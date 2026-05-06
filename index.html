@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Outside | Bullying Prevention</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <style>
+        /* CSS: The Visual Styling */
+        :root {
+            --bg-color: #ffffff;
+            --text-main: #111111;
+            --text-secondary: #555555;
+            --accent: #2563EB; /* Professional Blue */
+            --border: #e5e5e5;
+            --font-stack: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            font-family: var(--font-stack);
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+            border-bottom: 1px solid var(--border);
+            padding: 20px 40px;
+            position: sticky;
+            top: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(5px);
+        }
+
+        .nav-inner {
+            max-width: 720px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-weight: 800;
+            font-size: 1.6rem;
+            letter-spacing: -0.02em;
+            text-transform: uppercase;
+        }
+
+        .nav-links button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 0.95rem;
+            margin-left: 20px;
+            color: var(--text-secondary);
+            font-weight: 500;
+            padding: 5px 10px;
+            border-radius: 4px;
+            transition: all 0.2s;
+        }
+
+        .nav-links button:hover {
+            color: var(--text-main);
+            background-color: #f5f5f5;
+        }
+
+        .nav-links button.active {
+            color: var(--text-main);
+            background-color: #eee;
+        }
+
+        /* Layout */
+        .container {
+            max-width: 720px; /* Narrow width for better reading experience */
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        /* Typography */
+        h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            letter-spacing: -0.03em;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 10px;
+        }
+
+        h3 {
+            font-size: 1.05rem;
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+            color: var(--text-secondary);
+        }
+
+        ul,
+        ol {
+            margin-bottom: 1.5rem;
+            padding-left: 20px;
+            color: var(--text-secondary);
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        a {
+            color: var(--text-main);
+            text-decoration: underline;
+            text-decoration-color: var(--border);
+            text-underline-offset: 3px;
+        }
+
+        a:hover {
+            text-decoration-color: var(--accent);
+            color: var(--accent);
+        }
+
+        /* Specific Styles */
+        .page-section {
+            display: none; /* Hidden by default */
+            animation: fadeIn 0.3s ease-in-out;
+        }
+
+        .page-section.visible {
+            display: block; /* Shown when active */
+        }
+
+        .advisor-item {
+            margin-bottom: 30px;
+        }
+
+        .advisor-name {
+            font-weight: 700;
+            display: block;
+            color: var(--text-main);
+        }
+
+        .advisor-meta {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .advisor-points {
+            margin: 8px 0 6px 0;
+            padding-left: 20px;
+        }
+
+        .advisor-points li {
+            margin-bottom: 6px;
+        }
+
+        .advisor-links {
+            margin-top: 4px;
+            padding-left: 20px;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 600px) {
+            nav {
+                padding: 15px 20px;
+            }
+
+            .nav-inner {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .nav-links {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 5px;
+            }
+
+            .nav-links button {
+                margin-left: 0;
+                font-size: 0.85rem;
+                padding: 8px 12px;
+            }
+
+            .container {
+                margin: 30px auto;
+                padding: 0 16px;
+            }
+
+            h1 {
+                font-size: 1.6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-inner">
+            <div class="logo">Outside</div>
+            <div class="nav-links">
+                <button onclick="showPage('home')" id="nav-home" class="active">The Program</button>
+                <button onclick="showPage('research')" id="nav-research">Research</button>
+                <button onclick="showPage('advisors')" id="nav-advisors">Advisors</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+
+        <div id="home" class="page-section visible">
+            <h1>A new bullying prevention startup</h1>
+            <p><em>Outside helps chronic bullying victims through counselor-led, Zoom-based group therapy cohorts.</em></p>
+            
+            <p>One of the best interventions against chronic bullying is group therapy - an ideal setting to build social, problem-solving, and coping skills. Yet 98% of therapy is individual.</p>
+            
+            <h3>Why isn't there more group therapy?</h3>
+            <ol>
+                <li>Sourcing groups of similar-aged students who are available at the same time requires a pool of participants larger than most communities</li>
+                <li>Students are reluctant to report bullying in the first place</li>
+            </ol>
+
+            <h3>Our approach is simple:</h3>
+            <ul>
+                <li>Zoom-based group therapy cohorts for bullying victims</li>
+                <li>Cohorts are drawn from across the country, and no two attendees attend the same school</li>
+                <li>For providers, we handle the marketing and administrative overhead so they simply need to login and provide care, while earning a higher rate than they would at an individual session</li>
+                <li>For schools, we are a welcome resource they can share with parents</li>
+            </ul>
+
+            <h3>We've already proven this works:</h3>
+            <p>For the past two years, we have supported a bullying research clinic to pilot this program, and the results look great. Learn more about the pilot at the <a href="https://bravelab.unl.edu/current-research/belong/" target="_blank">Bullying Research and Victim Empowerment (BRAVE) Lab</a>.</p>
+
+            <h3>Get in touch</h3>
+            <p>If you'd like to learn more about the program, explore a partnership, or ask a question, email us at <a href="mailto:team@outsidesupport.org?subject=Outside%20Inquiry">team@outsidesupport.org</a>.</p>
+        </div>
+
+        <div id="research" class="page-section">
+            <h1>Research</h1>
+            <p>Our approach is grounded in research on bullying victimization, mental health impacts, and effective interventions.</p>
+
+            <p><strong>Research underway</strong></p>
+            <h3>Bullying, Empowerment, and Learning Online Network Group (BELONG)</h3>
+            <p><strong>BRAVE Lab, University of Nebraska - Lincoln.</strong> <a href="https://bravelab.unl.edu/current-research/belong/" target="_blank">Program details</a></p>
+            <ul>
+                <li>Free online group program led by trained facilitators for middle school students (grades 6-8) who have experienced bullying.</li>
+                <li>Six-week weekly Zoom sessions with a facilitator and 4-5 same-age, same-gender peers.</li>
+                <li>Focuses on identifying bullying, building problem-solving and coping skills, and strengthening peer connections.</li>
+            </ul>
+
+            <p><strong>Research papers</strong></p>
+            <h3>Empirical and theoretical foundations of family interventions to reduce the incidence and mental health impacts of school bullying victimization</h3>
+            <p><strong>Karyn L. Healy, Hannah J. Thomas, Matthew R. Sanders &amp; James G. Scott (2022)</strong><br>
+            <em>International Review of Psychiatry, 34:2, 140-153.</em> <a href="https://doi.org/10.1080/09540261.2022.2045260" target="_blank">DOI</a></p>
+            <ul>
+                <li>"There has been substantial longitudinal research on the relationship between the ability to regulate emotions and bullying victimisation: internalising problems are both risk factors and consequences of bullying."</li>
+                <li>"Emotional reactivity or dysregulation has been found to be the single most important predictor in the emergence of chronic victimisation."</li>
+                <li>"Supportive relationships with both peers and family are protective against bullying victimisation and the mental health consequences of being bullied."</li>
+            </ul>
+
+            <h3>Examining the Effectiveness of School-Bullying Intervention Programs Globally: a Meta-analysis</h3>
+            <p><strong>Gaffney, H., Farrington, D.P. &amp; Ttofi, M.M. (2019)</strong><br>
+            <em>International Journal of Bullying Prevention, 1, 14-31.</em> <a href="https://doi.org/10.1007/s42380-019-0007-4" target="_blank">DOI</a></p>
+            <ul>
+                <li>Online environments can encourage disclosure about bullying due to perceived anonymity, trust, and privacy.</li>
+            </ul>
+
+            <h3>Hypotheses for possible iatrogenic impacts of school bullying prevention programs</h3>
+            <p><strong>Karyn L. Healy (2020)</strong><br>
+            <em>Child Development Perspectives, 14(4), 221-228.</em></p>
+            <ul>
+                <li>Discusses how some school anti-bullying policies can be counterproductive.</li>
+            </ul>
+
+            <h3>Method of Nursing Interventions to Reduce the Incidence of Bullying and Its Impact on Students in School: A Scoping Review</h3>
+            <p><strong>Yosep, I.; Hikmat, R.; Mardhiyah, A.; Hazmi, H.; Hernawaty, T. (2022)</strong><br>
+            <em>Healthcare, 10, 1835.</em> <a href="https://doi.org/10.3390/healthcare10101835" target="_blank">DOI</a></p>
+            <ul>
+                <li>Resilience-based group programs can be an effective intervention to reduce bullying.</li>
+            </ul>
+        </div>
+
+        <div id="advisors" class="page-section">
+            <h1>Advisors</h1>
+            <p>We are supported by a panel of experts in clinical care, research, and bullying prevention.</p>
+            
+            <div style="margin-top: 40px;">
+                
+                <!-- <div class="advisor-item">
+                    <span class="advisor-name">Dr. Spencer Byrnes, PsyD</span>
+                    <div class="advisor-meta">
+                        Private practice with expertise in group therapy for bullying<br>
+                        <a href="https://www.linkedin.com/in/spencer-byrnes-psy-d-78531678/" target="_blank">LinkedIn</a>
+                    </div>
+                </div>
+
+                <div class="advisor-item">
+                    <span class="advisor-name">Christine Cauwels</span>
+                    <div class="advisor-meta">
+                        Clinical Director of Therapy, Cerebral<br>
+                        <a href="https://www.linkedin.com/in/christine-cauwels-73a103252/" target="_blank">LinkedIn</a>
+                    </div>
+                </div> -->
+
+                <!-- <div class="advisor-item">
+                    <span class="advisor-name">Julie Hertzog</span>
+                    <div class="advisor-meta">
+                        Director, PACER's National Bullying Prevention Center<br>
+                        <a href="https://www.linkedin.com/in/julie-hertzog-9514b9b/" target="_blank">LinkedIn</a>
+                    </div>
+                </div>
+
+                <div class="advisor-item">
+                    <span class="advisor-name">Prof. Chad Rose, PhD</span>
+                    <div class="advisor-meta">
+                        Associate Professor, University of Missouri<br>
+                        Director, Mizzou Ed Bully Prevention Lab<br>
+                        <a href="https://education.missouri.edu/person/chad-rose/" target="_blank">CV</a> &middot; <a href="https://www.linkedin.com/in/rosechad/" target="_blank">LinkedIn</a>
+                    </div>
+                </div>
+
+                <div class="advisor-item">
+                    <span class="advisor-name">Prof. James Scott, PhD</span>
+                    <div class="advisor-meta">
+                        Youth Mental Health Research Group, University of Queensland<br>
+                        Developing a study around group therapy for bullying victims<br>
+                        <a href="https://researchers.uq.edu.au/researcher/4537" target="_blank">CV</a> &middot; <a href="https://www.linkedin.com/in/james-scott-38a086183/" target="_blank">LinkedIn</a>
+                    </div>
+                </div> -->
+
+                <div class="advisor-item">
+                    <span class="advisor-name">Dr. Sara Heron, MD</span>
+                    <div class="advisor-meta">
+                        <ul class="advisor-points">
+                            <li>Executive Director, <a href="https://baychildren.org/" target="_blank">Bay Children's Services</a></li>
+                            <li>Child and Adolescent Psychiatrist</li>
+                            <li>MD, University of California San Francisco School of Medicine; Psychiatry Residency (UCSF); Child and Adolescent Psychiatry Fellowship (Stanford University)</li>
+                        </ul>
+                        <div class="advisor-links"><a href="https://baychildren.org/providers" target="_blank">Profile</a> &middot; <a href="https://www.linkedin.com/in/sara-heron-445b471b9/" target="_blank">LinkedIn</a></div>
+                    </div>
+                </div>
+                <div class="advisor-item">
+                    <span class="advisor-name">Amanda Hinson, JD</span>
+                    <div class="advisor-meta">
+                        <ul class="advisor-points">
+                            <li>Graduate Student Intern in Marriage and Family Therapy at Insights Collaborative Therapy Group, supervised by Mary Sanger, LPC-S, LMFT-S</li>
+                            <li>Gibson Dunn, Mercer Management Consulting</li>
+                            <li>Southern Methodist University (MS exp. May 2026), Harvard Law (JD), Harvard College (AB, Physics)</li>
+                        </ul>
+                        <div class="advisor-links"><a href="https://www.insightstherapy.com/therapists/amanda-hinson" target="_blank">Profile</a> &middot; <a href="https://www.linkedin.com/in/amandasharp/" target="_blank">LinkedIn</a></div>
+                    </div>
+                </div>
+                <div class="advisor-item">
+                    <span class="advisor-name">James Moran</span>
+                    <div class="advisor-meta">
+                        <ul class="advisor-points">
+                            <li>Technology founder &amp; investor</li>
+                            <li>Co-founder, YipitData (now a Carlyle company); Analyst, Blackstone</li>
+                            <li>Harvard College (AB, Economics)</li>
+                        </ul>
+                        <div class="advisor-links"><a href="https://www.linkedin.com/in/jamesdmoran/" target="_blank">LinkedIn</a></div>
+                    </div>
+                </div>
+                <div class="advisor-item">
+                    <span class="advisor-name">Emilea Rejman, M.A., PLMHP</span>
+                    <div class="advisor-meta">
+                        <ul class="advisor-points">
+                            <li>Project Director, BELONG (BRAVE Lab)</li>
+                            <li>University of Nebraska - Lincoln</li>
+                            <li>Doctoral candidate in School Psychology at UNL, supervised by Dr. Sue Swearer</li>
+                        </ul>
+                        <div class="advisor-links"><a href="https://bravelab.unl.edu/sites/unl.edu.cehs.brave-lab/files/media/file/Rejman%20CV%202024-4.pdf" target="_blank">Profile</a></div>
+                    </div>
+                </div>
+                <div class="advisor-item">
+                    <span class="advisor-name">Prof. Sue Swearer, PhD</span>
+                    <div class="advisor-meta">
+                        <ul class="advisor-points">
+                            <li>Willa Cather Professor of Educational Psychology and Director, Bullying Research and Victim Empowerment (BRAVE) Lab, University of Nebraska - Lincoln</li>
+                            <li>Co-Director, Bullying Research Network</li>
+                            <li>Licensed school psychologist focused on bullying prevention, school climate, and youth mental health</li>
+                            <li>Former Professional Counselor, Center for Pediatric Psychiatry, Children's Medical Center of Dallas</li>
+                        </ul>
+                        <div class="advisor-links"><a href="https://cehs.unl.edu/edpsych/person/susan-swearer/" target="_blank">Profile</a> &middot; <a href="https://www.linkedin.com/in/susan-swearer-46585037/" target="_blank">LinkedIn</a></div>
+                    </div>
+                </div>
+                <div class="advisor-item">
+                    <span class="advisor-name">Dr. Thomas Tarshis, MD</span>
+                    <div class="advisor-meta">
+                        <ul class="advisor-points">
+                            <li>Former AACAP spokesperson on Bullying and Victimization</li>
+                            <li>Author of <em>Living with Peer Pressure and Bullying</em></li>
+                            <li>Author of the Peer Interactions in Primary School (PIPS) Survey: Tarshis TP, Huffman LC. Psychometric properties of the Peer Interactions in Primary School (PIPS) Questionnaire. <em>J Dev Behav Pediatr.</em> 2007 Apr;28(2):125-32. DOI: <a href="https://doi.org/10.1097/01.DBP.0000267562.11329.8f" target="_blank">10.1097/01.DBP.0000267562.11329.8f</a>. PMID: 17435463</li>
+                        </ul>
+                        <div class="advisor-links"><a href="https://www.linkedin.com/in/thomas-tarshis-116a204/" target="_blank">LinkedIn</a></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        function showPage(pageId) {
+            // Hide all pages
+            document.querySelectorAll('.page-section').forEach(section => {
+                section.classList.remove('visible');
+            });
+            
+            // Remove active class from nav buttons
+            document.querySelectorAll('.nav-links button').forEach(btn => {
+                btn.classList.remove('active');
+            });
+
+            // Show selected page
+            document.getElementById(pageId).classList.add('visible');
+            
+            // Highlight nav button
+            document.getElementById('nav-' + pageId).classList.add('active');
+            
+            // Scroll to top
+            window.scrollTo(0, 0);
+        }
+    </script>
+</body>
+</html>

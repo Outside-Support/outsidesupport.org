@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>For Parents — Outside Support</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,300&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --teal:       #2E7D78;
+      --teal-dark:  #1F5956;
+      --teal-light: #E8F4F3;
+      --amber:      #E8A84C;
+      --amber-soft: #FDF3E3;
+      --off-white:  #F9F7F4;
+      --charcoal:   #1C2B2A;
+      --mid-gray:   #5A6B6A;
+      --rule:       #D4E3E2;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--off-white);
+      color: var(--charcoal);
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(249,247,244,0.95);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--rule);
+      padding: 0 2rem;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-logo { display: flex; flex-direction: column; line-height: 1.1; text-decoration: none; }
+    .nav-logo-main { font-family: 'Fraunces', serif; font-weight: 500; font-size: 1.2rem; color: var(--teal-dark); letter-spacing: -0.01em; }
+    .nav-logo-sub { font-size: 0.65rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--mid-gray); }
+    .nav-links { display: flex; align-items: center; gap: 2rem; list-style: none; }
+    .nav-links a { text-decoration: none; font-size: 0.85rem; font-weight: 500; color: var(--mid-gray); transition: color 0.2s; }
+    .nav-links a:hover { color: var(--teal); }
+    .nav-links a.active { color: var(--teal); font-weight: 600; }
+    .nav-cta { background: var(--teal); color: #fff !important; padding: 0.45rem 1.1rem; border-radius: 100px; font-size: 0.82rem !important; font-weight: 600 !important; transition: background 0.2s !important; }
+    .nav-cta:hover { background: var(--teal-dark) !important; }
+
+    /* ── SHARED ── */
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: var(--teal); color: #fff; text-decoration: none;
+      font-weight: 600; font-size: 0.9rem; padding: 0.85rem 1.8rem;
+      border-radius: 100px; transition: background 0.2s, transform 0.15s;
+    }
+    .btn-primary:hover { background: var(--teal-dark); transform: translateY(-1px); }
+    .section-label { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--teal); margin-bottom: 1rem; }
+    .section-headline { font-family: 'Fraunces', serif; font-size: clamp(1.8rem, 3vw, 2.4rem); font-weight: 500; line-height: 1.2; letter-spacing: -0.02em; color: var(--charcoal); margin-bottom: 0.75rem; }
+    .section-sub { font-size: 1rem; color: var(--mid-gray); line-height: 1.75; margin-bottom: 2.5rem; }
+
+    /* ── HERO ── */
+    .page-hero {
+      margin-top: 64px;
+      background: var(--off-white);
+      padding: 5.5rem 5rem 4rem;
+      max-width: 1100px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .page-eyebrow { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--teal); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem; }
+    .page-eyebrow::before { content: ''; display: block; width: 24px; height: 2px; background: var(--amber); }
+    .page-hero h1 { font-family: 'Fraunces', serif; font-size: clamp(2.2rem, 4vw, 3.2rem); font-weight: 500; line-height: 1.15; letter-spacing: -0.02em; color: var(--charcoal); max-width: 720px; margin-bottom: 1.5rem; }
+    .page-hero h1 em { font-style: italic; color: var(--teal); }
+    .page-hero-sub { font-size: 1.05rem; color: var(--mid-gray); line-height: 1.75; max-width: 580px; }
+
+    /* ── WHAT TO EXPECT ── */
+    .expect-wrap { background: #fff; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); padding: 6rem 5rem; }
+    .expect-inner { max-width: 1100px; margin: 0 auto; }
+    .expect-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 0; }
+    .expect-card { border: 1px solid var(--rule); border-radius: 16px; padding: 2rem 1.75rem; background: var(--off-white); }
+    .expect-icon { font-size: 1.5rem; margin-bottom: 1rem; }
+    .expect-title { font-family: 'Fraunces', serif; font-size: 1.1rem; font-weight: 500; color: var(--charcoal); margin-bottom: 0.5rem; letter-spacing: -0.01em; }
+    .expect-body { font-size: 0.88rem; color: var(--mid-gray); line-height: 1.75; }
+
+    /* ── GUARANTEE ── */
+    .guarantee-wrap { padding: 5rem; background: var(--teal-dark); }
+    .guarantee-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+    .guarantee-left .section-label { color: var(--amber); }
+    .guarantee-left .section-headline { color: #fff; max-width: 100%; }
+    .guarantee-left .section-sub { color: rgba(255,255,255,0.75); }
+    .guarantee-points { display: flex; flex-direction: column; gap: 1.25rem; }
+    .guarantee-point { display: flex; gap: 1rem; align-items: flex-start; }
+    .g-icon { width: 36px; height: 36px; min-width: 36px; background: rgba(255,255,255,0.1); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1rem; }
+    .g-text { font-size: 0.9rem; color: rgba(255,255,255,0.85); line-height: 1.65; padding-top: 0.3rem; }
+    .g-text strong { display: block; color: #fff; font-weight: 600; margin-bottom: 0.15rem; }
+    .guarantee-card { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.15); border-radius: 20px; padding: 2.5rem; }
+    .guarantee-card-headline { font-family: 'Fraunces', serif; font-size: 1.3rem; font-weight: 500; color: #fff; margin-bottom: 0.5rem; letter-spacing: -0.01em; }
+    .guarantee-card-sub { font-size: 0.88rem; color: rgba(255,255,255,0.7); line-height: 1.7; margin-bottom: 1.5rem; }
+    .guarantee-badge { display: flex; align-items: flex-start; gap: 0.75rem; background: rgba(232,168,76,0.15); border: 1px solid rgba(232,168,76,0.3); border-radius: 12px; padding: 1.25rem 1.5rem; }
+    .guarantee-badge-icon { font-size: 1.25rem; min-width: 24px; }
+    .guarantee-badge-text { font-size: 0.85rem; color: rgba(255,255,255,0.85); line-height: 1.65; }
+    .guarantee-badge-text strong { color: #fff; font-weight: 600; }
+
+    /* ── QUOTES ── */
+    .quotes-wrap { padding: 6rem 5rem; max-width: 1100px; margin: 0 auto; }
+    .quotes-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; margin-top: 0; }
+    .quote-card { background: var(--amber-soft); border-radius: 20px; padding: 2.5rem; display: flex; flex-direction: column; gap: 1rem; }
+    .q-mark { font-family: 'Fraunces', serif; font-size: 3rem; line-height: 0.7; color: var(--amber); }
+    .q-text { font-family: 'Fraunces', serif; font-size: 1.05rem; font-weight: 300; font-style: italic; line-height: 1.6; color: var(--charcoal); flex: 1; }
+    .q-attr { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--mid-gray); }
+    .q-source { font-size: 0.7rem; color: var(--mid-gray); font-style: italic; }
+
+    /* ── ENROLLMENT ── */
+    .enroll-wrap { background: #fff; border-top: 1px solid var(--rule); padding: 6rem 5rem; }
+    .enroll-inner { max-width: 1100px; margin: 0 auto; }
+    .enroll-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; margin-top: 3rem; position: relative; }
+    .enroll-steps::before { content: ''; position: absolute; top: 28px; left: calc(16.66% + 1rem); right: calc(16.66% + 1rem); height: 1px; background: var(--rule); z-index: 0; }
+    .enroll-step { display: flex; flex-direction: column; align-items: center; text-align: center; padding: 0 2rem; position: relative; z-index: 1; }
+    .enroll-circle { width: 56px; height: 56px; border-radius: 50%; background: var(--teal); color: #fff; display: flex; align-items: center; justify-content: center; font-family: 'Fraunces', serif; font-size: 1.4rem; font-weight: 500; margin-bottom: 1.5rem; }
+    .enroll-title { font-family: 'Fraunces', serif; font-size: 1.1rem; font-weight: 500; color: var(--charcoal); margin-bottom: 0.5rem; letter-spacing: -0.01em; }
+    .enroll-body { font-size: 0.88rem; color: var(--mid-gray); line-height: 1.7; }
+    .enroll-cta { text-align: center; margin-top: 3.5rem; padding-top: 3rem; border-top: 1px solid var(--rule); }
+    .enroll-cta p { font-size: 1rem; color: var(--mid-gray); margin-bottom: 1.25rem; }
+    .enroll-cta p strong { color: var(--charcoal); }
+
+    /* ── FOOTER ── */
+    footer { background: var(--charcoal); color: rgba(255,255,255,0.6); padding: 3rem 5rem; display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap; }
+    .footer-logo { font-family: 'Fraunces', serif; font-size: 1.1rem; font-weight: 500; color: #fff; }
+    .footer-logo span { display: block; font-family: 'Inter', sans-serif; font-size: 0.65rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-top: 0.2rem; }
+    .footer-links { display: flex; gap: 2rem; list-style: none; }
+    .footer-links a { text-decoration: none; color: rgba(255,255,255,0.5); font-size: 0.82rem; transition: color 0.2s; }
+    .footer-links a:hover { color: #fff; }
+    .footer-contact { font-size: 0.82rem; }
+    .footer-contact a { color: var(--amber); text-decoration: none; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      nav { padding: 0.7rem 1.25rem 0.85rem; height: auto; min-height: 64px; flex-wrap: wrap; align-items: flex-start; gap: 0.75rem; }
+      .nav-logo { flex: 0 0 100%; }
+      .nav-links { display: flex; width: 100%; flex-wrap: wrap; gap: 0.45rem 0.85rem; padding-bottom: 0.1rem; }
+      .nav-links a { white-space: nowrap; font-size: 0.76rem; }
+      .page-hero { margin-top: 124px; padding: 3.5rem 1.75rem 3rem; }
+      .expect-wrap { padding: 4rem 1.75rem; }
+      .expect-grid { grid-template-columns: 1fr; }
+      .guarantee-wrap { padding: 4rem 1.75rem; }
+      .guarantee-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+      .quotes-wrap { padding: 4rem 1.75rem; }
+      .quotes-grid { grid-template-columns: 1fr; }
+      .enroll-wrap { padding: 4rem 1.75rem; }
+      .enroll-steps { grid-template-columns: 1fr; gap: 2.5rem; }
+      .enroll-steps::before { display: none; }
+      .enroll-step { align-items: flex-start; text-align: left; flex-direction: row; gap: 1.25rem; padding: 0; }
+      .enroll-circle { min-width: 56px; margin-bottom: 0; }
+      footer { padding: 2.5rem 1.75rem; flex-direction: column; align-items: flex-start; gap: 1.5rem; }
+      .footer-links { flex-wrap: wrap; gap: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="index.html" class="nav-logo">
+      <span class="nav-logo-main">Outside Support</span>
+      <span class="nav-logo-sub">Nonprofit</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="outside-support-program.html">Our Program</a></li>
+      <li><a href="outside-support-for-parents.html" class="active">For Parents</a></li>
+      <li><a href="outside-support-for-schools.html">For Schools</a></li>
+      <li><a href="outside-support-about.html">About Us</a></li>
+      <li><a href="outside-support-contact.html" class="nav-cta">Get In Touch</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <div class="page-hero">
+    <div class="page-eyebrow">For Parents &amp; Caregivers</div>
+    <h1>You want to help your child. <em>We're here to help you do that.</em></h1>
+    <p class="page-hero-sub">When a child is being bullied, parents often feel just as stuck as their kid — unsure what to do, worried about making things worse. The BELONG Program gives your child a structured, safe space to build real skills and connect with peers who genuinely understand what they're going through.</p>
+  </div>
+
+  <!-- WHAT TO EXPECT -->
+  <div class="expect-wrap">
+    <div class="expect-inner">
+      <div class="section-label">What Your Child Will Experience</div>
+      <h2 class="section-headline">Six weeks designed around your child's needs.</h2>
+      <p class="section-sub" style="max-width:620px;">The BELONG Program isn't a lecture or a workshop — it's a small, consistent group of peers led by a trained facilitator. The same kids, the same facilitator, every week. That consistency is what makes the connections real.</p>
+
+      <div class="expect-grid">
+        <div class="expect-card">
+          <div class="expect-icon">🔍</div>
+          <div class="expect-title">They'll understand what happened</div>
+          <p class="expect-body">Students learn what bullying actually is — and isn't. That shared language helps them make sense of their own experience without self-blame, and gives them the words to talk about what's been happening — with you, with a teacher, or with anyone they choose to tell.</p>
+        </div>
+        <div class="expect-card">
+          <div class="expect-icon">🧠</div>
+          <div class="expect-title">They'll build real skills</div>
+          <p class="expect-body">Each session introduces practical, age-appropriate tools — problem-solving strategies, coping skills, and ways to respond in the moment. Not scripts, but real skills they can carry with them long after the program ends.</p>
+        </div>
+        <div class="expect-card">
+          <div class="expect-icon">🤝</div>
+          <div class="expect-title">They'll find peers who get it</div>
+          <p class="expect-body">One of the most powerful things about the program is simple: your child will meet other kids who've been through something similar. That alone — knowing you're not alone — changes things. Parents in our pilot told us their kids started opening up more at home after just a few sessions.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- GUARANTEE -->
+  <div class="guarantee-wrap">
+    <div class="guarantee-inner">
+      <div class="guarantee-left">
+        <div class="section-label">Why Online Works</div>
+        <h2 class="section-headline">Built for kids and their families.</h2>
+        <p class="section-sub">A child being bullied at school isn't going to share what's really going on if someone from their school might be listening. The BELONG Program is fully online — and that changes everything.</p>
+        <div class="guarantee-points">
+          <div class="guarantee-point">
+            <div class="g-icon">✓</div>
+            <div class="g-text"><strong>Grouped by gender</strong>Students are placed in groups with peers of the same gender, so the conversation feels relevant and the connections feel natural.</div>
+          </div>
+          <div class="guarantee-point">
+            <div class="g-icon">✓</div>
+            <div class="g-text"><strong>No one from their school, ever</strong>Because we draw students from across the country, we can guarantee your child will never be placed in a group with anyone from their own school.</div>
+          </div>
+          <div class="guarantee-point">
+            <div class="g-icon">✓</div>
+            <div class="g-text"><strong>Flexible scheduling</strong>Sessions happen online, so there's no commute and no disruption to your family's schedule. We work with you to find a time that fits.</div>
+          </div>
+          <div class="guarantee-point">
+            <div class="g-icon">✓</div>
+            <div class="g-text"><strong>A trained facilitator leads every session</strong>Every group is guided by a facilitator trained in the BELONG Program curriculum — so your child is always in capable, consistent hands.</div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="guarantee-card">
+          <div class="guarantee-card-headline">At no cost.</div>
+          <div class="guarantee-card-sub">The BELONG Program is completely free for every student. Cost should never be a reason a child doesn't get the support they need.</div>
+          <div class="guarantee-badge">
+            <div class="guarantee-badge-icon">🔒</div>
+            <div class="guarantee-badge-text"><strong>Our guarantee:</strong> No student is ever grouped with someone from their own school. That's not a policy — it's a structural feature of how the program works.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PARENT QUOTES -->
+  <div class="quotes-wrap">
+    <div class="section-label">What Parents Are Saying</div>
+    <h2 class="section-headline">From families who've been through it.</h2>
+    <p class="section-sub" style="max-width:580px;">These quotes are from parents whose children participated in the BELONG pilot program at the University of Nebraska — the direct research foundation for the BELONG Program.</p>
+    <div class="quotes-grid">
+      <div class="quote-card">
+        <div class="q-mark">&ldquo;</div>
+        <p class="q-text">Having peer groups that are purely positive and supporting — especially being able to relate to his particular thing — is always the most helpful for him. He always came out of those sessions feeling very positive, and good about things.</p>
+        <div class="q-attr">Parent of a participant</div>
+        <div class="q-source">BELONG Program pilot, University of Nebraska</div>
+      </div>
+      <div class="quote-card">
+        <div class="q-mark">&ldquo;</div>
+        <p class="q-text">It was helpful in not feeling alone in that way... she's been talking to me a lot more about things, you know.</p>
+        <div class="q-attr">Parent of a participant</div>
+        <div class="q-source">BELONG Program pilot, University of Nebraska</div>
+      </div>
+      <div class="quote-card">
+        <div class="q-mark">&ldquo;</div>
+        <p class="q-text">I think it's a great project — a good support and a resource for kids that may be really going through bullying, for them to know that there is support out there, and that they don't have to be on their own.</p>
+        <div class="q-attr">Parent of a participant</div>
+        <div class="q-source">BELONG Program pilot, University of Nebraska</div>
+      </div>
+      <div class="quote-card">
+        <div class="q-mark">&ldquo;</div>
+        <p class="q-text">He used to keep all his emotions inside. He's more open with his feelings now, and talking with us.</p>
+        <div class="q-attr">Parent of a participant</div>
+        <div class="q-source">BELONG Program pilot, University of Nebraska</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ENROLLMENT -->
+  <div class="enroll-wrap">
+    <div class="enroll-inner">
+      <div class="section-label">Getting Started</div>
+      <h2 class="section-headline">Three steps to get your child support.</h2>
+      <p class="section-sub" style="max-width:580px;">We take the time to make sure the program is the right fit for your child before they join a group. If we feel another kind of support would serve them better, we'll help point you in the right direction.</p>
+
+      <div class="enroll-steps">
+        <div class="enroll-step">
+          <div class="enroll-circle">1</div>
+          <div>
+            <div class="enroll-title">Refer your child</div>
+            <p class="enroll-body">Fill out our referral form to get started. Tell us a little about your child and what they've been experiencing — there's no wrong way to begin.</p>
+          </div>
+        </div>
+        <div class="enroll-step">
+          <div class="enroll-circle">2</div>
+          <div>
+            <div class="enroll-title">Complete consent forms</div>
+            <p class="enroll-body">If your child is a good fit for the program, we'll send over consent forms for you to complete. Parent or guardian consent and student assent are obtained before participation begins.</p>
+          </div>
+        </div>
+        <div class="enroll-step">
+          <div class="enroll-circle">3</div>
+          <div>
+            <div class="enroll-title">Get placed in a group</div>
+            <p class="enroll-body">Your child is matched to a small group of peers and the program begins — online, on a schedule that works for your family, completely free.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="enroll-cta">
+        <a href="outside-support-contact.html" class="btn-primary">Refer Your Child &rarr;</a>
+        <p style="margin-top:1.25rem; font-size:0.88rem; color:var(--mid-gray);">Still have questions? <a href="outside-support-contact.html" style="color:var(--teal); font-weight:600; text-decoration:none;">Get in touch</a> and we'll be happy to help.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">
+      Outside Support
+      <span>A nonprofit organization</span>
+    </div>
+    <ul class="footer-links">
+      <li><a href="outside-support-program.html">Our Program</a></li>
+      <li><a href="outside-support-for-parents.html">For Parents</a></li>
+      <li><a href="outside-support-for-schools.html">For Schools</a></li>
+      <li><a href="outside-support-about.html">About Us</a></li>
+      <li><a href="outside-support-contact.html">Contact</a></li>
+    </ul>
+    <div class="footer-contact">
+      Questions? <a href="mailto:hello@outsidesupport.org">hello@outsidesupport.org</a>
+    </div>
+  </footer>
+
+</body>
+</html>

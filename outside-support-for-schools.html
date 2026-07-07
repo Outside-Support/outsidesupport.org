@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>For Schools — Outside Support</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,300&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --teal:       #2E7D78;
+      --teal-dark:  #1F5956;
+      --teal-light: #E8F4F3;
+      --amber:      #E8A84C;
+      --amber-soft: #FDF3E3;
+      --off-white:  #F9F7F4;
+      --charcoal:   #1C2B2A;
+      --mid-gray:   #5A6B6A;
+      --rule:       #D4E3E2;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; background: var(--off-white); color: var(--charcoal); font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+
+    /* ── NAV ── */
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(249,247,244,0.95); backdrop-filter: blur(8px); border-bottom: 1px solid var(--rule); padding: 0 2rem; height: 64px; display: flex; align-items: center; justify-content: space-between; }
+    .nav-logo { display: flex; flex-direction: column; line-height: 1.1; text-decoration: none; }
+    .nav-logo-main { font-family: 'Fraunces', serif; font-weight: 500; font-size: 1.2rem; color: var(--teal-dark); letter-spacing: -0.01em; }
+    .nav-logo-sub { font-size: 0.65rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--mid-gray); }
+    .nav-links { display: flex; align-items: center; gap: 2rem; list-style: none; }
+    .nav-links a { text-decoration: none; font-size: 0.85rem; font-weight: 500; color: var(--mid-gray); transition: color 0.2s; }
+    .nav-links a:hover { color: var(--teal); }
+    .nav-links a.active { color: var(--teal); font-weight: 600; }
+    .nav-cta { background: var(--teal); color: #fff !important; padding: 0.45rem 1.1rem; border-radius: 100px; font-size: 0.82rem !important; font-weight: 600 !important; }
+    .nav-cta:hover { background: var(--teal-dark) !important; }
+
+    /* ── SHARED ── */
+    .btn-primary { display: inline-flex; align-items: center; gap: 0.5rem; background: var(--teal); color: #fff; text-decoration: none; font-weight: 600; font-size: 0.9rem; padding: 0.85rem 1.8rem; border-radius: 100px; transition: background 0.2s, transform 0.15s; }
+    .btn-primary:hover { background: var(--teal-dark); transform: translateY(-1px); }
+    .section-label { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--teal); margin-bottom: 1rem; }
+    .section-headline { font-family: 'Fraunces', serif; font-size: clamp(1.8rem, 3vw, 2.4rem); font-weight: 500; line-height: 1.2; letter-spacing: -0.02em; color: var(--charcoal); margin-bottom: 0.75rem; }
+    .section-sub { font-size: 1rem; color: var(--mid-gray); line-height: 1.75; margin-bottom: 2.5rem; }
+
+    /* ── HERO ── */
+    .page-hero { margin-top: 64px; background: var(--teal-dark); padding: 5.5rem 5rem 4.5rem; }
+    .page-hero-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+    .page-eyebrow { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--amber); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem; }
+    .page-eyebrow::before { content: ''; display: block; width: 24px; height: 2px; background: var(--amber); }
+    .page-hero h1 { font-family: 'Fraunces', serif; font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 500; line-height: 1.15; letter-spacing: -0.02em; color: #fff; margin-bottom: 1.25rem; }
+    .page-hero h1 em { font-style: italic; color: var(--amber); }
+    .page-hero-sub { font-size: 1rem; color: rgba(255,255,255,0.8); line-height: 1.75; }
+    .hero-facts { display: flex; flex-direction: column; gap: 1rem; }
+    .hero-fact { background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.15); border-radius: 12px; padding: 1.25rem 1.5rem; }
+    .hero-fact-label { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--amber); margin-bottom: 0.3rem; }
+    .hero-fact-value { font-size: 0.95rem; color: #fff; font-weight: 500; line-height: 1.4; }
+
+    /* ── TIER 2 SECTION ── */
+    .tier-wrap { background: #fff; border-bottom: 1px solid var(--rule); padding: 6rem 5rem; }
+    .tier-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
+    .tier-left p { font-size: 0.95rem; color: var(--mid-gray); line-height: 1.8; margin-bottom: 1rem; }
+    .tier-left p strong { color: var(--charcoal); font-weight: 600; }
+    .tier-diagram { background: var(--teal-light); border-radius: 20px; padding: 2rem; display: flex; flex-direction: column; gap: 0.75rem; }
+    .tier-diagram-title { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--teal); margin-bottom: 0.5rem; }
+    .tier-bar { border-radius: 10px; padding: 1rem 1.25rem; display: flex; align-items: center; gap: 1rem; }
+    .tier-bar.tier-1 { background: rgba(46,125,120,0.12); }
+    .tier-bar.tier-2 { background: var(--teal); }
+    .tier-bar.tier-3 { background: rgba(46,125,120,0.06); border: 1px solid var(--rule); }
+    .tier-bar-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; min-width: 48px; }
+    .tier-bar.tier-1 .tier-bar-label { color: var(--teal-dark); }
+    .tier-bar.tier-2 .tier-bar-label { color: rgba(255,255,255,0.7); }
+    .tier-bar.tier-3 .tier-bar-label { color: var(--mid-gray); }
+    .tier-bar-text { font-size: 0.85rem; line-height: 1.45; }
+    .tier-bar.tier-1 .tier-bar-text { color: var(--charcoal); }
+    .tier-bar.tier-2 .tier-bar-text { color: #fff; font-weight: 500; }
+    .tier-bar.tier-3 .tier-bar-text { color: var(--mid-gray); }
+    .tier-bar.tier-2 .tier-bar-text span { display: block; font-size: 0.75rem; color: rgba(255,255,255,0.7); margin-top: 0.1rem; }
+
+    /* ── WHAT WE OFFER ── */
+    .offer-wrap { padding: 6rem 5rem; max-width: 1100px; margin: 0 auto; }
+    .offer-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+    .offer-card { border: 1px solid var(--rule); border-radius: 16px; padding: 2rem 1.75rem; background: #fff; }
+    .offer-icon { font-size: 1.4rem; margin-bottom: 1rem; }
+    .offer-title { font-family: 'Fraunces', serif; font-size: 1.05rem; font-weight: 500; color: var(--charcoal); margin-bottom: 0.5rem; letter-spacing: -0.01em; }
+    .offer-body { font-size: 0.87rem; color: var(--mid-gray); line-height: 1.75; }
+
+    /* ── EVIDENCE ── */
+    .evidence-wrap { background: var(--amber-soft); padding: 5rem; }
+    .evidence-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr; gap: 5rem; align-items: center; }
+    .evidence-left p { font-size: 0.95rem; color: var(--mid-gray); line-height: 1.8; margin-bottom: 1rem; }
+    .evidence-left p strong { color: var(--charcoal); }
+    .evidence-stats { display: flex; flex-direction: column; gap: 1.25rem; }
+    .evidence-stat { padding-bottom: 1.25rem; border-bottom: 1px solid var(--rule); }
+    .evidence-stat:last-child { border-bottom: none; padding-bottom: 0; }
+    .evidence-stat-num { font-family: 'Fraunces', serif; font-size: 2rem; font-weight: 500; color: var(--teal-dark); line-height: 1; margin-bottom: 0.2rem; }
+    .evidence-stat-label { font-size: 0.8rem; color: var(--mid-gray); line-height: 1.4; }
+
+    /* ── REFERRAL ── */
+    .referral-wrap { padding: 6rem 5rem; max-width: 1100px; margin: 0 auto; }
+    .referral-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; margin-top: 3rem; position: relative; }
+    .referral-steps::before { content: ''; position: absolute; top: 28px; left: calc(16.66% + 1rem); right: calc(16.66% + 1rem); height: 1px; background: var(--rule); z-index: 0; }
+    .referral-step { display: flex; flex-direction: column; align-items: center; text-align: center; padding: 0 2rem; position: relative; z-index: 1; }
+    .referral-circle { width: 56px; height: 56px; border-radius: 50%; background: var(--teal); color: #fff; display: flex; align-items: center; justify-content: center; font-family: 'Fraunces', serif; font-size: 1.4rem; font-weight: 500; margin-bottom: 1.5rem; }
+    .referral-title { font-family: 'Fraunces', serif; font-size: 1.1rem; font-weight: 500; color: var(--charcoal); margin-bottom: 0.5rem; letter-spacing: -0.01em; }
+    .referral-body { font-size: 0.88rem; color: var(--mid-gray); line-height: 1.7; }
+    .referral-cta { text-align: center; margin-top: 3.5rem; padding-top: 3rem; border-top: 1px solid var(--rule); }
+    .referral-cta p { font-size: 1rem; color: var(--mid-gray); margin-bottom: 1.25rem; }
+    .referral-cta p strong { color: var(--charcoal); }
+
+    /* ── FOOTER ── */
+    footer { background: var(--charcoal); color: rgba(255,255,255,0.6); padding: 3rem 5rem; display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap; }
+    .footer-logo { font-family: 'Fraunces', serif; font-size: 1.1rem; font-weight: 500; color: #fff; }
+    .footer-logo span { display: block; font-family: 'Inter', sans-serif; font-size: 0.65rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-top: 0.2rem; }
+    .footer-links { display: flex; gap: 2rem; list-style: none; }
+    .footer-links a { text-decoration: none; color: rgba(255,255,255,0.5); font-size: 0.82rem; transition: color 0.2s; }
+    .footer-links a:hover { color: #fff; }
+    .footer-contact { font-size: 0.82rem; }
+    .footer-contact a { color: var(--amber); text-decoration: none; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      nav { padding: 0.7rem 1.25rem 0.85rem; height: auto; min-height: 64px; flex-wrap: wrap; align-items: flex-start; gap: 0.75rem; }
+      .nav-logo { flex: 0 0 100%; }
+      .nav-links { display: flex; width: 100%; flex-wrap: wrap; gap: 0.45rem 0.85rem; padding-bottom: 0.1rem; }
+      .nav-links a { white-space: nowrap; font-size: 0.76rem; }
+      .page-hero { margin-top: 124px; padding: 3.5rem 1.75rem 3rem; }
+      .page-hero-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+      .tier-wrap { padding: 4rem 1.75rem; }
+      .tier-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+      .offer-wrap { padding: 4rem 1.75rem; }
+      .offer-grid { grid-template-columns: 1fr; }
+      .evidence-wrap { padding: 4rem 1.75rem; }
+      .evidence-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+      .referral-wrap { padding: 4rem 1.75rem; }
+      .referral-steps { grid-template-columns: 1fr; gap: 2.5rem; }
+      .referral-steps::before { display: none; }
+      .referral-step { align-items: flex-start; text-align: left; flex-direction: row; gap: 1.25rem; padding: 0; }
+      .referral-circle { min-width: 56px; margin-bottom: 0; }
+      footer { padding: 2.5rem 1.75rem; flex-direction: column; align-items: flex-start; gap: 1.5rem; }
+      .footer-links { flex-wrap: wrap; gap: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="index.html" class="nav-logo">
+      <span class="nav-logo-main">Outside Support</span>
+      <span class="nav-logo-sub">Nonprofit</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="outside-support-program.html">Our Program</a></li>
+      <li><a href="outside-support-for-parents.html">For Parents</a></li>
+      <li><a href="outside-support-for-schools.html" class="active">For Schools</a></li>
+      <li><a href="outside-support-about.html">About Us</a></li>
+      <li><a href="outside-support-contact.html" class="nav-cta">Get In Touch</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <div class="page-hero">
+    <div class="page-hero-inner">
+      <div>
+        <div class="page-eyebrow">For Schools &amp; Counselors</div>
+        <h1>A trusted resource for the students your school <em>most wants to reach.</em></h1>
+        <p class="page-hero-sub">The BELONG Program is a free, evidence-based Tier 2 support for middle schoolers who've experienced bullying — designed to complement your school-wide efforts, not add to your workload.</p>
+      </div>
+      <div class="hero-facts">
+        <div class="hero-fact">
+          <div class="hero-fact-label">Program type</div>
+          <div class="hero-fact-value">Tier 2 targeted support — social-emotional skills &amp; peer support</div>
+        </div>
+        <div class="hero-fact">
+          <div class="hero-fact-label">Who it serves</div>
+          <div class="hero-fact-value">Middle schoolers grades 6–8 who've experienced bullying</div>
+        </div>
+        <div class="hero-fact">
+          <div class="hero-fact-label">Cost to your school</div>
+          <div class="hero-fact-value">At no cost — no contracts, no administrative burden</div>
+        </div>
+        <div class="hero-fact">
+          <div class="hero-fact-label">Grounded in</div>
+          <div class="hero-fact-value">Peer-reviewed research from the BRAVE Lab, University of Nebraska-Lincoln</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TIER 2 -->
+  <div class="tier-wrap">
+    <div class="tier-inner">
+      <div class="tier-left">
+        <div class="section-label">Where We Fit</div>
+        <h2 class="section-headline">A Tier 2 support that slots right into your MTSS framework.</h2>
+        <p>Your school's Tier 1 efforts — assemblies, classroom curricula, school-wide culture initiatives — do important work. But some students need more targeted support than universal programming can provide.</p>
+        <p>The BELONG Program is designed for exactly those students. <strong>It's a structured, small-group Tier 2 intervention for middle schoolers who've experienced bullying</strong> — evidence-based, facilitator-led, and focused on the student who was targeted.</p>
+        <p>Because it runs online and outside school hours, it requires no classroom time, no staff coverage, and no scheduling disruption. You refer the student. We do the rest.</p>
+      </div>
+      <div>
+        <div class="tier-diagram">
+          <div class="tier-diagram-title">MTSS Framework</div>
+          <div class="tier-bar tier-3">
+            <div class="tier-bar-label">Tier 3</div>
+            <div class="tier-bar-text">Intensive, individualized support — mental health referrals, counseling</div>
+          </div>
+          <div class="tier-bar tier-2">
+            <div class="tier-bar-label">Tier 2</div>
+            <div class="tier-bar-text">The BELONG Program
+              <span>Targeted group support for students who are experiencing bullying</span>
+            </div>
+          </div>
+          <div class="tier-bar tier-1">
+            <div class="tier-bar-label">Tier 1</div>
+            <div class="tier-bar-text">School-wide prevention — culture, curriculum, assemblies</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WHAT WE OFFER -->
+  <div class="offer-wrap">
+    <div class="section-label">What We Offer</div>
+    <h2 class="section-headline">Built to work alongside what you already do.</h2>
+    <p class="section-sub" style="max-width:600px;">Outside Support is a partner, not a replacement. Here's what referring a student actually looks like from your end.</p>
+    <div class="offer-grid">
+      <div class="offer-card">
+        <div class="offer-icon">🎓</div>
+        <div class="offer-title">Evidence-based curriculum</div>
+        <p class="offer-body">The BELONG Program is grounded in peer-reviewed research from the BRAVE Lab at the University of Nebraska-Lincoln — one of the country's leading bullying research programs. When you refer a student, you're referring them to something that works.</p>
+      </div>
+      <div class="offer-card">
+        <div class="offer-icon">💻</div>
+        <div class="offer-title">Fully online, no disruption</div>
+        <p class="offer-body">Sessions happen online, outside school hours. No classroom time lost, no scheduling conflicts, no staff required on your end. Students attend from home, on a schedule that works for their family.</p>
+      </div>
+      <div class="offer-card">
+        <div class="offer-icon">🔒</div>
+        <div class="offer-title">No one from their school</div>
+        <p class="offer-body">Because the program draws students from across the country, we guarantee that no student is ever grouped with someone from their own school. That's what makes middle schoolers actually willing to open up.</p>
+      </div>
+      <div class="offer-card">
+        <div class="offer-icon">👥</div>
+        <div class="offer-title">Grouped by gender</div>
+        <p class="offer-body">Students are placed in small groups of peers the same gender. That intentional structure makes the program more relevant and the peer connections more meaningful.</p>
+      </div>
+      <div class="offer-card">
+        <div class="offer-icon">✓</div>
+        <div class="offer-title">At no cost</div>
+        <p class="offer-body">There are no fees, no contracts, and no costs — for your school or for families.</p>
+      </div>
+      <div class="offer-card">
+        <div class="offer-icon">👥</div>
+        <div class="offer-title">Trained facilitators</div>
+        <p class="offer-body">Every group is led by a facilitator trained in the BELONG Program curriculum. Consistent, intentional, and quality-controlled — every session, every group.</p>
+      </div>
+      <div class="offer-card">
+        <div class="offer-icon">🤝</div>
+        <div class="offer-title">We handle the family outreach</div>
+        <p class="offer-body">Once you make the introduction, we take it from there — connecting with families, explaining the program, and managing enrollment. Minimal lift on your end.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- EVIDENCE -->
+  <div class="evidence-wrap">
+    <div class="evidence-inner">
+      <div class="evidence-left">
+        <div class="section-label">Our Research Foundation</div>
+        <h2 class="section-headline">Grounded in over two decades of bullying research.</h2>
+        <p>The BELONG Program is directly built on the work of the <strong>BRAVE Lab</strong> at the University of Nebraska-Lincoln — one of the longest-running and most respected bullying research programs in the country.</p>
+        <p>The BELONG pilot program, run through the BRAVE Lab, tested this approach with real middle schoolers. The results were encouraging: students left with better understanding of their experiences, stronger problem-solving skills, and — critically — the sense that they weren't alone. Parents reported meaningful changes at home.</p>
+        <p>Dr. Susan Swearer, Professor of School Psychology at UNL and director of the BRAVE Lab, serves as a research advisor to Outside Support.</p>
+      </div>
+      <div class="evidence-stats">
+        <div class="evidence-stat">
+          <div class="evidence-stat-num">1998</div>
+          <div class="evidence-stat-label">Year the BRAVE Lab was established at the University of Nebraska-Lincoln</div>
+        </div>
+        <div class="evidence-stat">
+          <div class="evidence-stat-num">25+</div>
+          <div class="evidence-stat-label">Years of peer-reviewed bullying research informing our curriculum</div>
+        </div>
+        <div class="evidence-stat">
+          <div class="evidence-stat-num">13</div>
+          <div class="evidence-stat-label">Countries involved in BRAVE Lab's international bullying research network</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- REFERRAL PROCESS -->
+  <div class="referral-wrap">
+    <div class="section-label">How It Works</div>
+    <h2 class="section-headline">Referring a student takes minutes.</h2>
+    <p class="section-sub" style="max-width:580px;">We've designed the referral process to be as simple as possible for schools. No paperwork on your end, no coordination burden — just a warm introduction and we'll handle the rest.</p>
+
+    <div class="referral-steps">
+      <div class="referral-step">
+        <div class="referral-circle">1</div>
+        <div>
+          <div class="referral-title">Refer a student</div>
+          <p class="referral-body">Fill out our referral form to get started. Please note that parent or guardian contact information is required to make a referral — we'll reach out to the family directly from there.</p>
+        </div>
+      </div>
+      <div class="referral-step">
+        <div class="referral-circle">2</div>
+        <div>
+          <div class="referral-title">We connect with the family</div>
+          <p class="referral-body">With your introduction, we reach out directly to parents or caregivers, explain the program, confirm it's the right fit, and manage enrollment from there.</p>
+        </div>
+      </div>
+      <div class="referral-step">
+        <div class="referral-circle">3</div>
+        <div>
+          <div class="referral-title">The student joins a group</div>
+          <p class="referral-body">We match the student to a small facilitated group and the program begins — fully online, outside school hours, no further coordination needed from your end.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="referral-cta">
+      <a href="outside-support-contact.html" class="btn-primary">Refer a Student &rarr;</a>
+      <p style="margin-top:1.25rem; font-size:0.88rem; color:var(--mid-gray);">Still have questions? <a href="outside-support-contact.html" style="color:var(--teal); font-weight:600; text-decoration:none;">Get in touch</a> and we'll be happy to help.</p>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">
+      Outside Support
+      <span>A nonprofit organization</span>
+    </div>
+    <ul class="footer-links">
+      <li><a href="outside-support-program.html">Our Program</a></li>
+      <li><a href="outside-support-for-parents.html">For Parents</a></li>
+      <li><a href="outside-support-for-schools.html">For Schools</a></li>
+      <li><a href="outside-support-about.html">About Us</a></li>
+      <li><a href="outside-support-contact.html">Contact</a></li>
+    </ul>
+    <div class="footer-contact">
+      Questions? <a href="mailto:hello@outsidesupport.org">hello@outsidesupport.org</a>
+    </div>
+  </footer>
+
+</body>
+</html>

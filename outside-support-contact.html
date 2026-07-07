@@ -6,6 +6,9 @@
   <title>Get In Touch — Outside Support</title>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,300&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="stylesheet" href="contact.css" />
+  <script src="contact-config.js" defer></script>
+  <script src="contact.js" defer></script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
@@ -41,66 +44,6 @@
     .page-eyebrow::before { content: ''; display: block; width: 24px; height: 2px; background: var(--amber); }
     .page-headline { font-family: 'Fraunces', serif; font-size: clamp(2rem, 3.5vw, 2.8rem); font-weight: 500; line-height: 1.15; letter-spacing: -0.02em; color: var(--charcoal); margin-bottom: 0.75rem; }
     .page-sub { font-size: 1rem; color: var(--mid-gray); line-height: 1.75; max-width: 560px; margin-bottom: 4rem; }
-
-    /* SECTION HEADERS */
-    .section-block { margin-bottom: 4rem; }
-    .section-block + .section-block { padding-top: 4rem; border-top: 1px solid var(--rule); }
-    .section-title { font-family: 'Fraunces', serif; font-size: 1.4rem; font-weight: 500; color: var(--charcoal); letter-spacing: -0.01em; margin-bottom: 0.5rem; }
-    .section-desc { font-size: 0.9rem; color: var(--mid-gray); line-height: 1.7; margin-bottom: 1.75rem; max-width: 520px; }
-
-    /* REFERRAL BUTTONS */
-    .referral-buttons { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 2rem; }
-    .referral-btn {
-      display: flex; flex-direction: column; gap: 0.35rem;
-      padding: 1.5rem 1.75rem; border: 1.5px solid var(--rule);
-      border-radius: 14px; background: #fff; cursor: pointer;
-      text-align: left; transition: border-color 0.2s, box-shadow 0.2s, transform 0.15s;
-      font-family: 'Inter', sans-serif;
-    }
-    .referral-btn:hover { border-color: var(--teal); box-shadow: 0 6px 24px rgba(46,125,120,0.08); transform: translateY(-1px); }
-    .referral-btn.active { border-color: var(--teal); background: var(--teal-light); }
-    .referral-btn-icon { font-size: 1.4rem; margin-bottom: 0.25rem; }
-    .referral-btn-title { font-size: 0.95rem; font-weight: 700; color: var(--charcoal); }
-    .referral-btn-sub { font-size: 0.76rem; color: var(--mid-gray); line-height: 1.4; }
-
-    /* FORMS */
-    .referral-form { display: none; margin-top: 0.5rem; }
-    .referral-form.visible { display: block; }
-
-    .form-section-label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--teal); margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--rule); }
-    .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem; }
-    .field-row.full { grid-template-columns: 1fr; }
-    .field { display: flex; flex-direction: column; gap: 0.35rem; }
-    .field label { font-size: 0.76rem; font-weight: 600; color: var(--charcoal); }
-    .field label span { font-weight: 400; color: var(--mid-gray); }
-    .field input, .field select, .field textarea {
-      font-family: 'Inter', sans-serif; font-size: 0.9rem; color: var(--charcoal);
-      background: #fff; border: 1.5px solid var(--rule); border-radius: 10px;
-      padding: 0.7rem 1rem; outline: none; width: 100%;
-      transition: border-color 0.2s, box-shadow 0.2s; appearance: none;
-    }
-    .field input:focus, .field select:focus, .field textarea:focus { border-color: var(--teal); box-shadow: 0 0 0 3px rgba(46,125,120,0.1); }
-    .field select { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%235A6B6A' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 1rem center; padding-right: 2.5rem; }
-    .field textarea { resize: vertical; min-height: 100px; line-height: 1.6; }
-
-    .form-spacer { height: 1.5rem; }
-
-    /* SCHOOL NOTE */
-    .school-note { background: var(--amber-soft); border-left: 3px solid var(--amber); border-radius: 0 8px 8px 0; padding: 0.85rem 1.1rem; margin-bottom: 1.5rem; font-size: 0.82rem; color: var(--charcoal); line-height: 1.6; }
-    .school-note strong { font-weight: 600; }
-
-    /* CONSENT NOTE */
-    .consent-note { font-size: 0.76rem; color: var(--mid-gray); line-height: 1.65; margin-bottom: 1.25rem; font-style: italic; }
-
-    /* SUBMIT */
-    .btn-submit { width: 100%; padding: 1rem; background: var(--teal); color: #fff; border: none; border-radius: 100px; font-family: 'Inter', sans-serif; font-size: 0.95rem; font-weight: 700; cursor: pointer; transition: background 0.2s, transform 0.15s; }
-    .btn-submit:hover { background: var(--teal-dark); transform: translateY(-1px); }
-
-    /* SUCCESS */
-    .success-msg { display: none; background: var(--teal-light); border: 1px solid var(--rule); border-radius: 14px; padding: 2rem; text-align: center; }
-    .success-msg.visible { display: block; }
-    .success-msg-title { font-family: 'Fraunces', serif; font-size: 1.2rem; font-weight: 500; color: var(--teal-dark); margin-bottom: 0.4rem; }
-    .success-msg-sub { font-size: 0.88rem; color: var(--mid-gray); line-height: 1.65; }
 
     /* FOOTER */
     footer { background: var(--charcoal); color: rgba(255,255,255,0.6); padding: 3rem 5rem; display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap; }
@@ -138,159 +81,14 @@
       <li><a href="outside-support-for-parents.html">For Parents</a></li>
       <li><a href="outside-support-for-schools.html">For Schools</a></li>
       <li><a href="outside-support-about.html">About Us</a></li>
-      <li><a href="outside-support-contact.html" class="nav-cta active">Get In Touch</a></li>
+      <li><a href="#get-in-touch" class="nav-cta active">Get In Touch</a></li>
     </ul>
   </nav>
 
-  <div class="page-content">
-
+  <div class="page-content contact-page-intro">
     <div class="page-eyebrow">Get In Touch</div>
     <h1 class="page-headline">We'd love to hear from you.</h1>
-    <p class="page-sub">Whether you're ready to refer a student or just have questions, you're in the right place.</p>
-
-    <!-- SECTION 1: REFER A STUDENT -->
-    <div class="section-block">
-      <div class="section-title">Refer a Student</div>
-
-      <div class="referral-buttons">
-        <button class="referral-btn" id="btn-parent" onclick="showReferral('parent')">
-          <span class="referral-btn-icon">👨‍👩‍👧</span>
-          <span class="referral-btn-title">I'm a Parent or Guardian</span>
-          <span class="referral-btn-sub">I'd like to refer my child to the BELONG Program</span>
-        </button>
-        <button class="referral-btn" id="btn-school" onclick="showReferral('school')">
-          <span class="referral-btn-icon">🏫</span>
-          <span class="referral-btn-title">I'm a School Administrator</span>
-          <span class="referral-btn-sub">I'd like to refer a student from my school</span>
-        </button>
-      </div>
-
-      <!-- PARENT REFERRAL FORM -->
-      <div class="referral-form" id="form-parent">
-        <form onsubmit="handleSuccess(event, 'success-parent')">
-          <div class="form-section-label">Parent or Guardian Information</div>
-          <div class="field-row">
-            <div class="field"><label>First name</label><input type="text" placeholder="Jane" required /></div>
-            <div class="field"><label>Last name</label><input type="text" placeholder="Smith" required /></div>
-          </div>
-          <div class="field-row full">
-            <div class="field"><label>Email address</label><input type="email" placeholder="jane@email.com" required /></div>
-          </div>
-
-          <div class="form-spacer"></div>
-          <div class="form-section-label">About Your Child</div>
-          <div class="field-row">
-            <div class="field"><label>Child's first name</label><input type="text" placeholder="Alex" required /></div>
-            <div class="field">
-              <label>Grade</label>
-              <select required>
-                <option value="" disabled selected>Select grade</option>
-                <option>6th grade</option>
-                <option>7th grade</option>
-                <option>8th grade</option>
-              </select>
-            </div>
-          </div>
-
-          <div class="form-spacer"></div>
-          <div class="form-section-label">Anything You'd Like to Share</div>
-          <div class="field-row full">
-            <div class="field">
-              <label>Additional context <span>(optional)</span></label>
-              <textarea placeholder="Share anything that feels helpful. There's no wrong thing to say."></textarea>
-            </div>
-          </div>
-
-          <p class="consent-note">Parent or guardian consent and student assent will be obtained from all participants prior to the start of the program.</p>
-          <button type="submit" class="btn-submit">Prepare Referral Email &rarr;</button>
-        </form>
-        <div class="success-msg" id="success-parent">
-          <div class="success-msg-title">Email draft opened.</div>
-          <p class="success-msg-sub">Please send the draft from your email app to complete the referral. If it did not open, email hello@outsidesupport.org directly.</p>
-        </div>
-      </div>
-
-      <!-- SCHOOL REFERRAL FORM -->
-      <div class="referral-form" id="form-school">
-        <div class="school-note"><strong>Please note:</strong> Parent or guardian contact information must be provided at the time of referral. We will reach out directly to the family to explain the program and confirm participation.</div>
-        <form onsubmit="handleSuccess(event, 'success-school')">
-          <div class="form-section-label">School Information</div>
-          <div class="field-row full">
-            <div class="field"><label>School name</label><input type="text" placeholder="Lincoln Middle School" required /></div>
-          </div>
-          <div class="field-row">
-            <div class="field"><label>Your name</label><input type="text" placeholder="Full name" required /></div>
-            <div class="field"><label>Your role</label><input type="text" placeholder="e.g. School counselor" required /></div>
-          </div>
-          <div class="field-row full">
-            <div class="field"><label>Your email</label><input type="email" placeholder="you@school.edu" required /></div>
-          </div>
-
-          <div class="form-spacer"></div>
-          <div class="form-section-label">Parent or Guardian Contact</div>
-          <div class="field-row">
-            <div class="field"><label>Parent or guardian name</label><input type="text" placeholder="Full name" required /></div>
-            <div class="field"><label>Parent or guardian email</label><input type="email" placeholder="parent@email.com" required /></div>
-          </div>
-          <div class="field-row">
-            <div class="field"><label>Student first name</label><input type="text" placeholder="Alex" required /></div>
-            <div class="field">
-              <label>Grade</label>
-              <select required>
-                <option value="" disabled selected>Select grade</option>
-                <option>6th grade</option>
-                <option>7th grade</option>
-                <option>8th grade</option>
-              </select>
-            </div>
-          </div>
-
-          <div class="form-spacer"></div>
-          <div class="form-section-label">Anything You'd Like to Share</div>
-          <div class="field-row full">
-            <div class="field">
-              <label>Additional context <span>(optional)</span></label>
-              <textarea placeholder="Any background that would be helpful for our team to know."></textarea>
-            </div>
-          </div>
-
-          <p class="consent-note">Parent or guardian consent and student assent will be obtained from all participants prior to the start of the program.</p>
-          <button type="submit" class="btn-submit">Prepare Referral Email &rarr;</button>
-        </form>
-        <div class="success-msg" id="success-school">
-          <div class="success-msg-title">Email draft opened.</div>
-          <p class="success-msg-sub">Please send the draft from your email app to complete the referral. If it did not open, email hello@outsidesupport.org directly.</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- SECTION 2: GENERAL INQUIRIES -->
-    <div class="section-block">
-      <div class="section-title">Have a Question?</div>
-      <p class="section-desc">We'd love to hear from you. Fill out the form below and someone from our team will get back to you.</p>
-
-      <form onsubmit="handleSuccess(event, 'success-inquiry')">
-        <div class="field-row">
-          <div class="field"><label>First name</label><input type="text" placeholder="Jane" required /></div>
-          <div class="field"><label>Last name</label><input type="text" placeholder="Smith" required /></div>
-        </div>
-        <div class="field-row full">
-          <div class="field"><label>Email address</label><input type="email" placeholder="jane@email.com" required /></div>
-        </div>
-        <div class="field-row full" style="margin-top:0.25rem;">
-          <div class="field">
-            <label>What would you like to discuss?</label>
-            <textarea placeholder="Tell us what's on your mind — a question about the program, a potential partnership, or anything else."></textarea>
-          </div>
-        </div>
-        <button type="submit" class="btn-submit" style="margin-top:0.25rem;">Prepare Message Email &rarr;</button>
-      </form>
-      <div class="success-msg" id="success-inquiry">
-        <div class="success-msg-title">Email draft opened.</div>
-        <p class="success-msg-sub">Please send the draft from your email app to complete your message. If it did not open, email hello@outsidesupport.org directly.</p>
-      </div>
-    </div>
-
+    <p class="page-sub">Share your email below and we'll follow up. You can also email us directly at <a href="mailto:team@outsidesupport.org">team@outsidesupport.org</a>.</p>
   </div>
 
   <!-- FOOTER -->
@@ -304,53 +102,12 @@
       <li><a href="outside-support-for-parents.html">For Parents</a></li>
       <li><a href="outside-support-for-schools.html">For Schools</a></li>
       <li><a href="outside-support-about.html">About Us</a></li>
-      <li><a href="outside-support-contact.html">Contact</a></li>
+      <li><a href="#get-in-touch">Contact</a></li>
     </ul>
     <div class="footer-contact">
-      <a href="mailto:hello@outsidesupport.org">hello@outsidesupport.org</a>
+      <a href="mailto:team@outsidesupport.org">team@outsidesupport.org</a>
     </div>
   </footer>
-
-  <script>
-    function showReferral(type) {
-      // Reset buttons and forms
-      document.getElementById('btn-parent').classList.remove('active');
-      document.getElementById('btn-school').classList.remove('active');
-      document.getElementById('form-parent').classList.remove('visible');
-      document.getElementById('form-school').classList.remove('visible');
-
-      // Activate selected
-      document.getElementById('btn-' + type).classList.add('active');
-      document.getElementById('form-' + type).classList.add('visible');
-
-      // Smooth scroll to form
-      setTimeout(() => {
-        document.getElementById('form-' + type).scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-      }, 50);
-    }
-
-    function handleSuccess(e, successId) {
-      e.preventDefault();
-      const form = e.target;
-      const subjectByForm = {
-        'success-parent': 'Outside Support parent referral',
-        'success-school': 'Outside Support school referral',
-        'success-inquiry': 'Outside Support inquiry'
-      };
-      const lines = Array.from(form.querySelectorAll('.field')).map((field) => {
-        const label = field.querySelector('label');
-        const control = field.querySelector('input, select, textarea');
-        const labelText = label ? label.childNodes[0].textContent.trim() : 'Field';
-        const value = control && control.value.trim() ? control.value.trim() : '(not provided)';
-        return `${labelText}: ${value}`;
-      });
-      const body = `Hello Outside Support,\n\n${lines.join('\n')}\n\nThank you.`;
-      window.location.href = `mailto:hello@outsidesupport.org?subject=${encodeURIComponent(subjectByForm[successId])}&body=${encodeURIComponent(body)}`;
-      const success = document.getElementById(successId);
-      form.style.display = 'none';
-      success.classList.add('visible');
-    }
-  </script>
 
 </body>
 </html>

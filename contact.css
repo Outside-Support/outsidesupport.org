@@ -1,0 +1,121 @@
+.contact-capture {
+  background: #fff;
+  border-top: 1px solid var(--rule);
+  padding: 4rem 5rem;
+  scroll-margin-top: 84px;
+}
+
+.contact-capture-inner {
+  max-width: 980px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.contact-capture .section-label {
+  color: var(--teal);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  margin-bottom: 0.75rem;
+  text-transform: uppercase;
+}
+
+.contact-capture h2 {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--charcoal);
+  margin-bottom: 1rem;
+}
+
+.contact-capture p {
+  color: var(--mid-gray);
+  line-height: 1.75;
+}
+
+.contact-capture a {
+  color: var(--teal);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.email-capture-form {
+  display: flex;
+  gap: 0.75rem;
+  align-items: stretch;
+}
+
+.email-capture-form input[type="email"] {
+  flex: 1;
+  min-width: 0;
+  border: 1px solid var(--rule);
+  border-radius: 100px;
+  background: var(--off-white);
+  color: var(--charcoal);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  padding: 0.95rem 1.2rem;
+  outline: none;
+}
+
+.email-capture-form input[type="email"]:focus {
+  border-color: var(--teal);
+  box-shadow: 0 0 0 3px rgba(46,125,120,0.1);
+}
+
+.email-capture-form button {
+  border: 0;
+  border-radius: 100px;
+  background: var(--teal);
+  color: #fff;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  padding: 0.95rem 1.5rem;
+  transition: background 0.2s, transform 0.15s;
+  white-space: nowrap;
+}
+
+.email-capture-form button:hover {
+  background: var(--teal-dark);
+  transform: translateY(-1px);
+}
+
+.email-capture-status {
+  color: var(--mid-gray);
+  font-size: 0.86rem;
+  margin-top: 0.85rem;
+  min-height: 1.4rem;
+}
+
+.contact-page-intro {
+  padding-bottom: 2.5rem !important;
+}
+
+@media (max-width: 900px) {
+  .contact-capture {
+    padding: 3.5rem 1.75rem;
+    scroll-margin-top: 132px;
+  }
+
+  .contact-capture-inner {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+  }
+}
+
+@media (max-width: 520px) {
+  .email-capture-form {
+    flex-direction: column;
+  }
+
+  .email-capture-form button {
+    width: 100%;
+  }
+}

@@ -277,7 +277,7 @@
       border-top: 1px solid var(--rule);
     }
     .advisors-intro {
-      max-width: 640px;
+      max-width: 760px;
       font-size: 0.95rem;
       color: var(--mid-gray);
       line-height: 1.75;
@@ -285,8 +285,8 @@
     }
     .advisors-grid {
       display: grid;
-      grid-template-columns: 1fr;
-      max-width: 640px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      max-width: 980px;
       gap: 1.5rem;
     }
     .advisor-card {
@@ -297,20 +297,6 @@
       display: flex;
       flex-direction: column;
       gap: 0.4rem;
-    }
-    .advisor-avatar {
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      background: var(--teal-light);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: 'Fraunces', serif;
-      font-size: 1rem;
-      font-weight: 500;
-      color: var(--teal-dark);
-      margin-bottom: 0.75rem;
     }
     .advisor-name {
       font-family: 'Fraunces', serif;
@@ -623,7 +609,6 @@
       <div class="advisors-grid">
 
         <div class="advisor-card">
-          <div class="advisor-avatar">SH</div>
           <div class="advisor-name">Dr. Sara Heron, MD</div>
           <div class="advisor-title">Executive Director, Bay Children's Services</div>
           <ul class="advisor-points">
@@ -634,7 +619,6 @@
         </div>
 
         <div class="advisor-card">
-          <div class="advisor-avatar">AH</div>
           <div class="advisor-name">Amanda Hinson, JD</div>
           <div class="advisor-title">Marriage and family therapy graduate intern</div>
           <ul class="advisor-points">
@@ -646,7 +630,6 @@
         </div>
 
         <div class="advisor-card">
-          <div class="advisor-avatar">ER</div>
           <div class="advisor-name">Emilea Rejman, M.A., PLMHP</div>
           <div class="advisor-title">Project Director, BELONG (BRAVE Lab)</div>
           <ul class="advisor-points">
@@ -657,7 +640,6 @@
         </div>
 
         <div class="advisor-card">
-          <div class="advisor-avatar">SS</div>
           <div class="advisor-name">Prof. Sue Swearer, PhD</div>
           <div class="advisor-title">Willa Cather Professor and Director, BRAVE Lab</div>
           <ul class="advisor-points">
@@ -670,7 +652,6 @@
         </div>
 
         <div class="advisor-card">
-          <div class="advisor-avatar">TT</div>
           <div class="advisor-name">Dr. Thomas Tarshis, MD</div>
           <div class="advisor-title">Child psychiatrist and bullying/victimization expert</div>
           <ul class="advisor-points">

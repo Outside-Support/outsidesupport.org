@@ -278,7 +278,6 @@
       margin-top: 0.75rem;
     }
 
-    /* Advisor cards — span full or side by side */
     .advisors-section {
       margin-top: 2rem;
     }
@@ -291,6 +290,13 @@
       margin-bottom: 1.25rem;
       padding-top: 2rem;
       border-top: 1px solid var(--rule);
+    }
+    .advisors-intro {
+      max-width: 640px;
+      font-size: 0.95rem;
+      color: var(--mid-gray);
+      line-height: 1.75;
+      margin: -0.25rem 0 1.5rem;
     }
     .advisors-grid {
       display: grid;
@@ -339,6 +345,28 @@
       color: var(--mid-gray);
       line-height: 1.7;
       margin-top: 0.5rem;
+    }
+    .advisor-points {
+      margin: 0.75rem 0 0;
+      padding-left: 1rem;
+      color: var(--mid-gray);
+      font-size: 0.85rem;
+      line-height: 1.65;
+    }
+    .advisor-points li + li {
+      margin-top: 0.35rem;
+    }
+    .advisor-links {
+      margin-top: 0.75rem;
+      font-size: 0.82rem;
+      font-weight: 600;
+    }
+    .advisor-links a {
+      color: var(--teal);
+      text-decoration: none;
+    }
+    .advisor-links a:hover {
+      color: var(--teal-dark);
     }
 
     /* ── RESEARCH FOUNDATION ── */
@@ -601,20 +629,73 @@
         <div class="team-name">Jim Moran</div>
         <div class="team-title">Founder</div>
         <div class="team-divider"></div>
-        <p class="team-bio">Jim founded Outside Support with a conviction that the tools to address bullying should be available to every student, not just those with access to private resources. He previously served as co-CEO of YipitData, where he helped build one of the leading data research firms in the country from a startup into a category-defining business.</p>
+        <p class="team-bio">Jim founded Outside Support after seeing an opportunity to make group-based bullying support available beyond private local resources. He is a technology founder and investor, co-founder of YipitData (now a Carlyle company), a former Blackstone analyst, and a graduate of Harvard College.</p>
         <span class="team-tag">Leadership</span>
       </div>
     </div>
 
     <div class="advisors-section">
-      <div class="advisors-label">Advisory Board</div>
+      <div class="advisors-label">Advisors</div>
+      <p class="advisors-intro">We are supported by experts in child and adolescent psychiatry, family therapy, bullying research, and program implementation.</p>
       <div class="advisors-grid">
 
         <div class="advisor-card">
+          <div class="advisor-avatar">SH</div>
+          <div class="advisor-name">Dr. Sara Heron, MD</div>
+          <div class="advisor-title">Executive Director, Bay Children's Services</div>
+          <ul class="advisor-points">
+            <li>Child and adolescent psychiatrist.</li>
+            <li>MD, University of California San Francisco School of Medicine; psychiatry residency at UCSF; child and adolescent psychiatry fellowship at Stanford University.</li>
+          </ul>
+          <div class="advisor-links"><a href="https://baychildren.org/providers" target="_blank">Profile</a> &middot; <a href="https://www.linkedin.com/in/sara-heron-445b471b9/" target="_blank">LinkedIn</a></div>
+        </div>
+
+        <div class="advisor-card">
+          <div class="advisor-avatar">AH</div>
+          <div class="advisor-name">Amanda Hinson, JD</div>
+          <div class="advisor-title">Marriage and family therapy graduate intern</div>
+          <ul class="advisor-points">
+            <li>Graduate student intern in marriage and family therapy at Insights Collaborative Therapy Group, supervised by Mary Sanger, LPC-S, LMFT-S.</li>
+            <li>Previously at Gibson Dunn and Mercer Management Consulting.</li>
+            <li>Southern Methodist University (MS expected May 2026), Harvard Law (JD), Harvard College (AB, Physics).</li>
+          </ul>
+          <div class="advisor-links"><a href="https://www.insightstherapy.com/therapists/amanda-hinson" target="_blank">Profile</a> &middot; <a href="https://www.linkedin.com/in/amandasharp/" target="_blank">LinkedIn</a></div>
+        </div>
+
+        <div class="advisor-card">
+          <div class="advisor-avatar">ER</div>
+          <div class="advisor-name">Emilea Rejman, M.A., PLMHP</div>
+          <div class="advisor-title">Project Director, BELONG (BRAVE Lab)</div>
+          <ul class="advisor-points">
+            <li>University of Nebraska-Lincoln.</li>
+            <li>Doctoral candidate in school psychology at UNL, supervised by Dr. Sue Swearer.</li>
+          </ul>
+          <div class="advisor-links"><a href="https://bravelab.unl.edu/sites/unl.edu.cehs.brave-lab/files/media/file/Rejman%20CV%202024-4.pdf" target="_blank">Profile</a></div>
+        </div>
+
+        <div class="advisor-card">
           <div class="advisor-avatar">SS</div>
-          <div class="advisor-name">Dr. Susan Swearer</div>
-          <div class="advisor-title">Research Advisor</div>
-          <p class="advisor-bio">Professor of School Psychology at the University of Nebraska-Lincoln and director of the BRAVE Lab — Bullying Research and Victim Empowerment. Dr. Swearer is one of the country's foremost researchers in bullying prevention and intervention, with more than two decades of work developing and studying evidence-based programs for school-aged youth. The BELONG Program is grounded in research from her lab.</p>
+          <div class="advisor-name">Prof. Sue Swearer, PhD</div>
+          <div class="advisor-title">Willa Cather Professor and Director, BRAVE Lab</div>
+          <ul class="advisor-points">
+            <li>Willa Cather Professor of Educational Psychology and Director, Bullying Research and Victim Empowerment (BRAVE) Lab, University of Nebraska-Lincoln.</li>
+            <li>Co-Director, Bullying Research Network.</li>
+            <li>Licensed school psychologist focused on bullying prevention, school climate, and youth mental health.</li>
+            <li>Former Professional Counselor, Center for Pediatric Psychiatry, Children's Medical Center of Dallas.</li>
+          </ul>
+          <div class="advisor-links"><a href="https://cehs.unl.edu/edpsych/person/susan-swearer/" target="_blank">Profile</a> &middot; <a href="https://www.linkedin.com/in/susan-swearer-46585037/" target="_blank">LinkedIn</a></div>
+        </div>
+
+        <div class="advisor-card">
+          <div class="advisor-avatar">TT</div>
+          <div class="advisor-name">Dr. Thomas Tarshis, MD</div>
+          <div class="advisor-title">Child psychiatrist and bullying/victimization expert</div>
+          <ul class="advisor-points">
+            <li>Former AACAP spokesperson on bullying and victimization.</li>
+            <li>Author of <em>Living with Peer Pressure and Bullying</em>.</li>
+            <li>Author of the Peer Interactions in Primary School (PIPS) Survey.</li>
+          </ul>
+          <div class="advisor-links"><a href="https://www.linkedin.com/in/thomas-tarshis-116a204/" target="_blank">LinkedIn</a></div>
         </div>
 
       </div>

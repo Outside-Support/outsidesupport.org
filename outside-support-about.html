@@ -208,7 +208,6 @@
       gap: 1.5rem;
     }
 
-    /* Leadership cards — larger */
     .team-card {
       background: #fff;
       border: 1px solid var(--rule);
@@ -226,21 +225,6 @@
     .team-card.featured {
       border-color: var(--teal);
       border-width: 1.5px;
-    }
-
-    .team-avatar {
-      width: 56px;
-      height: 56px;
-      border-radius: 50%;
-      background: var(--teal-light);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: 'Fraunces', serif;
-      font-size: 1.3rem;
-      font-weight: 500;
-      color: var(--teal-dark);
-      margin-bottom: 1rem;
     }
     .team-name {
       font-family: 'Fraunces', serif;
@@ -266,16 +250,17 @@
       color: var(--mid-gray);
       line-height: 1.75;
     }
-    .team-tag {
-      display: inline-block;
-      font-size: 0.7rem;
+    .team-links {
+      margin-top: 0.65rem;
+      font-size: 0.82rem;
       font-weight: 600;
-      letter-spacing: 0.06em;
+    }
+    .team-links a {
+      color: var(--teal);
+      text-decoration: none;
+    }
+    .team-links a:hover {
       color: var(--teal-dark);
-      background: var(--teal-light);
-      padding: 0.2rem 0.6rem;
-      border-radius: 100px;
-      margin-top: 0.75rem;
     }
 
     .advisors-section {
@@ -611,26 +596,24 @@
   <!-- TEAM -->
   <div class="team-wrap">
     <div class="section-label">Our Team</div>
-    <h2 class="section-headline">Small team. Deep roots.</h2>
+    <h2 class="section-headline">Meet the team.</h2>
     <p class="section-sub">Outside Support is an early-stage organization with a focused team and strong research foundations. Here's who is building it.</p>
 
     <div class="team-grid">
       <div class="team-card featured">
-        <div class="team-avatar">[Photo]</div>
         <div class="team-name">Molly McCarthy</div>
         <div class="team-title">Chief Executive Officer</div>
         <div class="team-divider"></div>
         <p class="team-bio">Molly McCarthy has spent her career building things from scratch — inside Fortune 500 companies and venture-backed startups alike. When she discovered Dr. Swearer's research and saw firsthand what the BELONG program did for the kids who went through it, she knew she had found her next challenge: getting this into the hands of every middle schooler who needs it.</p>
-        <span class="team-tag">Leadership</span>
+        <div class="team-links"><a href="https://www.linkedin.com/in/molly-mccarthy-b9b5912/" target="_blank">LinkedIn</a></div>
       </div>
 
       <div class="team-card featured">
-        <div class="team-avatar">[Photo]</div>
         <div class="team-name">Jim Moran</div>
         <div class="team-title">Founder</div>
         <div class="team-divider"></div>
-        <p class="team-bio">Jim founded Outside Support after seeing an opportunity to make group-based bullying support available beyond private local resources. He is a technology founder and investor, co-founder of YipitData (now a Carlyle company), a former Blackstone analyst, and a graduate of Harvard College.</p>
-        <span class="team-tag">Leadership</span>
+        <p class="team-bio">Jim co-founded one of the largest market data providers and is now an early stage technology investor. Having experienced bullying growing up, Jim was excited about telehealth enabling a way to connect with others in similar situations but at different schools. He founded Outside Support in partnership with the BRAVE LAB to develop an evidence based peer support program.</p>
+        <div class="team-links"><a href="https://www.linkedin.com/in/jamesdmoran/" target="_blank">LinkedIn</a></div>
       </div>
     </div>
 

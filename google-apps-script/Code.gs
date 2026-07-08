@@ -18,25 +18,23 @@ function doPost(e) {
     email,
     String(payload.sourcePage || ""),
     String(payload.pageUrl || ""),
-    String(payload.submittedAt || "")
+    String(payload.submittedAt || ""),
+    "",
+    ""
   ];
 
   sheet.appendRow(row);
+  var rowNumber = sheet.getLastRow();
 
-  MailApp.sendEmail({
-    to: CONTACT_CAPTURE_CONFIG.alertEmail,
-    subject: CONTACT_CAPTURE_CONFIG.alertSubject,
-    body: [
-      "A new email was submitted on outsidesupport.org.",
-      "",
-      "Email: " + email,
-      "Source page: " + row[2],
-      "Page URL: " + row[3],
-      "Submitted at: " + row[4]
-    ].join("\n")
-  });
+  try {
+    sendAlertEmail_(row);
+    sheet.getRange(rowNumber, 6).setValue(new Date());
+  } catch (err) {
+    sheet.getRange(rowNumber, 7).setValue(String(err && err.message ? err.message : err));
+    return jsonResponse({ ok: true, alertSent: false });
+  }
 
-  return jsonResponse({ ok: true });
+  return jsonResponse({ ok: true, alertSent: true });
 }
 
 function doGet() {
@@ -45,9 +43,17 @@ function doGet() {
 
 function setupSubmissionsSheet() {
   var sheet = getSubmissionsSheet_();
-  if (sheet.getLastRow() === 0) {
-    writeHeader_(sheet);
-  }
+  writeHeader_(sheet);
+}
+
+function testAlertEmail() {
+  sendAlertEmail_([
+    new Date(),
+    "test@example.com",
+    "Manual Apps Script test",
+    "https://outsidesupport.org/",
+    new Date().toISOString()
+  ]);
 }
 
 function getSubmissionsSheet_() {
@@ -58,9 +64,7 @@ function getSubmissionsSheet_() {
     sheet = spreadsheet.insertSheet(CONTACT_CAPTURE_CONFIG.sheetName);
   }
 
-  if (sheet.getLastRow() === 0) {
-    writeHeader_(sheet);
-  }
+  writeHeader_(sheet);
 
   return sheet;
 }
@@ -71,7 +75,9 @@ function writeHeader_(sheet) {
     "Email",
     "Source Page",
     "Page URL",
-    "Browser Submitted At"
+    "Browser Submitted At",
+    "Alert Sent At",
+    "Alert Error"
   ];
 
   sheet.getRange(1, 1, 1, headers.length).setValues([headers]);
@@ -81,6 +87,24 @@ function writeHeader_(sheet) {
     .setBackground("#2E7D78")
     .setFontColor("#FFFFFF");
   sheet.autoResizeColumns(1, headers.length);
+}
+
+function sendAlertEmail_(row) {
+  MailApp.sendEmail({
+    to: CONTACT_CAPTURE_CONFIG.alertEmail,
+    subject: CONTACT_CAPTURE_CONFIG.alertSubject,
+    name: "Outside Support Website",
+    body: [
+      "A new email was submitted on outsidesupport.org.",
+      "",
+      "Email: " + row[1],
+      "Source page: " + row[2],
+      "Page URL: " + row[3],
+      "Submitted at: " + row[4],
+      "",
+      "Remaining daily email quota after this send: " + MailApp.getRemainingDailyQuota()
+    ].join("\n")
+  });
 }
 
 function jsonResponse(data) {

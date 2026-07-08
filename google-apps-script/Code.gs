@@ -56,6 +56,20 @@ function testAlertEmail() {
   ]);
 }
 
+function testAlertEmailToJim() {
+  MailApp.sendEmail({
+    to: "jim@outsidesupport.org",
+    subject: "Outside Support contact capture test",
+    name: "Outside Support Website",
+    body: [
+      "This is a manual Apps Script email test.",
+      "",
+      "If you receive this, Apps Script can send email from this project.",
+      "If team@outsidesupport.org does not receive alerts, check that mailbox or Google Group."
+    ].join("\n")
+  });
+}
+
 function getSubmissionsSheet_() {
   var spreadsheet = SpreadsheetApp.getActiveSpreadsheet();
   var sheet = spreadsheet.getSheetByName(CONTACT_CAPTURE_CONFIG.sheetName);

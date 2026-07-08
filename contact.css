@@ -94,6 +94,39 @@
   min-height: 1.4rem;
 }
 
+.referral-waitlist {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.referral-waitlist p {
+  color: var(--mid-gray);
+  font-size: 0.95rem;
+  line-height: 1.75;
+  margin: 0 0 1rem;
+}
+
+.referral-waitlist .email-capture-form {
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+.referral-waitlist .email-capture-status {
+  text-align: center;
+}
+
+.schools-card .referral-waitlist {
+  margin-top: 2rem;
+}
+
+.schools-card .referral-waitlist .email-capture-form {
+  margin: 0;
+}
+
+.schools-card .referral-waitlist .email-capture-status {
+  text-align: left;
+}
+
 .contact-page-intro {
   padding-bottom: 2.5rem !important;
 }

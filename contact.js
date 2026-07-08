@@ -87,7 +87,7 @@
           submitToEndpoint(endpoint, payload)
             .then(function () {
               form.reset();
-              if (status) status.textContent = "Thanks. We'll be in touch soon.";
+              if (status) status.textContent = "You're on the list";
             })
             .catch(function () {
               if (status) {

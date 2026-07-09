@@ -20,7 +20,8 @@ function doPost(e) {
     String(payload.pageUrl || ""),
     String(payload.submittedAt || ""),
     "",
-    ""
+    "",
+    String(payload.formType || "")
   ];
 
   sheet.appendRow(row);
@@ -31,6 +32,7 @@ function doPost(e) {
     sheet.getRange(rowNumber, 6).setValue(new Date());
   } catch (err) {
     sheet.getRange(rowNumber, 7).setValue(String(err && err.message ? err.message : err));
+    // The signup IS saved. A failed alert email must not report failure to the visitor.
     return jsonResponse({ ok: true, alertSent: false });
   }
 
@@ -52,7 +54,10 @@ function testAlertEmail() {
     "test@example.com",
     "Manual Apps Script test",
     "https://outsidesupport.org/",
-    new Date().toISOString()
+    new Date().toISOString(),
+    "",
+    "",
+    "manual-test"
   ]);
 }
 
@@ -91,7 +96,8 @@ function writeHeader_(sheet) {
     "Page URL",
     "Browser Submitted At",
     "Alert Sent At",
-    "Alert Error"
+    "Alert Error",
+    "Form Type"
   ];
 
   sheet.getRange(1, 1, 1, headers.length).setValues([headers]);
@@ -112,6 +118,7 @@ function sendAlertEmail_(row) {
       "A new email was submitted on outsidesupport.org.",
       "",
       "Email: " + row[1],
+      "Form: " + (row[7] || "unknown"),
       "Source page: " + row[2],
       "Page URL: " + row[3],
       "Submitted at: " + row[4],

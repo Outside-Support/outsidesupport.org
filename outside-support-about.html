@@ -49,54 +49,22 @@
       justify-content: space-between;
     }
     .nav-logo { display: flex; flex-direction: column; line-height: 1.1; text-decoration: none; }
-    .nav-logo-main {
-      font-family: 'Fraunces', serif;
-      font-weight: 500;
-      font-size: 1.2rem;
-      color: var(--teal-dark);
-      letter-spacing: -0.01em;
-    }
-    .nav-logo-sub {
-      font-size: 0.65rem;
-      font-weight: 500;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--mid-gray);
-    }
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 2rem;
-      list-style: none;
-    }
-    .nav-links a {
-      text-decoration: none;
-      font-size: 0.85rem;
-      font-weight: 500;
-      color: var(--mid-gray);
-      transition: color 0.2s;
-    }
+    .nav-logo-main { font-family: 'Fraunces', serif; font-weight: 500; font-size: 1.2rem; color: var(--teal-dark); letter-spacing: -0.01em; }
+    .nav-logo-sub { font-size: 0.65rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--mid-gray); }
+    .nav-links { display: flex; align-items: center; gap: 2rem; list-style: none; }
+    .nav-links a { text-decoration: none; font-size: 0.85rem; font-weight: 500; color: var(--mid-gray); transition: color 0.2s; }
     .nav-links a:hover { color: var(--teal); }
     .nav-links a.active { color: var(--teal); font-weight: 600; }
-    .nav-cta {
-      background: var(--teal);
-      color: #fff !important;
-      padding: 0.45rem 1.1rem;
-      border-radius: 100px;
-      font-size: 0.82rem !important;
-      font-weight: 600 !important;
-      transition: background 0.2s !important;
-    }
+    .nav-cta { background: var(--teal); color: #fff !important; padding: 0.45rem 1.1rem; border-radius: 100px; font-size: 0.82rem !important; font-weight: 600 !important; transition: background 0.2s !important; }
     .nav-cta:hover { background: var(--teal-dark) !important; }
 
     /* ── PAGE HERO ── */
     .page-hero {
       margin-top: 64px;
-      padding: 5.5rem 5rem 5rem;
+      padding: 5.5rem 5rem 3.5rem;
       max-width: 1100px;
       margin-left: auto;
       margin-right: auto;
-      margin-top: 64px;
     }
     .page-eyebrow {
       font-size: 0.72rem;
@@ -109,13 +77,7 @@
       align-items: center;
       gap: 0.5rem;
     }
-    .page-eyebrow::before {
-      content: '';
-      display: block;
-      width: 24px;
-      height: 2px;
-      background: var(--amber);
-    }
+    .page-eyebrow::before { content: ''; display: block; width: 24px; height: 2px; background: var(--amber); }
     .page-hero h1 {
       font-family: 'Fraunces', serif;
       font-size: clamp(2.2rem, 4vw, 3.2rem);
@@ -126,59 +88,17 @@
       max-width: 700px;
       margin-bottom: 1.5rem;
     }
-    .page-hero h1 em {
-      font-style: italic;
-      color: var(--teal);
-    }
-    .page-hero-sub {
-      font-size: 1.05rem;
-      color: var(--mid-gray);
-      line-height: 1.75;
-      max-width: 580px;
-    }
-
-    /* ── MISSION STRIP ── */
-    .mission-strip {
-      background: var(--teal-dark);
-      padding: 4.5rem 5rem;
-    }
-    .mission-inner {
-      max-width: 1100px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1fr 2fr;
-      gap: 4rem;
-      align-items: center;
-    }
-    .mission-label {
-      font-size: 0.72rem;
-      font-weight: 600;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--amber);
-      margin-bottom: 0.75rem;
-    }
-    .mission-title {
-      font-family: 'Fraunces', serif;
-      font-size: 1.5rem;
-      font-weight: 500;
-      color: #fff;
-      line-height: 1.3;
-      letter-spacing: -0.01em;
-    }
-    .mission-copy {
-      font-size: 1rem;
-      color: rgba(255,255,255,0.8);
-      line-height: 1.8;
-    }
-    .mission-copy p + p { margin-top: 1rem; }
+    .page-hero h1 em { font-style: italic; color: var(--teal); }
+    .page-hero-sub { font-size: 1.05rem; color: var(--mid-gray); line-height: 1.8; max-width: 660px; }
+    .page-hero-sub strong { color: var(--charcoal); font-weight: 600; }
 
     /* ── TEAM ── */
     .team-wrap {
-      padding: 6rem 5rem;
-      max-width: 1100px;
-      margin: 0 auto;
+      background: #fff;
+      border-top: 1px solid var(--rule);
+      padding: 5rem;
     }
+    .team-inner { max-width: 1100px; margin: 0 auto; }
     .section-label {
       font-size: 0.72rem;
       font-weight: 600;
@@ -197,22 +117,12 @@
       max-width: 580px;
       margin-bottom: 0.75rem;
     }
-    .section-sub {
-      font-size: 1rem;
-      color: var(--mid-gray);
-      max-width: 540px;
-      line-height: 1.75;
-      margin-bottom: 3rem;
-    }
+    .section-sub { font-size: 1rem; color: var(--mid-gray); max-width: 540px; line-height: 1.75; margin-bottom: 3rem; }
 
-    .team-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1.5rem;
-    }
+    .team-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
 
     .team-card {
-      background: #fff;
+      background: var(--off-white);
       border: 1px solid var(--rule);
       border-radius: 20px;
       padding: 2.5rem;
@@ -221,54 +131,17 @@
       gap: 0.5rem;
       transition: box-shadow 0.2s, transform 0.2s;
     }
-    .team-card:hover {
-      box-shadow: 0 8px 32px rgba(46,125,120,0.08);
-      transform: translateY(-2px);
-    }
-    .team-card.featured {
-      border-color: var(--teal);
-      border-width: 1.5px;
-    }
-    .team-name {
-      font-family: 'Fraunces', serif;
-      font-size: 1.3rem;
-      font-weight: 500;
-      color: var(--charcoal);
-      letter-spacing: -0.01em;
-    }
-    .team-title {
-      font-size: 0.82rem;
-      font-weight: 600;
-      color: var(--teal);
-      letter-spacing: 0.04em;
-    }
-    .team-divider {
-      width: 32px;
-      height: 1.5px;
-      background: var(--amber);
-      margin: 0.75rem 0;
-    }
-    .team-bio {
-      font-size: 0.88rem;
-      color: var(--mid-gray);
-      line-height: 1.75;
-    }
-    .team-links {
-      margin-top: 0.65rem;
-      font-size: 0.82rem;
-      font-weight: 600;
-    }
-    .team-links a {
-      color: var(--teal);
-      text-decoration: none;
-    }
-    .team-links a:hover {
-      color: var(--teal-dark);
-    }
+    .team-card:hover { box-shadow: 0 8px 32px rgba(46,125,120,0.08); transform: translateY(-2px); }
+    .team-card.featured { border-color: var(--teal); border-width: 1.5px; }
+    .team-name { font-family: 'Fraunces', serif; font-size: 1.3rem; font-weight: 500; color: var(--charcoal); letter-spacing: -0.01em; }
+    .team-title { font-size: 0.82rem; font-weight: 600; color: var(--teal); letter-spacing: 0.04em; }
+    .team-divider { width: 32px; height: 1.5px; background: var(--amber); margin: 0.75rem 0; }
+    .team-bio { font-size: 0.88rem; color: var(--mid-gray); line-height: 1.75; }
+    .team-links { margin-top: 0.65rem; font-size: 0.82rem; font-weight: 600; }
+    .team-links a { color: var(--teal); text-decoration: none; }
+    .team-links a:hover { color: var(--teal-dark); }
 
-    .advisors-section {
-      margin-top: 2rem;
-    }
+    .advisors-section { margin-top: 2rem; }
     .advisors-label {
       font-size: 0.72rem;
       font-weight: 600;
@@ -276,22 +149,11 @@
       text-transform: uppercase;
       color: var(--mid-gray);
       margin-bottom: 1.25rem;
-      padding-top: 2rem;
+      padding-top: 2.5rem;
       border-top: 1px solid var(--rule);
     }
-    .advisors-intro {
-      max-width: 760px;
-      font-size: 0.95rem;
-      color: var(--mid-gray);
-      line-height: 1.75;
-      margin: -0.25rem 0 1.5rem;
-    }
-    .advisors-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      max-width: 980px;
-      gap: 1.5rem;
-    }
+    .advisors-intro { max-width: 760px; font-size: 0.95rem; color: var(--mid-gray); line-height: 1.75; margin: -0.25rem 0 1.5rem; }
+    .advisors-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 980px; gap: 1.5rem; }
     .advisor-card {
       background: var(--off-white);
       border: 1px solid var(--rule);
@@ -301,193 +163,22 @@
       flex-direction: column;
       gap: 0.4rem;
     }
-    .advisor-name {
-      font-family: 'Fraunces', serif;
-      font-size: 1.1rem;
-      font-weight: 500;
-      color: var(--charcoal);
-      letter-spacing: -0.01em;
-    }
-    .advisor-title {
-      font-size: 0.76rem;
-      font-weight: 600;
-      color: var(--teal);
-      letter-spacing: 0.03em;
-    }
-    .advisor-bio {
-      font-size: 0.85rem;
-      color: var(--mid-gray);
-      line-height: 1.7;
-      margin-top: 0.5rem;
-    }
-    .advisor-points {
-      margin: 0.75rem 0 0;
-      padding-left: 1rem;
-      color: var(--mid-gray);
-      font-size: 0.85rem;
-      line-height: 1.65;
-    }
-    .advisor-points li + li {
-      margin-top: 0.35rem;
-    }
-    .advisor-links {
-      margin-top: 0.75rem;
-      font-size: 0.82rem;
-      font-weight: 600;
-    }
-    .advisor-links a {
-      color: var(--teal);
-      text-decoration: none;
-    }
-    .advisor-links a:hover {
-      color: var(--teal-dark);
-    }
-
-    /* ── RESEARCH FOUNDATION ── */
-    .research-wrap {
-      background: #fff;
-      border-top: 1px solid var(--rule);
-      border-bottom: 1px solid var(--rule);
-      padding: 5rem;
-    }
-    .research-inner {
-      max-width: 1100px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 5rem;
-      align-items: center;
-    }
-    .research-left .section-label { margin-bottom: 1rem; }
-    .research-left .section-headline { margin-bottom: 0.75rem; }
-    .research-left p {
-      font-size: 0.95rem;
-      color: var(--mid-gray);
-      line-height: 1.8;
-      margin-bottom: 1rem;
-    }
-    .research-left p:last-child { margin-bottom: 0; }
-    .research-left strong { color: var(--charcoal); font-weight: 600; }
-
-    .research-card {
-      background: var(--teal-light);
-      border-radius: 20px;
-      padding: 2.5rem;
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-    }
-    .research-card-title {
-      font-family: 'Fraunces', serif;
-      font-size: 1.1rem;
-      font-weight: 500;
-      color: var(--teal-dark);
-      letter-spacing: -0.01em;
-    }
-    .research-stats {
-      display: flex;
-      flex-direction: column;
-      gap: 1.25rem;
-    }
-    .research-stat {
-      display: flex;
-      flex-direction: column;
-      gap: 0.15rem;
-      padding-bottom: 1.25rem;
-      border-bottom: 1px solid var(--rule);
-    }
-    .research-stat:last-child { border-bottom: none; padding-bottom: 0; }
-    .research-stat-num {
-      font-family: 'Fraunces', serif;
-      font-size: 1.8rem;
-      font-weight: 500;
-      color: var(--teal-dark);
-      line-height: 1;
-    }
-    .research-stat-label {
-      font-size: 0.82rem;
-      color: var(--mid-gray);
-      line-height: 1.4;
-    }
-
-    /* ── QUOTE ── */
-    .quote-band {
-      background: var(--amber-soft);
-      padding: 5rem;
-    }
-    .quote-band-inner {
-      max-width: 780px;
-      margin: 0 auto;
-      text-align: center;
-    }
-    .q-mark {
-      font-family: 'Fraunces', serif;
-      font-size: 4.5rem;
-      line-height: 0.6;
-      color: var(--amber);
-      display: block;
-      margin-bottom: 1.5rem;
-    }
-    .q-text {
-      font-family: 'Fraunces', serif;
-      font-size: clamp(1.2rem, 2.2vw, 1.6rem);
-      font-weight: 300;
-      font-style: italic;
-      line-height: 1.55;
-      color: var(--charcoal);
-      margin-bottom: 1.5rem;
-      letter-spacing: -0.01em;
-    }
-    .q-attr {
-      font-size: 0.76rem;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--mid-gray);
-    }
-    .q-source {
-      font-size: 0.74rem;
-      color: var(--mid-gray);
-      font-style: italic;
-      margin-top: 0.3rem;
-    }
+    .advisor-name { font-family: 'Fraunces', serif; font-size: 1.1rem; font-weight: 500; color: var(--charcoal); letter-spacing: -0.01em; }
+    .advisor-title { font-size: 0.76rem; font-weight: 600; color: var(--teal); letter-spacing: 0.03em; }
+    .advisor-points { margin: 0.75rem 0 0; padding-left: 1rem; color: var(--mid-gray); font-size: 0.85rem; line-height: 1.65; }
+    .advisor-points li + li { margin-top: 0.35rem; }
+    .advisor-links { margin-top: 0.75rem; font-size: 0.82rem; font-weight: 600; }
+    .advisor-links a { color: var(--teal); text-decoration: none; }
+    .advisor-links a:hover { color: var(--teal-dark); }
 
     /* ── FOOTER ── */
-    footer {
-      background: var(--charcoal);
-      color: rgba(255,255,255,0.6);
-      padding: 3rem 5rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 2rem;
-      flex-wrap: wrap;
-    }
-    .footer-logo {
-      font-family: 'Fraunces', serif;
-      font-size: 1.1rem;
-      font-weight: 500;
-      color: #fff;
-    }
-    .footer-logo span {
-      display: block;
-      font-family: 'Inter', sans-serif;
-      font-size: 0.65rem;
-      font-weight: 500;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.4);
-      margin-top: 0.2rem;
-    }
-    .footer-links { display: flex; gap: 2rem; list-style: none; }
-    .footer-links a {
-      text-decoration: none;
-      color: rgba(255,255,255,0.5);
-      font-size: 0.82rem;
-      transition: color 0.2s;
-    }
+    footer { background: var(--charcoal); color: rgba(255,255,255,0.6); padding: 3rem 5rem; display: flex; align-items: flex-start; justify-content: space-between; gap: 2rem; flex-wrap: wrap; }
+    .footer-logo { font-family: 'Fraunces', serif; font-size: 1.1rem; font-weight: 500; color: #fff; }
+    .footer-logo span { display: block; font-family: 'Inter', sans-serif; font-size: 0.65rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-top: 0.2rem; }
+    .footer-links { display: flex; gap: 2rem; list-style: none; padding-top: 0.35rem; }
+    .footer-links a { text-decoration: none; color: rgba(255,255,255,0.5); font-size: 0.82rem; transition: color 0.2s; }
     .footer-links a:hover { color: #fff; }
-    .footer-contact { font-size: 0.82rem; }
+    .footer-contact { font-size: 0.82rem; max-width: 300px; }
     .footer-contact a { color: var(--amber); text-decoration: none; }
 
     /* ── RESPONSIVE ── */
@@ -497,17 +188,12 @@
       .nav-links { display: flex; width: 100%; flex-wrap: wrap; gap: 0.45rem 0.85rem; padding-bottom: 0.1rem; }
       .nav-links a { white-space: nowrap; font-size: 0.76rem; }
 
-      .page-hero { margin-top: 124px; padding: 3.5rem 1.75rem 3rem; }
-      .mission-strip { padding: 3rem 1.75rem; }
-      .mission-inner { grid-template-columns: 1fr; gap: 2rem; }
+      .page-hero { margin-top: 124px; padding: 3.5rem 1.75rem 2.5rem; }
       .team-wrap { padding: 4rem 1.75rem; }
       .team-grid { grid-template-columns: 1fr; }
       .advisors-grid { grid-template-columns: 1fr; }
-      .research-wrap { padding: 4rem 1.75rem; }
-      .research-inner { grid-template-columns: 1fr; gap: 2.5rem; }
-      .quote-band { padding: 3.5rem 1.75rem; }
       footer { padding: 2.5rem 1.75rem; flex-direction: column; align-items: flex-start; gap: 1.5rem; }
-      .footer-links { flex-wrap: wrap; gap: 1rem; }
+      .footer-links { flex-wrap: wrap; gap: 1rem; padding-top: 0; }
     }
   </style>
 </head>
@@ -521,11 +207,10 @@
     </a>
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
-      <li><a href="outside-support-program.html">Our Program</a></li>
       <li><a href="outside-support-for-parents.html">For Parents</a></li>
       <li><a href="outside-support-for-schools.html">For Schools</a></li>
       <li><a href="outside-support-about.html" class="active">About Us</a></li>
-      <li><a href="#get-in-touch" class="nav-cta">Get In Touch</a></li>
+      <li><a href="outside-support-contact.html" class="nav-cta">Contact</a></li>
     </ul>
   </nav>
 
@@ -533,147 +218,95 @@
   <div class="page-hero">
     <div class="page-eyebrow">About Us</div>
     <h1>We exist for the kid who's <em>going through it</em> right now.</h1>
-    <p class="page-hero-sub">Outside Support was founded on a simple belief: every middle schooler who experiences bullying deserves real skills, real support, and peers who get what they're going through — regardless of where they live or what their family can afford.</p>
-  </div>
-
-  <!-- MISSION STRIP -->
-  <div class="mission-strip">
-    <div class="mission-inner">
-      <div>
-        <div class="mission-label">Our Mission</div>
-        <div class="mission-title">Equip every student who's experienced bullying with the skills and connections to move forward.</div>
-      </div>
-      <div class="mission-copy">
-        <p>Bullying affects one in five students — and the impact doesn't end when the school day does. Most existing support focuses on preventing bullying or addressing the behavior of those who bully. Outside Support takes a different approach: we focus on the student who was targeted, giving them a structured, facilitator-led experience built around social-emotional skills, peer connection, and practical tools for navigating what comes next.</p>
-        <p>Our BELONG Program is grounded in over two decades of bullying research from the BRAVE Lab at the University of Nebraska-Lincoln. It's not therapy. It's a skill-building program — designed to be accessible, evidence-based, and free for every student who needs it.</p>
-      </div>
-    </div>
+    <p class="page-hero-sub">Outside Support runs BELONG, a six-week online group for middle schoolers who've experienced bullying. Most bullying programs focus on prevention, or on the students doing the bullying — we focus on the student who was targeted. <strong>It's not therapy.</strong> It's a skill-building program, grounded in research from the BRAVE Lab at the University of Nebraska-Lincoln.</p>
   </div>
 
   <!-- TEAM -->
   <div class="team-wrap">
-    <div class="section-label">Our Team</div>
-    <h2 class="section-headline">Meet the team.</h2>
-    <p class="section-sub">Outside Support is an early-stage organization with a focused team and strong research foundations. Here's who is building it.</p>
+    <div class="team-inner">
+      <div class="section-label">Our Team</div>
+      <h2 class="section-headline">Meet the team.</h2>
+      <p class="section-sub">Outside Support is an early-stage organization with a focused team and strong research foundations. Here's who is building it.</p>
 
-    <div class="team-grid">
-      <div class="team-card featured">
-        <div class="team-name">Molly McCarthy</div>
-        <div class="team-title">Chief Executive Officer</div>
-        <div class="team-divider"></div>
-        <p class="team-bio">Molly McCarthy has spent her career building things from scratch — inside Fortune 500 companies and venture-backed startups alike. When she discovered Dr. Swearer's research and saw firsthand what the BELONG program did for the kids who went through it, she knew she had found her next challenge: getting this into the hands of every middle schooler who needs it.</p>
-        <div class="team-links"><a href="https://www.linkedin.com/in/molly-mccarthy-b9b5912/" target="_blank">LinkedIn</a></div>
+      <div class="team-grid">
+        <div class="team-card featured">
+          <div class="team-name">Molly McCarthy</div>
+          <div class="team-title">Chief Executive Officer</div>
+          <div class="team-divider"></div>
+          <p class="team-bio">Molly McCarthy has spent her career building things from scratch — inside Fortune 500 companies and venture-backed startups alike. When she discovered Dr. Swearer's research and saw firsthand what the BELONG program did for the kids who went through it, she knew she had found her next challenge: getting this into the hands of every middle schooler who needs it.</p>
+          <div class="team-links"><a href="https://www.linkedin.com/in/molly-mccarthy-b9b5912/" target="_blank" rel="noopener">LinkedIn</a></div>
+        </div>
+
+        <div class="team-card featured">
+          <div class="team-name">Jim Moran</div>
+          <div class="team-title">Founder</div>
+          <div class="team-divider"></div>
+          <p class="team-bio">Jim co-founded one of the largest market data providers and is now an early stage technology investor. Having experienced bullying growing up, Jim was excited about telehealth enabling a way to connect with others in similar situations but at different schools. He founded Outside Support in partnership with the BRAVE Lab to develop an evidence based peer support program.</p>
+          <div class="team-links"><a href="https://www.linkedin.com/in/jamesdmoran/" target="_blank" rel="noopener">LinkedIn</a></div>
+        </div>
       </div>
 
-      <div class="team-card featured">
-        <div class="team-name">Jim Moran</div>
-        <div class="team-title">Founder</div>
-        <div class="team-divider"></div>
-        <p class="team-bio">Jim co-founded one of the largest market data providers and is now an early stage technology investor. Having experienced bullying growing up, Jim was excited about telehealth enabling a way to connect with others in similar situations but at different schools. He founded Outside Support in partnership with the BRAVE LAB to develop an evidence based peer support program.</p>
-        <div class="team-links"><a href="https://www.linkedin.com/in/jamesdmoran/" target="_blank">LinkedIn</a></div>
-      </div>
-    </div>
+      <div class="advisors-section">
+        <div class="advisors-label">Advisors</div>
+        <p class="advisors-intro">We are supported by experts in child and adolescent psychiatry, family therapy, bullying research, and program implementation.</p>
+        <div class="advisors-grid">
 
-    <div class="advisors-section">
-      <div class="advisors-label">Advisors</div>
-      <p class="advisors-intro">We are supported by experts in child and adolescent psychiatry, family therapy, bullying research, and program implementation.</p>
-      <div class="advisors-grid">
-
-        <div class="advisor-card">
-          <div class="advisor-name">Dr. Sara Heron, MD</div>
-          <div class="advisor-title">Executive Director, Bay Children's Services</div>
-          <ul class="advisor-points">
-            <li>Child and adolescent psychiatrist.</li>
-            <li>MD, University of California San Francisco School of Medicine; psychiatry residency at UCSF; child and adolescent psychiatry fellowship at Stanford University.</li>
-          </ul>
-          <div class="advisor-links"><a href="https://baychildren.org/providers" target="_blank">Profile</a> &middot; <a href="https://www.linkedin.com/in/sara-heron-445b471b9/" target="_blank">LinkedIn</a></div>
-        </div>
-
-        <div class="advisor-card">
-          <div class="advisor-name">Amanda Hinson, JD</div>
-          <div class="advisor-title">Marriage and family therapy graduate intern</div>
-          <ul class="advisor-points">
-            <li>Graduate student intern in marriage and family therapy at Insights Collaborative Therapy Group, supervised by Mary Sanger, LPC-S, LMFT-S.</li>
-            <li>Previously at Gibson Dunn and Mercer Management Consulting.</li>
-            <li>Southern Methodist University (MS expected May 2026), Harvard Law (JD), Harvard College (AB, Physics).</li>
-          </ul>
-          <div class="advisor-links"><a href="https://www.insightstherapy.com/therapists/amanda-hinson" target="_blank">Profile</a> &middot; <a href="https://www.linkedin.com/in/amandasharp/" target="_blank">LinkedIn</a></div>
-        </div>
-
-        <div class="advisor-card">
-          <div class="advisor-name">Emilea Rejman, M.A., PLMHP</div>
-          <div class="advisor-title">Project Director, BELONG (BRAVE Lab)</div>
-          <ul class="advisor-points">
-            <li>University of Nebraska-Lincoln.</li>
-            <li>Doctoral candidate in school psychology at UNL, supervised by Dr. Sue Swearer.</li>
-          </ul>
-          <div class="advisor-links"><a href="https://bravelab.unl.edu/sites/unl.edu.cehs.brave-lab/files/media/file/Rejman%20CV%202024-4.pdf" target="_blank">Profile</a></div>
-        </div>
-
-        <div class="advisor-card">
-          <div class="advisor-name">Prof. Sue Swearer, PhD</div>
-          <div class="advisor-title">Willa Cather Professor and Director, BRAVE Lab</div>
-          <ul class="advisor-points">
-            <li>Willa Cather Professor of Educational Psychology and Director, Bullying Research and Victim Empowerment (BRAVE) Lab, University of Nebraska-Lincoln.</li>
-            <li>Co-Director, Bullying Research Network.</li>
-            <li>Licensed school psychologist focused on bullying prevention, school climate, and youth mental health.</li>
-            <li>Former Professional Counselor, Center for Pediatric Psychiatry, Children's Medical Center of Dallas.</li>
-          </ul>
-          <div class="advisor-links"><a href="https://cehs.unl.edu/edpsych/person/susan-swearer/" target="_blank">Profile</a> &middot; <a href="https://www.linkedin.com/in/susan-swearer-46585037/" target="_blank">LinkedIn</a></div>
-        </div>
-
-        <div class="advisor-card">
-          <div class="advisor-name">Dr. Thomas Tarshis, MD</div>
-          <div class="advisor-title">Child psychiatrist and bullying/victimization expert</div>
-          <ul class="advisor-points">
-            <li>Former AACAP spokesperson on bullying and victimization.</li>
-            <li>Author of <em>Living with Peer Pressure and Bullying</em>.</li>
-            <li>Author of the Peer Interactions in Primary School (PIPS) Survey.</li>
-          </ul>
-          <div class="advisor-links"><a href="https://www.linkedin.com/in/thomas-tarshis-116a204/" target="_blank">LinkedIn</a></div>
-        </div>
-
-      </div>
-    </div>
-  </div>
-
-  <!-- RESEARCH FOUNDATION -->
-  <div class="research-wrap">
-    <div class="research-inner">
-      <div class="research-left">
-        <div class="section-label">Our Foundation</div>
-        <h2 class="section-headline">Built on decades of research.</h2>
-        <p>Outside Support didn't start from scratch. Our BELONG Program is directly grounded in the work of the <strong>BRAVE Lab</strong> at the University of Nebraska-Lincoln — one of the longest-running bullying research programs in the country.</p>
-        <p>The BELONG program, piloted at the University of Nebraska, served as the direct research foundation for Outside Support. Its curriculum, facilitator approach, and peer group model were developed and tested with real middle schoolers — and the results informed everything we built.</p>
-        <p>When we say evidence-based, we mean it. Not just inspired by research — built from it.</p>
-      </div>
-      <div class="research-card">
-        <div class="research-card-title">BRAVE Lab at a glance</div>
-        <div class="research-stats">
-          <div class="research-stat">
-            <div class="research-stat-num">1998</div>
-            <div class="research-stat-label">Year the BRAVE Lab was established at the University of Nebraska-Lincoln</div>
+          <div class="advisor-card">
+            <div class="advisor-name">Prof. Sue Swearer, PhD</div>
+            <div class="advisor-title">Willa Cather Professor and Director, BRAVE Lab</div>
+            <ul class="advisor-points">
+              <li>Willa Cather Professor of Educational Psychology and Director, Bullying Research and Victim Empowerment (BRAVE) Lab, University of Nebraska-Lincoln.</li>
+              <li>Co-Director, Bullying Research Network.</li>
+              <li>Licensed school psychologist focused on bullying prevention, school climate, and youth mental health.</li>
+              <li>Former Professional Counselor, Center for Pediatric Psychiatry, Children's Medical Center of Dallas.</li>
+            </ul>
+            <div class="advisor-links"><a href="https://cehs.unl.edu/edpsych/person/susan-swearer/" target="_blank" rel="noopener">Profile</a> &middot; <a href="https://www.linkedin.com/in/susan-swearer-46585037/" target="_blank" rel="noopener">LinkedIn</a></div>
           </div>
-          <div class="research-stat">
-            <div class="research-stat-num">25+</div>
-            <div class="research-stat-label">Years of peer-reviewed bullying research informing our curriculum</div>
+
+          <div class="advisor-card">
+            <div class="advisor-name">Dr. Sara Heron, MD</div>
+            <div class="advisor-title">Executive Director, Bay Children's Services</div>
+            <ul class="advisor-points">
+              <li>Child and adolescent psychiatrist.</li>
+              <li>MD, University of California San Francisco School of Medicine; psychiatry residency at UCSF; child and adolescent psychiatry fellowship at Stanford University.</li>
+            </ul>
+            <div class="advisor-links"><a href="https://baychildren.org/providers" target="_blank" rel="noopener">Profile</a> &middot; <a href="https://www.linkedin.com/in/sara-heron-445b471b9/" target="_blank" rel="noopener">LinkedIn</a></div>
           </div>
-          <div class="research-stat">
-            <div class="research-stat-num">13</div>
-            <div class="research-stat-label">Countries involved in BRAVE Lab's international research network on bullying in schools</div>
+
+          <div class="advisor-card">
+            <div class="advisor-name">Dr. Thomas Tarshis, MD</div>
+            <div class="advisor-title">Child psychiatrist and bullying/victimization expert</div>
+            <ul class="advisor-points">
+              <li>Former AACAP spokesperson on bullying and victimization.</li>
+              <li>Author of <em>Living with Peer Pressure and Bullying</em>.</li>
+              <li>Author of the Peer Interactions in Primary School (PIPS) Survey.</li>
+            </ul>
+            <div class="advisor-links"><a href="https://www.linkedin.com/in/thomas-tarshis-116a204/" target="_blank" rel="noopener">LinkedIn</a></div>
           </div>
+
+          <div class="advisor-card">
+            <div class="advisor-name">Amanda Hinson, JD</div>
+            <div class="advisor-title">Marriage and family therapy graduate intern</div>
+            <ul class="advisor-points">
+              <li>Graduate student intern in marriage and family therapy at Insights Collaborative Therapy Group, supervised by Mary Sanger, LPC-S, LMFT-S.</li>
+              <li>Previously at Gibson Dunn and Mercer Management Consulting.</li>
+              <li>Southern Methodist University (MS expected May 2026), Harvard Law (JD), Harvard College (AB, Physics).</li>
+            </ul>
+            <div class="advisor-links"><a href="https://www.insightstherapy.com/therapists/amanda-hinson" target="_blank" rel="noopener">Profile</a> &middot; <a href="https://www.linkedin.com/in/amandasharp/" target="_blank" rel="noopener">LinkedIn</a></div>
+          </div>
+
+          <div class="advisor-card">
+            <div class="advisor-name">Emilea Rejman, M.A., PLMHP</div>
+            <div class="advisor-title">Project Director, BELONG (BRAVE Lab)</div>
+            <ul class="advisor-points">
+              <li>University of Nebraska-Lincoln.</li>
+              <li>Doctoral candidate in school psychology at UNL, supervised by Dr. Sue Swearer.</li>
+            </ul>
+            <div class="advisor-links"><a href="https://bravelab.unl.edu/sites/unl.edu.cehs.brave-lab/files/media/file/Rejman%20CV%202024-4.pdf" target="_blank" rel="noopener">Profile</a></div>
+          </div>
+
         </div>
       </div>
-    </div>
-  </div>
-
-  <!-- QUOTE -->
-  <div class="quote-band">
-    <div class="quote-band-inner">
-      <span class="q-mark">&ldquo;</span>
-      <p class="q-text">I think it's a great project — a good support and a resource for kids that may be really going through bullying, for them to know that there is support out there, and that they don't have to be on their own.</p>
-      <div class="q-attr">Parent of a participant</div>
-      <div class="q-source">From the BELONG Program pilot, University of Nebraska — the research foundation behind Outside Support</div>
     </div>
   </div>
 
@@ -684,14 +317,17 @@
       <span>A nonprofit organization</span>
     </div>
     <ul class="footer-links">
-      <li><a href="outside-support-program.html">Our Program</a></li>
       <li><a href="outside-support-for-parents.html">For Parents</a></li>
       <li><a href="outside-support-for-schools.html">For Schools</a></li>
       <li><a href="outside-support-about.html">About Us</a></li>
-      <li><a href="#get-in-touch">Contact</a></li>
+      <li><a href="outside-support-contact.html">Contact</a></li>
     </ul>
     <div class="footer-contact">
       Questions? <a href="mailto:team@outsidesupport.org">team@outsidesupport.org</a>
+      <div class="footer-legal">
+        Outside Support is a registered 501(c)(3) nonprofit organization.<br>
+        &copy; 2026 Outside Support
+      </div>
     </div>
   </footer>
 

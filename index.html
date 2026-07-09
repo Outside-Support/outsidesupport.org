@@ -50,11 +50,7 @@
       justify-content: space-between;
     }
 
-    .nav-logo {
-      display: flex;
-      flex-direction: column;
-      line-height: 1.1;
-    }
+    .nav-logo { display: flex; flex-direction: column; line-height: 1.1; }
     .nav-logo-main {
       font-family: 'Fraunces', serif;
       font-weight: 500;
@@ -70,12 +66,7 @@
       color: var(--mid-gray);
     }
 
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 2rem;
-      list-style: none;
-    }
+    .nav-links { display: flex; align-items: center; gap: 2rem; list-style: none; }
     .nav-links a {
       text-decoration: none;
       font-size: 0.85rem;
@@ -145,10 +136,7 @@
       color: var(--charcoal);
       margin-bottom: 1.5rem;
     }
-    .hero-headline em {
-      font-style: italic;
-      color: var(--teal);
-    }
+    .hero-headline em { font-style: italic; color: var(--teal); }
 
     .hero-sub {
       font-size: 1.05rem;
@@ -159,49 +147,23 @@
       font-weight: 400;
     }
 
-    .hero-actions {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
+    .hero-actions { display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap; }
 
-    .btn-primary {
+    .btn-scroll {
       display: inline-flex;
       align-items: center;
-      gap: 0.5rem;
-      background: var(--teal);
-      color: #fff;
+      gap: 0.45rem;
+      color: var(--teal);
       text-decoration: none;
       font-weight: 600;
       font-size: 0.9rem;
-      padding: 0.85rem 1.8rem;
-      border-radius: 100px;
-      transition: background 0.2s, transform 0.15s;
-      letter-spacing: 0.01em;
-    }
-    .btn-primary:hover { background: var(--teal-dark); transform: translateY(-1px); }
-
-    .btn-secondary {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      color: var(--teal);
-      text-decoration: none;
-      font-weight: 500;
-      font-size: 0.9rem;
       border-bottom: 1px solid var(--teal);
-      padding-bottom: 1px;
+      padding-bottom: 2px;
       transition: color 0.2s;
     }
-    .btn-secondary:hover { color: var(--teal-dark); }
-
-    .hero-audiences {
-      font-size: 0.76rem;
-      color: var(--mid-gray);
-      letter-spacing: 0.04em;
-      margin-top: 0.75rem;
-    }
+    .btn-scroll:hover { color: var(--teal-dark); }
+    .btn-scroll span { transition: transform 0.2s; }
+    .btn-scroll:hover span { transform: translateY(2px); }
 
     .hero-quick-details {
       display: flex;
@@ -210,54 +172,11 @@
       margin-top: 1.25rem;
       flex-wrap: wrap;
     }
-    .hero-quick-item span {
-      font-size: 0.76rem;
-      font-weight: 600;
-      color: var(--mid-gray);
-    }
-    .hero-quick-dot {
-      width: 3px;
-      height: 3px;
-      border-radius: 50%;
-      background: var(--rule);
-    }
+    .hero-quick-item span { font-size: 0.76rem; font-weight: 600; color: var(--mid-gray); }
+    .hero-quick-dot { width: 3px; height: 3px; border-radius: 50%; background: var(--rule); }
 
-    /* ── HERO TRUST STRIP ── */
-    .hero-trust {
-      padding-top: 1.75rem;
-      border-top: 1px solid var(--rule);
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-    }
-    .trust-badge {
-      font-size: 0.75rem;
-      color: var(--mid-gray);
-      line-height: 1.4;
-    }
-    .trust-badge strong {
-      display: block;
-      color: var(--charcoal);
-      font-weight: 600;
-      font-size: 0.8rem;
-    }
-    .trust-dot {
-      width: 4px;
-      height: 4px;
-      border-radius: 50%;
-      background: var(--rule);
-    }
-
-    .hero-image {
-      position: relative;
-      overflow: hidden;
-    }
-    .hero-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center top;
-    }
+    .hero-image { position: relative; overflow: hidden; }
+    .hero-image img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
     .hero-image::after {
       content: '';
       position: absolute;
@@ -266,11 +185,7 @@
     }
 
     /* ── PROBLEM STRIP ── */
-    .problem-strip {
-      background: var(--teal-dark);
-      color: #fff;
-      padding: 4.5rem 5rem;
-    }
+    .problem-strip { background: var(--teal-dark); color: #fff; padding: 4.5rem 5rem; }
     .problem-inner {
       max-width: 900px;
       margin: 0 auto;
@@ -279,9 +194,7 @@
       gap: 3rem;
       align-items: center;
     }
-    .problem-stat {
-      text-align: center;
-    }
+    .problem-stat { text-align: center; }
     .problem-stat-num {
       font-family: 'Fraunces', serif;
       font-size: 5rem;
@@ -289,18 +202,7 @@
       line-height: 1;
       color: var(--amber);
     }
-    .problem-stat-label {
-      font-size: 0.85rem;
-      color: rgba(255,255,255,0.7);
-      line-height: 1.5;
-      margin-top: 0.5rem;
-    }
-    .problem-divider {
-      width: 1px;
-      height: 80px;
-      background: rgba(255,255,255,0.15);
-      display: none;
-    }
+    .problem-stat-label { font-size: 0.85rem; color: rgba(255,255,255,0.7); line-height: 1.5; margin-top: 0.5rem; }
     .problem-copy h2 {
       font-family: 'Fraunces', serif;
       font-size: 1.6rem;
@@ -309,18 +211,10 @@
       margin-bottom: 1rem;
       letter-spacing: -0.01em;
     }
-    .problem-copy p {
-      font-size: 0.95rem;
-      line-height: 1.8;
-      color: rgba(255,255,255,0.8);
-    }
+    .problem-copy p { font-size: 0.95rem; line-height: 1.8; color: rgba(255,255,255,0.8); }
 
     /* ── PROGRAM SECTION ── */
-    .program {
-      padding: 6rem 5rem;
-      max-width: 1100px;
-      margin: 0 auto;
-    }
+    .program { padding: 6rem 5rem; max-width: 1100px; margin: 0 auto; scroll-margin-top: 84px; }
 
     .section-label {
       font-size: 0.72rem;
@@ -350,12 +244,7 @@
       margin-bottom: 3rem;
     }
 
-    .program-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
-      margin-bottom: 3rem;
-    }
+    .program-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-bottom: 3rem; }
 
     .program-card {
       background: #fff;
@@ -364,10 +253,7 @@
       padding: 2rem 1.75rem;
       transition: box-shadow 0.2s, transform 0.2s;
     }
-    .program-card:hover {
-      box-shadow: 0 8px 32px rgba(46,125,120,0.08);
-      transform: translateY(-2px);
-    }
+    .program-card:hover { box-shadow: 0 8px 32px rgba(46,125,120,0.08); transform: translateY(-2px); }
 
     .card-icon {
       width: 44px;
@@ -390,22 +276,16 @@
       letter-spacing: -0.01em;
     }
 
-    .card-body {
-      font-size: 0.88rem;
-      color: var(--mid-gray);
-      line-height: 1.7;
-    }
+    .card-body { font-size: 0.88rem; color: var(--mid-gray); line-height: 1.7; }
 
     .program-details {
       background: var(--teal-light);
       border-radius: 16px;
       padding: 1.5rem 2rem;
       display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 1rem;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem 1rem;
     }
-
-    .detail-item {}
     .detail-label {
       font-size: 0.7rem;
       font-weight: 600;
@@ -414,22 +294,11 @@
       color: var(--teal);
       margin-bottom: 0.3rem;
     }
-    .detail-value {
-      font-size: 0.95rem;
-      font-weight: 600;
-      color: var(--charcoal);
-    }
+    .detail-value { font-size: 0.95rem; font-weight: 600; color: var(--charcoal); }
 
     /* ── QUOTE ── */
-    .quote-section {
-      background: var(--amber-soft);
-      padding: 5rem;
-    }
-    .quote-inner {
-      max-width: 800px;
-      margin: 0 auto;
-      text-align: center;
-    }
+    .quote-section { background: var(--amber-soft); padding: 5rem; }
+    .quote-inner { max-width: 800px; margin: 0 auto; text-align: center; }
     .quote-mark {
       font-family: 'Fraunces', serif;
       font-size: 5rem;
@@ -455,68 +324,11 @@
       text-transform: uppercase;
       color: var(--mid-gray);
     }
-    .quote-source {
-      font-size: 0.75rem;
-      color: var(--mid-gray);
-      margin-top: 0.25rem;
-      font-style: italic;
-    }
-
-    /* ── SECONDARY QUOTE STRIP ── */
-    .quote-strip {
-      background: #fff;
-      border-top: 1px solid var(--rule);
-      border-bottom: 1px solid var(--rule);
-      padding: 4rem 5rem;
-    }
-    .quote-strip-inner {
-      max-width: 1100px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2.5rem;
-    }
-    .quote-strip-card {
-      display: flex;
-      flex-direction: column;
-      gap: 0.75rem;
-    }
-    .strip-mark {
-      font-family: 'Fraunces', serif;
-      font-size: 2.5rem;
-      line-height: 1;
-      color: var(--amber);
-    }
-    .strip-text {
-      font-family: 'Fraunces', serif;
-      font-size: 1rem;
-      font-weight: 300;
-      font-style: italic;
-      line-height: 1.6;
-      color: var(--charcoal);
-      flex: 1;
-    }
-    .strip-attr {
-      font-size: 0.72rem;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--mid-gray);
-    }
+    .quote-source { font-size: 0.75rem; color: var(--mid-gray); margin-top: 0.25rem; font-style: italic; }
 
     /* ── AUDIENCE SECTION ── */
-    .audience {
-      padding: 6rem 5rem;
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-
-    .audience-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
-      margin-top: 2.5rem;
-    }
+    .audience { padding: 6rem 5rem; max-width: 1100px; margin: 0 auto; }
+    .audience-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 2.5rem; }
 
     .audience-card {
       border: 1.5px solid var(--rule);
@@ -530,20 +342,9 @@
       transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
       background: #fff;
     }
-    .audience-card:hover {
-      border-color: var(--teal);
-      box-shadow: 0 8px 32px rgba(46,125,120,0.1);
-      transform: translateY(-2px);
-    }
+    .audience-card:hover { border-color: var(--teal); box-shadow: 0 8px 32px rgba(46,125,120,0.1); transform: translateY(-2px); }
 
-    .audience-role {
-      font-size: 0.7rem;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--teal);
-    }
-
+    .audience-role { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--teal); }
     .audience-title {
       font-family: 'Fraunces', serif;
       font-size: 1.25rem;
@@ -551,23 +352,8 @@
       color: var(--charcoal);
       letter-spacing: -0.01em;
     }
-
-    .audience-desc {
-      font-size: 0.88rem;
-      color: var(--mid-gray);
-      line-height: 1.65;
-      flex: 1;
-    }
-
-    .audience-link {
-      font-size: 0.82rem;
-      font-weight: 600;
-      color: var(--teal);
-      display: flex;
-      align-items: center;
-      gap: 0.3rem;
-      margin-top: 0.5rem;
-    }
+    .audience-desc { font-size: 0.88rem; color: var(--mid-gray); line-height: 1.65; flex: 1; }
+    .audience-link { font-size: 0.82rem; font-weight: 600; color: var(--teal); display: flex; align-items: center; gap: 0.3rem; margin-top: 0.5rem; }
 
     /* ── FOOTER ── */
     footer {
@@ -575,18 +361,13 @@
       color: rgba(255,255,255,0.6);
       padding: 3rem 5rem;
       display: flex;
-      align-items: center;
+      align-items: flex-start;
       justify-content: space-between;
       gap: 2rem;
       flex-wrap: wrap;
     }
 
-    .footer-logo {
-      font-family: 'Fraunces', serif;
-      font-size: 1.1rem;
-      font-weight: 500;
-      color: #fff;
-    }
+    .footer-logo { font-family: 'Fraunces', serif; font-size: 1.1rem; font-weight: 500; color: #fff; }
     .footer-logo span {
       display: block;
       font-family: 'Inter', sans-serif;
@@ -598,26 +379,12 @@
       margin-top: 0.2rem;
     }
 
-    .footer-links {
-      display: flex;
-      gap: 2rem;
-      list-style: none;
-    }
-    .footer-links a {
-      text-decoration: none;
-      color: rgba(255,255,255,0.5);
-      font-size: 0.82rem;
-      transition: color 0.2s;
-    }
+    .footer-links { display: flex; gap: 2rem; list-style: none; padding-top: 0.35rem; }
+    .footer-links a { text-decoration: none; color: rgba(255,255,255,0.5); font-size: 0.82rem; transition: color 0.2s; }
     .footer-links a:hover { color: #fff; }
 
-    .footer-contact {
-      font-size: 0.82rem;
-    }
-    .footer-contact a {
-      color: var(--amber);
-      text-decoration: none;
-    }
+    .footer-contact { font-size: 0.82rem; max-width: 300px; }
+    .footer-contact a { color: var(--amber); text-decoration: none; }
 
     /* ── RESPONSIVE ── */
     @media (max-width: 900px) {
@@ -626,20 +393,10 @@
       .nav-links { display: flex; width: 100%; flex-wrap: wrap; gap: 0.45rem 0.85rem; padding-bottom: 0.1rem; }
       .nav-links a { white-space: nowrap; font-size: 0.76rem; }
 
-      .hero {
-        margin-top: 124px;
-        grid-template-columns: 1fr;
-        min-height: auto;
-      }
+      .hero { margin-top: 124px; grid-template-columns: 1fr; min-height: auto; }
       .hero-content { padding: 3rem 1.75rem 2.5rem; }
-      .hero-image {
-        height: 320px;
-        order: -1;
-      }
-      .hero-image::after {
-        background: linear-gradient(to top, var(--off-white) 0%, transparent 20%);
-      }
-      .hero-trust { flex-wrap: wrap; gap: 0.75rem; }
+      .hero-image { height: 320px; order: -1; }
+      .hero-image::after { background: linear-gradient(to top, var(--off-white) 0%, transparent 20%); }
 
       .problem-strip { padding: 3rem 1.75rem; }
       .problem-inner { grid-template-columns: 1fr; gap: 2rem; }
@@ -653,11 +410,9 @@
       .audience { padding: 4rem 1.75rem; }
       .audience-grid { grid-template-columns: 1fr; }
 
-      .quote-strip { padding: 3rem 1.75rem; }
-      .quote-strip-inner { grid-template-columns: 1fr; gap: 2rem; }
 
       footer { padding: 2.5rem 1.75rem; flex-direction: column; align-items: flex-start; gap: 1.5rem; }
-      .footer-links { flex-wrap: wrap; gap: 1rem; }
+      .footer-links { flex-wrap: wrap; gap: 1rem; padding-top: 0; }
     }
   </style>
 </head>
@@ -671,28 +426,26 @@
     </div>
     <ul class="nav-links">
       <li><a href="index.html" class="active">Home</a></li>
-      <li><a href="outside-support-program.html">Our Program</a></li>
       <li><a href="outside-support-for-parents.html">For Parents</a></li>
       <li><a href="outside-support-for-schools.html">For Schools</a></li>
       <li><a href="outside-support-about.html">About Us</a></li>
-      <li><a href="#get-in-touch" class="nav-cta">Get In Touch</a></li>
+      <li><a href="outside-support-contact.html" class="nav-cta">Contact</a></li>
     </ul>
   </nav>
 
   <!-- HERO -->
   <section class="hero">
     <div class="hero-content">
-      <div class="hero-eyebrow">Free · Online · For Middle Schoolers</div>
+      <div class="hero-eyebrow">Online · For Middle Schoolers</div>
       <h1 class="hero-headline">
         Your child doesn't have to face bullying <em>alone.</em>
       </h1>
       <p class="hero-sub">
-        Outside Support provides a free six-week online support group for middle schoolers experiencing bullying. We ensure kids are never placed with anyone from their own school — giving students a safe space to connect with peers who understand while learning problem-solving and coping strategies.
+        Outside Support runs a six-week online support group for middle schoolers experiencing bullying. Students are never placed with anyone from their own school — giving them a safe space to connect with peers who understand, while learning problem-solving and coping strategies.
       </p>
       <div class="hero-actions">
-        <a href="outside-support-program.html" class="btn-primary">Learn About Our Program &rarr;</a>
+        <a href="#program" class="btn-scroll">See how the program works <span aria-hidden="true">&darr;</span></a>
       </div>
-      <p class="hero-audiences">For parents, schools, and community partners</p>
       <div class="hero-quick-details">
         <div class="hero-quick-item"><span>Grades 6–8</span></div>
         <div class="hero-quick-dot"></div>
@@ -702,7 +455,6 @@
         <div class="hero-quick-dot"></div>
         <div class="hero-quick-item"><span>Facilitator-led</span></div>
       </div>
-      <div style="margin-top:0.5rem; padding-top:0.5rem; border-top:1px solid var(--rule); font-size:0.78rem; font-weight:600; color:var(--mid-gray); text-align:center;">At no cost</div>
     </div>
     <div class="hero-image">
       <img
@@ -727,10 +479,10 @@
   </section>
 
   <!-- PROGRAM -->
-  <section class="program">
+  <section class="program" id="program">
     <div class="section-label">The BELONG Program</div>
     <h2 class="section-headline">Six weeks that can change how your child sees themselves.</h2>
-    <p class="section-sub">Developed and piloted with bullying expert Dr. Sue Swearer at the University of Nebraska, BELONG is an evidence-based, facilitator-led curriculum in skill building and peer support, designed specifically for middle schoolers who've experienced bullying. Our program is built around three core outcomes.</p>
+    <p class="section-sub">Developed and piloted with bullying expert Dr. Sue Swearer at the University of Nebraska, BELONG is an evidence-based, facilitator-led curriculum in skill building and peer support, designed specifically for middle schoolers who've experienced bullying. It is built around three core outcomes.</p>
 
     <div class="program-grid">
       <div class="program-card">
@@ -756,10 +508,6 @@
         <div class="detail-value">Online, small group</div>
       </div>
       <div class="detail-item">
-        <div class="detail-label">Program type</div>
-        <div class="detail-value">Skill building &amp; peer support</div>
-      </div>
-      <div class="detail-item">
         <div class="detail-label">Grouped by</div>
         <div class="detail-value">Grouped by gender</div>
       </div>
@@ -768,10 +516,14 @@
         <div class="detail-value">Six weeks</div>
       </div>
       <div class="detail-item">
+        <div class="detail-label">Program type</div>
+        <div class="detail-value">Skill building &amp; peer support</div>
+      </div>
+      <div class="detail-item">
         <div class="detail-label">Led by</div>
         <div class="detail-value">Trained facilitators</div>
       </div>
-      <div class="detail-item" style="grid-column: 1 / -1; text-align: center; padding-top: 0.5rem; border-top: 1px solid var(--rule);">
+      <div class="detail-item">
         <div class="detail-label">Cost</div>
         <div class="detail-value">At no cost</div>
       </div>
@@ -782,30 +534,9 @@
   <section class="quote-section">
     <div class="quote-inner">
       <span class="quote-mark">&ldquo;</span>
-      <p class="quote-text">Having peer groups that are purely positive and supporting — especially being able to relate to his particular thing — is always the most helpful for him. He always came out of those sessions feeling very positive, and good about things.</p>
-      <div class="quote-attr">Parent of a participant</div>
+      <p class="quote-text">It helped me build up courage. The courage to stand up for myself and stand up for others. You guys really helped me.</p>
+      <div class="quote-attr">Student participant</div>
       <div class="quote-source">From the BELONG Program pilot, University of Nebraska — the research foundation behind Outside Support</div>
-    </div>
-  </section>
-
-  <!-- SECOND QUOTE STRIP -->
-  <section class="quote-strip">
-    <div class="quote-strip-inner">
-      <div class="quote-strip-card">
-        <span class="strip-mark">&ldquo;</span>
-        <p class="strip-text">It was helpful in not feeling alone... she's been talking to me a lot more about things, you know.</p>
-        <div class="strip-attr">Parent — BELONG Program participant</div>
-      </div>
-      <div class="quote-strip-card">
-        <span class="strip-mark">&ldquo;</span>
-        <p class="strip-text">It helped me build up courage. The courage to stand up for myself and stand up for others. You guys really helped me.</p>
-        <div class="strip-attr">Student — BELONG Program participant</div>
-      </div>
-      <div class="quote-strip-card">
-        <span class="strip-mark">&ldquo;</span>
-        <p class="strip-text">I think it's a great project — a good support and a resource for kids that may be really going through bullying, for them to know that there is support out there.</p>
-        <div class="strip-attr">Parent — BELONG Program participant</div>
-      </div>
     </div>
   </section>
 
@@ -818,21 +549,36 @@
       <a href="outside-support-for-parents.html" class="audience-card">
         <div class="audience-role">For families</div>
         <div class="audience-title">I'm a parent or caregiver</div>
-        <p class="audience-desc">Learn how the program works, what to expect, and how to refer your child — no cost, no commitment, just support.</p>
+        <p class="audience-desc">Learn how the program works, what your child will experience, and how to refer them.</p>
         <div class="audience-link">Learn more &rarr;</div>
       </a>
       <a href="outside-support-for-schools.html" class="audience-card">
         <div class="audience-role">For schools</div>
         <div class="audience-title">I'm a school administrator or counselor</div>
-        <p class="audience-desc">Outside Support is designed to work alongside your existing support systems — a free, external resource you can refer students to with confidence.</p>
+        <p class="audience-desc">Outside Support is designed to work alongside your existing support systems — an external resource you can refer students to with confidence.</p>
         <div class="audience-link">Partner with us &rarr;</div>
       </a>
-      <a href="#get-in-touch" class="audience-card">
+      <a href="outside-support-contact.html" class="audience-card">
         <div class="audience-role">For organizations</div>
         <div class="audience-title">I'm a potential partner</div>
         <p class="audience-desc">We work with community organizations who share our mission of supporting middle schoolers affected by bullying.</p>
         <div class="audience-link">Get in touch &rarr;</div>
       </a>
+    </div>
+  </section>
+
+  <!-- WAITLIST -->
+  <section class="waitlist-band" id="waitlist">
+    <div class="waitlist-inner">
+      <div class="section-label">Referrals Open Soon</div>
+      <h2>Be the first to know.</h2>
+      <p>We're preparing for our fall sessions and will begin accepting referrals shortly. Leave your email and we'll reach out the moment they open.</p>
+      <form class="email-capture-form" data-email-capture="waitlist-home">
+        <input type="email" name="email" autocomplete="email" placeholder="Email address" required />
+        <button type="submit">Notify me</button>
+      </form>
+      <div class="email-capture-status" data-email-capture-status></div>
+      <p class="email-capture-note">We'll only use your email to let you know when referrals open.</p>
     </div>
   </section>
 
@@ -843,14 +589,17 @@
       <span>A nonprofit organization</span>
     </div>
     <ul class="footer-links">
-      <li><a href="outside-support-program.html">Our Program</a></li>
       <li><a href="outside-support-for-parents.html">For Parents</a></li>
       <li><a href="outside-support-for-schools.html">For Schools</a></li>
       <li><a href="outside-support-about.html">About Us</a></li>
-      <li><a href="#get-in-touch">Contact</a></li>
+      <li><a href="outside-support-contact.html">Contact</a></li>
     </ul>
     <div class="footer-contact">
       Questions? <a href="mailto:team@outsidesupport.org">team@outsidesupport.org</a>
+      <div class="footer-legal">
+        Outside Support is a registered 501(c)(3) nonprofit organization.<br>
+        &copy; 2026 Outside Support
+      </div>
     </div>
   </footer>
 

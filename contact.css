@@ -1,49 +1,4 @@
-.contact-capture {
-  background: #fff;
-  border-top: 1px solid var(--rule);
-  padding: 4rem 5rem;
-  scroll-margin-top: 84px;
-}
-
-.contact-capture-inner {
-  max-width: 980px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3rem;
-  align-items: center;
-}
-
-.contact-capture .section-label {
-  color: var(--teal);
-  font-size: 0.72rem;
-  font-weight: 600;
-  letter-spacing: 0.14em;
-  margin-bottom: 0.75rem;
-  text-transform: uppercase;
-}
-
-.contact-capture h2 {
-  font-family: 'Fraunces', serif;
-  font-size: clamp(1.8rem, 3vw, 2.4rem);
-  font-weight: 500;
-  line-height: 1.15;
-  letter-spacing: -0.02em;
-  color: var(--charcoal);
-  margin-bottom: 1rem;
-}
-
-.contact-capture p {
-  color: var(--mid-gray);
-  line-height: 1.75;
-}
-
-.contact-capture a {
-  color: var(--teal);
-  font-weight: 600;
-  text-decoration: none;
-}
-
+/* ── EMAIL CAPTURE FORM (shared) ── */
 .email-capture-form {
   display: flex;
   gap: 0.75rem;
@@ -82,10 +37,8 @@
   white-space: nowrap;
 }
 
-.email-capture-form button:hover {
-  background: var(--teal-dark);
-  transform: translateY(-1px);
-}
+.email-capture-form button:hover { background: var(--teal-dark); transform: translateY(-1px); }
+.email-capture-form button:disabled { opacity: 0.6; cursor: default; transform: none; }
 
 .email-capture-status {
   color: var(--mid-gray);
@@ -93,62 +46,126 @@
   margin-top: 0.85rem;
   min-height: 1.4rem;
 }
+.email-capture-status a { color: var(--teal); font-weight: 600; }
 
-.referral-waitlist {
-  max-width: 640px;
-  margin: 0 auto;
-}
-
-.referral-waitlist p {
+.email-capture-note {
+  font-size: 0.76rem;
   color: var(--mid-gray);
-  font-size: 0.95rem;
-  line-height: 1.75;
-  margin: 0 0 1rem;
+  margin-top: 0.75rem;
 }
 
-.referral-waitlist .email-capture-form {
-  max-width: 520px;
+/* ── WAITLIST BAND (Home / Parents / Schools) ── */
+.waitlist-band {
+  background: #fff;
+  border-top: 1px solid var(--rule);
+  padding: 5rem;
+  scroll-margin-top: 84px;
+}
+
+.waitlist-inner {
+  max-width: 620px;
   margin: 0 auto;
-}
-
-.referral-waitlist .email-capture-status {
   text-align: center;
 }
 
-.schools-card .referral-waitlist {
-  margin-top: 2rem;
+.waitlist-inner .section-label { color: var(--teal); }
+
+.waitlist-inner h2 {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(1.6rem, 2.6vw, 2.1rem);
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--charcoal);
+  margin-bottom: 0.85rem;
 }
 
-.schools-card .referral-waitlist .email-capture-form {
-  margin: 0;
+.waitlist-inner > p {
+  color: var(--mid-gray);
+  line-height: 1.75;
+  margin-bottom: 1.75rem;
 }
 
-.schools-card .referral-waitlist .email-capture-status {
-  text-align: left;
+.waitlist-inner .email-capture-form { max-width: 480px; margin: 0 auto; }
+.waitlist-inner .email-capture-status { text-align: center; }
+.waitlist-inner .email-capture-note { text-align: center; }
+
+/* Inline waitlist used inside enroll/referral CTA blocks */
+.referral-waitlist { max-width: 640px; margin: 0 auto; }
+.referral-waitlist p { color: var(--mid-gray); font-size: 0.95rem; line-height: 1.75; margin: 0 0 1rem; }
+.referral-waitlist .email-capture-form { max-width: 520px; margin: 0 auto; }
+.referral-waitlist .email-capture-status { text-align: center; }
+
+/* ── CONTACT PAGE ── */
+.contact-grid {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 5rem 6rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
 }
 
-.contact-page-intro {
-  padding-bottom: 2.5rem !important;
+.contact-panel {
+  background: #fff;
+  border: 1px solid var(--rule);
+  border-radius: 20px;
+  padding: 2.5rem;
 }
 
+.contact-panel h2 {
+  font-family: 'Fraunces', serif;
+  font-size: 1.35rem;
+  font-weight: 500;
+  color: var(--charcoal);
+  letter-spacing: -0.01em;
+  margin-bottom: 0.6rem;
+}
+
+.contact-panel p {
+  font-size: 0.92rem;
+  color: var(--mid-gray);
+  line-height: 1.75;
+  margin-bottom: 1.5rem;
+}
+
+.contact-panel .email-capture-form { max-width: 100%; }
+
+.contact-direct { display: flex; flex-direction: column; gap: 2rem; }
+
+.contact-direct-item { padding-bottom: 1.75rem; border-bottom: 1px solid var(--rule); }
+.contact-direct-item:last-child { border-bottom: none; padding-bottom: 0; }
+
+.contact-direct-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-bottom: 0.6rem;
+}
+
+.contact-direct-item p { font-size: 0.92rem; color: var(--mid-gray); line-height: 1.75; }
+.contact-direct-item a { color: var(--teal); font-weight: 600; text-decoration: none; }
+.contact-direct-item a:hover { color: var(--teal-dark); }
+
+/* ── FOOTER LEGAL LINE ── */
+.footer-legal {
+  margin-top: 0.85rem;
+  font-size: 0.72rem;
+  line-height: 1.65;
+  color: rgba(255,255,255,0.35);
+}
+
+/* ── RESPONSIVE ── */
 @media (max-width: 900px) {
-  .contact-capture {
-    padding: 3.5rem 1.75rem;
-    scroll-margin-top: 132px;
-  }
-
-  .contact-capture-inner {
-    grid-template-columns: 1fr;
-    gap: 1.75rem;
-  }
+  .waitlist-band { padding: 3.5rem 1.75rem; scroll-margin-top: 132px; }
+  .contact-grid { grid-template-columns: 1fr; gap: 2rem; padding: 0 1.75rem 4rem; }
+  .contact-panel { padding: 2rem; }
 }
 
 @media (max-width: 520px) {
-  .email-capture-form {
-    flex-direction: column;
-  }
-
-  .email-capture-form button {
-    width: 100%;
-  }
+  .email-capture-form { flex-direction: column; }
+  .email-capture-form button { width: 100%; }
 }

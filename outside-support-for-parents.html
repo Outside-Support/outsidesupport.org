@@ -83,14 +83,16 @@
     .page-hero h1 em { font-style: italic; color: var(--teal); }
     .page-hero-sub { font-size: 1.05rem; color: var(--mid-gray); line-height: 1.75; max-width: 580px; }
 
-    /* ── WHAT TO EXPECT ── */
+    /* ── WHAT WE COVER ── */
     .expect-wrap { background: #fff; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); padding: 6rem 5rem; }
     .expect-inner { max-width: 1100px; margin: 0 auto; }
     .expect-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 0; }
-    .expect-card { border: 1px solid var(--rule); border-radius: 16px; padding: 2rem 1.75rem; background: var(--off-white); }
-    .expect-icon { font-size: 1.5rem; margin-bottom: 1rem; }
-    .expect-title { font-family: 'Fraunces', serif; font-size: 1.1rem; font-weight: 500; color: var(--charcoal); margin-bottom: 0.5rem; letter-spacing: -0.01em; }
-    .expect-body { font-size: 0.88rem; color: var(--mid-gray); line-height: 1.75; }
+    .expect-card { border: 1px solid var(--rule); border-radius: 16px; padding: 2rem 1.75rem; background: var(--off-white); display: flex; flex-direction: column; }
+    .expect-num { font-family: 'Fraunces', serif; font-size: 1.5rem; font-weight: 500; color: var(--amber); line-height: 1; margin-bottom: 1rem; }
+    .expect-title { font-family: 'Fraunces', serif; font-size: 1.15rem; font-weight: 500; color: var(--charcoal); margin-bottom: 0.6rem; letter-spacing: -0.01em; }
+    .expect-body { font-size: 0.88rem; color: var(--mid-gray); line-height: 1.75; flex: 1; }
+    .expect-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 1.25rem; }
+    .expect-tag { font-size: 0.72rem; font-weight: 600; background: var(--teal-light); color: var(--teal-dark); padding: 0.3rem 0.7rem; border-radius: 100px; }
 
     /* ── GUARANTEE ── */
     .guarantee-wrap { padding: 5rem; background: var(--teal-dark); }
@@ -104,7 +106,7 @@
     .g-text { font-size: 0.9rem; color: rgba(255,255,255,0.85); line-height: 1.65; padding-top: 0.3rem; }
     .g-text strong { display: block; color: #fff; font-weight: 600; margin-bottom: 0.15rem; }
     .guarantee-card { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.15); border-radius: 20px; padding: 2.5rem; }
-    .guarantee-card-headline { font-family: 'Fraunces', serif; font-size: 1.3rem; font-weight: 500; color: #fff; margin-bottom: 0.5rem; letter-spacing: -0.01em; }
+    .guarantee-card-headline { font-family: 'Fraunces', serif; font-size: 1.4rem; font-weight: 500; color: #fff; margin-bottom: 0.6rem; letter-spacing: -0.01em; }
     .guarantee-card-sub { font-size: 0.88rem; color: rgba(255,255,255,0.7); line-height: 1.7; margin-bottom: 1.5rem; }
     .guarantee-badge { display: flex; align-items: flex-start; gap: 0.75rem; background: rgba(232,168,76,0.15); border: 1px solid rgba(232,168,76,0.3); border-radius: 12px; padding: 1.25rem 1.5rem; }
     .guarantee-badge-icon { font-size: 1.25rem; min-width: 24px; }
@@ -113,7 +115,7 @@
 
     /* ── QUOTES ── */
     .quotes-wrap { padding: 6rem 5rem; max-width: 1100px; margin: 0 auto; }
-    .quotes-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; margin-top: 0; }
+    .quotes-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 0; }
     .quote-card { background: var(--amber-soft); border-radius: 20px; padding: 2.5rem; display: flex; flex-direction: column; gap: 1rem; }
     .q-mark { font-family: 'Fraunces', serif; font-size: 3rem; line-height: 0.7; color: var(--amber); }
     .q-text { font-family: 'Fraunces', serif; font-size: 1.05rem; font-weight: 300; font-style: italic; line-height: 1.6; color: var(--charcoal); flex: 1; }
@@ -121,7 +123,7 @@
     .q-source { font-size: 0.7rem; color: var(--mid-gray); font-style: italic; }
 
     /* ── ENROLLMENT ── */
-    .enroll-wrap { background: #fff; border-top: 1px solid var(--rule); padding: 6rem 5rem; }
+    .enroll-wrap { background: #fff; border-top: 1px solid var(--rule); padding: 6rem 5rem 4rem; }
     .enroll-inner { max-width: 1100px; margin: 0 auto; }
     .enroll-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; margin-top: 3rem; position: relative; }
     .enroll-steps::before { content: ''; position: absolute; top: 28px; left: calc(16.66% + 1rem); right: calc(16.66% + 1rem); height: 1px; background: var(--rule); z-index: 0; }
@@ -129,18 +131,15 @@
     .enroll-circle { width: 56px; height: 56px; border-radius: 50%; background: var(--teal); color: #fff; display: flex; align-items: center; justify-content: center; font-family: 'Fraunces', serif; font-size: 1.4rem; font-weight: 500; margin-bottom: 1.5rem; }
     .enroll-title { font-family: 'Fraunces', serif; font-size: 1.1rem; font-weight: 500; color: var(--charcoal); margin-bottom: 0.5rem; letter-spacing: -0.01em; }
     .enroll-body { font-size: 0.88rem; color: var(--mid-gray); line-height: 1.7; }
-    .enroll-cta { text-align: center; margin-top: 3.5rem; padding-top: 3rem; border-top: 1px solid var(--rule); }
-    .enroll-cta p { font-size: 1rem; color: var(--mid-gray); margin-bottom: 1.25rem; }
-    .enroll-cta p strong { color: var(--charcoal); }
 
     /* ── FOOTER ── */
-    footer { background: var(--charcoal); color: rgba(255,255,255,0.6); padding: 3rem 5rem; display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap; }
+    footer { background: var(--charcoal); color: rgba(255,255,255,0.6); padding: 3rem 5rem; display: flex; align-items: flex-start; justify-content: space-between; gap: 2rem; flex-wrap: wrap; }
     .footer-logo { font-family: 'Fraunces', serif; font-size: 1.1rem; font-weight: 500; color: #fff; }
     .footer-logo span { display: block; font-family: 'Inter', sans-serif; font-size: 0.65rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-top: 0.2rem; }
-    .footer-links { display: flex; gap: 2rem; list-style: none; }
+    .footer-links { display: flex; gap: 2rem; list-style: none; padding-top: 0.35rem; }
     .footer-links a { text-decoration: none; color: rgba(255,255,255,0.5); font-size: 0.82rem; transition: color 0.2s; }
     .footer-links a:hover { color: #fff; }
-    .footer-contact { font-size: 0.82rem; }
+    .footer-contact { font-size: 0.82rem; max-width: 300px; }
     .footer-contact a { color: var(--amber); text-decoration: none; }
 
     /* ── RESPONSIVE ── */
@@ -156,13 +155,13 @@
       .guarantee-inner { grid-template-columns: 1fr; gap: 2.5rem; }
       .quotes-wrap { padding: 4rem 1.75rem; }
       .quotes-grid { grid-template-columns: 1fr; }
-      .enroll-wrap { padding: 4rem 1.75rem; }
+      .enroll-wrap { padding: 4rem 1.75rem 2.5rem; }
       .enroll-steps { grid-template-columns: 1fr; gap: 2.5rem; }
       .enroll-steps::before { display: none; }
       .enroll-step { align-items: flex-start; text-align: left; flex-direction: row; gap: 1.25rem; padding: 0; }
       .enroll-circle { min-width: 56px; margin-bottom: 0; }
       footer { padding: 2.5rem 1.75rem; flex-direction: column; align-items: flex-start; gap: 1.5rem; }
-      .footer-links { flex-wrap: wrap; gap: 1rem; }
+      .footer-links { flex-wrap: wrap; gap: 1rem; padding-top: 0; }
     }
   </style>
 </head>
@@ -176,11 +175,10 @@
     </a>
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
-      <li><a href="outside-support-program.html">Our Program</a></li>
       <li><a href="outside-support-for-parents.html" class="active">For Parents</a></li>
       <li><a href="outside-support-for-schools.html">For Schools</a></li>
       <li><a href="outside-support-about.html">About Us</a></li>
-      <li><a href="#get-in-touch" class="nav-cta">Get In Touch</a></li>
+      <li><a href="outside-support-contact.html" class="nav-cta">Contact</a></li>
     </ul>
   </nav>
 
@@ -191,28 +189,43 @@
     <p class="page-hero-sub">When a child is being bullied, parents often feel just as stuck as their kid — unsure what to do, worried about making things worse. The BELONG Program gives your child a structured, safe space to build real skills and connect with peers who genuinely understand what they're going through.</p>
   </div>
 
-  <!-- WHAT TO EXPECT -->
+  <!-- WHAT WE COVER -->
   <div class="expect-wrap">
     <div class="expect-inner">
-      <div class="section-label">What Your Child Will Experience</div>
-      <h2 class="section-headline">Six weeks designed around your child's needs.</h2>
+      <div class="section-label">What We Cover</div>
+      <h2 class="section-headline">Six weeks, three things that make a difference.</h2>
       <p class="section-sub" style="max-width:620px;">The BELONG Program isn't a lecture or a workshop — it's a small, consistent group of peers led by a trained facilitator. The same kids, the same facilitator, every week. That consistency is what makes the connections real.</p>
 
       <div class="expect-grid">
         <div class="expect-card">
-          <div class="expect-icon">🔍</div>
-          <div class="expect-title">They'll understand what happened</div>
-          <p class="expect-body">Students learn what bullying actually is — and isn't. That shared language helps them make sense of their own experience without self-blame, and gives them the words to talk about what's been happening — with you, with a teacher, or with anyone they choose to tell.</p>
+          <div class="expect-num">01</div>
+          <div class="expect-title">Understanding bullying</div>
+          <p class="expect-body">Your child develops a clear, grounded understanding of what bullying actually is — and what it isn't. That shared language helps them make sense of their own experience without self-blame, and gives them the words to talk about what's happening — with you, a teacher, or anyone they choose to tell.</p>
+          <div class="expect-tags">
+            <span class="expect-tag">Bullying vs. teasing</span>
+            <span class="expect-tag">Types of bullying</span>
+            <span class="expect-tag">Why kids bully</span>
+          </div>
         </div>
         <div class="expect-card">
-          <div class="expect-icon">🧠</div>
-          <div class="expect-title">They'll build real skills</div>
-          <p class="expect-body">Each session introduces practical, age-appropriate tools — problem-solving strategies, coping skills, and ways to respond in the moment. Not scripts, but real skills they can carry with them long after the program ends.</p>
+          <div class="expect-num">02</div>
+          <div class="expect-title">Problem solving</div>
+          <p class="expect-body">Students practice real-world strategies for navigating bullying situations — including how to respond in the moment, and how to handle bullying inside their own friend group, which is often the hardest kind to address.</p>
+          <div class="expect-tags">
+            <span class="expect-tag">What to do in the moment</span>
+            <span class="expect-tag">Example scenarios</span>
+            <span class="expect-tag">Peer group dynamics</span>
+          </div>
         </div>
         <div class="expect-card">
-          <div class="expect-icon">🤝</div>
-          <div class="expect-title">They'll find peers who get it</div>
-          <p class="expect-body">One of the most powerful things about the program is simple: your child will meet other kids who've been through something similar. That alone — knowing you're not alone — changes things. Parents in our pilot told us their kids started opening up more at home after just a few sessions.</p>
+          <div class="expect-num">03</div>
+          <div class="expect-title">Building resilience</div>
+          <p class="expect-body">Students learn to recognize the connection between how they think, how they feel, and how they act — and build the confidence to move forward. Parents in our pilot told us their kids started opening up more at home after just a few sessions.</p>
+          <div class="expect-tags">
+            <span class="expect-tag">Coping strategies</span>
+            <span class="expect-tag">Building confidence</span>
+            <span class="expect-tag">Emotional awareness</span>
+          </div>
         </div>
       </div>
     </div>
@@ -232,10 +245,6 @@
           </div>
           <div class="guarantee-point">
             <div class="g-icon">✓</div>
-            <div class="g-text"><strong>No one from their school, ever</strong>Because we draw students from across the country, we can guarantee your child will never be placed in a group with anyone from their own school.</div>
-          </div>
-          <div class="guarantee-point">
-            <div class="g-icon">✓</div>
             <div class="g-text"><strong>Flexible scheduling</strong>Sessions happen online, so there's no commute and no disruption to your family's schedule. We work with you to find a time that fits.</div>
           </div>
           <div class="guarantee-point">
@@ -246,11 +255,11 @@
       </div>
       <div>
         <div class="guarantee-card">
-          <div class="guarantee-card-headline">At no cost.</div>
-          <div class="guarantee-card-sub">The BELONG Program is completely free for every student. Cost should never be a reason a child doesn't get the support they need.</div>
+          <div class="guarantee-card-headline">No one from their school. Ever.</div>
+          <div class="guarantee-card-sub">Because we draw students from across the country, your child will never be placed in a group with anyone from their own school. That's not a policy — it's a structural feature of how the program works. Kids open up when they know no one from school will find out.</div>
           <div class="guarantee-badge">
             <div class="guarantee-badge-icon">🔒</div>
-            <div class="guarantee-badge-text"><strong>Our guarantee:</strong> No student is ever grouped with someone from their own school. That's not a policy — it's a structural feature of how the program works.</div>
+            <div class="guarantee-badge-text"><strong>At no cost.</strong> Cost should never be the reason a child doesn't get the support they need.</div>
           </div>
         </div>
       </div>
@@ -261,7 +270,7 @@
   <div class="quotes-wrap">
     <div class="section-label">What Parents Are Saying</div>
     <h2 class="section-headline">From families who've been through it.</h2>
-    <p class="section-sub" style="max-width:580px;">These quotes are from parents whose children participated in the BELONG pilot program at the University of Nebraska — the direct research foundation for the BELONG Program.</p>
+    <p class="section-sub" style="max-width:580px;">These quotes are from parents whose children participated in the BELONG pilot program at the University of Nebraska — the direct research foundation for our program.</p>
     <div class="quotes-grid">
       <div class="quote-card">
         <div class="q-mark">&ldquo;</div>
@@ -272,12 +281,6 @@
       <div class="quote-card">
         <div class="q-mark">&ldquo;</div>
         <p class="q-text">It was helpful in not feeling alone in that way... she's been talking to me a lot more about things, you know.</p>
-        <div class="q-attr">Parent of a participant</div>
-        <div class="q-source">BELONG Program pilot, University of Nebraska</div>
-      </div>
-      <div class="quote-card">
-        <div class="q-mark">&ldquo;</div>
-        <p class="q-text">I think it's a great project — a good support and a resource for kids that may be really going through bullying, for them to know that there is support out there, and that they don't have to be on their own.</p>
         <div class="q-attr">Parent of a participant</div>
         <div class="q-source">BELONG Program pilot, University of Nebraska</div>
       </div>
@@ -316,23 +319,27 @@
           <div class="enroll-circle">3</div>
           <div>
             <div class="enroll-title">Get placed in a group</div>
-            <p class="enroll-body">Your child is matched to a small group of peers and the program begins — online, on a schedule that works for your family, completely free.</p>
+            <p class="enroll-body">Your child is matched to a small group of peers and the program begins — online, on a schedule that works for your family.</p>
           </div>
-        </div>
-      </div>
-
-      <div class="enroll-cta">
-        <div class="referral-waitlist">
-          <p>We're currently preparing for our fall sessions and will begin accepting referrals soon. Leave your email below and we'll reach out as soon as referrals open.</p>
-          <form class="email-capture-form" data-email-capture>
-            <input type="email" name="email" autocomplete="email" placeholder="Email address" required />
-            <button type="submit">Send</button>
-          </form>
-          <div class="email-capture-status" data-email-capture-status></div>
         </div>
       </div>
     </div>
   </div>
+
+  <!-- WAITLIST -->
+  <section class="waitlist-band" id="waitlist">
+    <div class="waitlist-inner">
+      <div class="section-label">Referrals Open Soon</div>
+      <h2>Be the first to know.</h2>
+      <p>We're preparing for our fall sessions and will begin accepting referrals shortly. Leave your email and we'll reach out the moment they open.</p>
+      <form class="email-capture-form" data-email-capture="waitlist-parents">
+        <input type="email" name="email" autocomplete="email" placeholder="Email address" required />
+        <button type="submit">Notify me</button>
+      </form>
+      <div class="email-capture-status" data-email-capture-status></div>
+      <p class="email-capture-note">We'll only use your email to let you know when referrals open.</p>
+    </div>
+  </section>
 
   <!-- FOOTER -->
   <footer>
@@ -341,14 +348,17 @@
       <span>A nonprofit organization</span>
     </div>
     <ul class="footer-links">
-      <li><a href="outside-support-program.html">Our Program</a></li>
       <li><a href="outside-support-for-parents.html">For Parents</a></li>
       <li><a href="outside-support-for-schools.html">For Schools</a></li>
       <li><a href="outside-support-about.html">About Us</a></li>
-      <li><a href="#get-in-touch">Contact</a></li>
+      <li><a href="outside-support-contact.html">Contact</a></li>
     </ul>
     <div class="footer-contact">
       Questions? <a href="mailto:team@outsidesupport.org">team@outsidesupport.org</a>
+      <div class="footer-legal">
+        Outside Support is a registered 501(c)(3) nonprofit organization.<br>
+        &copy; 2026 Outside Support
+      </div>
     </div>
   </footer>
 

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — Outside Support</title>
+  <meta name="robots" content="noindex" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,300&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="stylesheet" href="contact.css" />
+  <script src="contact-config.js" defer></script>
+  <script src="contact.js" defer></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --teal:#2E7D78; --teal-dark:#1F5956; --teal-light:#E8F4F3; --amber:#E8A84C;
+      --amber-soft:#FDF3E3; --off-white:#F9F7F4; --charcoal:#1C2B2A; --mid-gray:#5A6B6A; --rule:#D4E3E2;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family:'Inter',sans-serif; background:var(--off-white); color:var(--charcoal); font-size:16px; line-height:1.6; -webkit-font-smoothing:antialiased; display:flex; flex-direction:column; min-height:100vh; }
+    main { flex: 1; }
+
+    nav { position:fixed; top:0; left:0; right:0; z-index:100; background:rgba(249,247,244,0.95); backdrop-filter:blur(8px); border-bottom:1px solid var(--rule); padding:0 2rem; height:64px; display:flex; align-items:center; justify-content:space-between; }
+    .nav-logo { display:flex; flex-direction:column; line-height:1.1; text-decoration:none; }
+    .nav-logo-main { font-family:'Fraunces',serif; font-weight:500; font-size:1.2rem; color:var(--teal-dark); letter-spacing:-0.01em; }
+    .nav-logo-sub { font-size:0.65rem; font-weight:500; letter-spacing:0.1em; text-transform:uppercase; color:var(--mid-gray); }
+    .nav-links { display:flex; align-items:center; gap:2rem; list-style:none; }
+    .nav-links a { text-decoration:none; font-size:0.85rem; font-weight:500; color:var(--mid-gray); transition:color 0.2s; }
+    .nav-links a:hover { color:var(--teal); }
+    .nav-cta { background:var(--teal); color:#fff !important; padding:0.45rem 1.1rem; border-radius:100px; font-size:0.82rem !important; font-weight:600 !important; }
+    .nav-cta:hover { background:var(--teal-dark) !important; }
+
+    .page-hero { margin-top:64px; padding:5rem 5rem 2.5rem; max-width:820px; margin-left:auto; margin-right:auto; }
+    .page-eyebrow { font-size:0.72rem; font-weight:600; letter-spacing:0.14em; text-transform:uppercase; color:var(--teal); margin-bottom:1rem; display:flex; align-items:center; gap:0.5rem; }
+    .page-eyebrow::before { content:''; display:block; width:24px; height:2px; background:var(--amber); }
+    .page-hero h1 { font-family:'Fraunces',serif; font-size:clamp(2rem,4vw,2.8rem); font-weight:500; line-height:1.15; letter-spacing:-0.02em; color:var(--charcoal); margin-bottom:0.75rem; }
+    .page-hero .updated { font-size:0.85rem; color:var(--mid-gray); }
+
+    .legal { max-width:820px; margin:0 auto; padding:0 5rem 5rem; }
+    .legal .lede { font-size:1.02rem; color:var(--mid-gray); line-height:1.8; margin-bottom:2.5rem; }
+    .legal h2 { font-family:'Fraunces',serif; font-size:1.3rem; font-weight:500; color:var(--charcoal); letter-spacing:-0.01em; margin:2.25rem 0 0.75rem; }
+    .legal p { color:var(--mid-gray); line-height:1.8; margin-bottom:1rem; }
+    .legal ul { list-style:none; margin:0 0 1rem; padding:0; }
+    .legal li { position:relative; padding-left:1.25rem; color:var(--mid-gray); line-height:1.8; margin-bottom:0.6rem; }
+    .legal li::before { content:''; position:absolute; left:0; top:0.75rem; width:5px; height:5px; border-radius:50%; background:var(--amber); }
+    .legal strong { color:var(--charcoal); font-weight:600; }
+    .legal a { color:var(--teal); font-weight:600; text-decoration:none; }
+    .legal a:hover { color:var(--teal-dark); }
+
+    footer { background:var(--charcoal); color:rgba(255,255,255,0.6); padding:3rem 5rem; display:flex; align-items:flex-start; justify-content:space-between; gap:2rem; flex-wrap:wrap; }
+    .footer-logo { font-family:'Fraunces',serif; font-size:1.1rem; font-weight:500; color:#fff; }
+    .footer-logo span { display:block; font-family:'Inter',sans-serif; font-size:0.65rem; font-weight:500; letter-spacing:0.1em; text-transform:uppercase; color:rgba(255,255,255,0.4); margin-top:0.2rem; }
+    .footer-links { display:flex; gap:2rem; list-style:none; padding-top:0.35rem; flex-wrap:wrap; }
+    .footer-links a { text-decoration:none; color:rgba(255,255,255,0.5); font-size:0.82rem; transition:color 0.2s; }
+    .footer-links a:hover { color:#fff; }
+    .footer-contact { font-size:0.82rem; max-width:300px; }
+    .footer-contact a { color:var(--amber); text-decoration:none; }
+    .footer-legal { margin-top:0.85rem; font-size:0.72rem; line-height:1.65; color:rgba(255,255,255,0.35); }
+
+    @media (max-width:900px) {
+      nav { padding:0.7rem 1.25rem 0.85rem; height:auto; min-height:64px; flex-wrap:wrap; align-items:flex-start; gap:0.75rem; }
+      .nav-logo { flex:0 0 100%; }
+      .nav-links { display:flex; width:100%; flex-wrap:wrap; gap:0.45rem 0.85rem; }
+      .nav-links a { white-space:nowrap; font-size:0.76rem; }
+      .page-hero { margin-top:124px; padding:3rem 1.75rem 2rem; }
+      .legal { padding:0 1.75rem 4rem; }
+      footer { padding:2.5rem 1.75rem; flex-direction:column; align-items:flex-start; gap:1.5rem; }
+      .footer-links { gap:1rem; padding-top:0; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo">
+      <span class="nav-logo-main">Outside Support</span>
+      <span class="nav-logo-sub">Nonprofit</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="outside-support-for-parents.html">For Parents</a></li>
+      <li><a href="outside-support-for-schools.html">For Schools</a></li>
+      <li><a href="outside-support-about.html">About Us</a></li>
+      <li><a href="outside-support-contact.html" class="nav-cta">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <div class="page-hero">
+      <div class="page-eyebrow">Privacy</div>
+      <h1>Privacy Policy</h1>
+      <div class="updated">Last updated: July 30, 2026</div>
+    </div>
+
+    <div class="legal">
+      <p class="lede">Outside Support (“Outside Support,” “we,” “us”) operates outsidesupport.org (the “Site”). This policy explains what information we collect through the Site and how we use it.</p>
+
+      <h2>Information we collect</h2>
+      <ul>
+        <li><strong>Information you give us.</strong> If you sign up for updates or contact us, we collect the email address and any information you choose to provide (such as your name or message).</li>
+        <li><strong>Information collected automatically.</strong> Like most websites, we collect standard technical data such as your IP address, browser type, and pages visited, through cookies and similar analytics tools, to understand how the Site is used.</li>
+      </ul>
+      <p>We do not sell your personal information.</p>
+
+      <h2>How we use information</h2>
+      <p>We use the information to respond to you, send updates you’ve requested, operate and improve the Site, and comply with the law. You can unsubscribe from emails at any time using the link in any message.</p>
+
+      <h2>How we share information</h2>
+      <p>We share information only with service providers that help us operate the Site and our communications (for example, our email and analytics providers), and when required by law. We do not sell or rent your information.</p>
+
+      <h2>Links to other sites, including our referral partner</h2>
+      <p>The Site contains links to other websites we don’t control. In particular, when you choose to be referred to a program run by the University of Nebraska, you will leave our Site and go to a site operated by the University of Nebraska. Any information you provide there is governed by the University of Nebraska’s own privacy policy, not this one. We encourage you to review that policy before submitting information.</p>
+
+      <h2>Children’s privacy</h2>
+      <p>The Site is intended for parents, guardians, and other adults. We do not knowingly collect personal information from children under 13 through the Site. If you believe a child has provided us information, please contact us at <a href="mailto:team@outsidesupport.org">team@outsidesupport.org</a> and we will delete it.</p>
+
+      <h2>Data security</h2>
+      <p>We use reasonable measures to protect the information we collect. No method of transmission or storage is completely secure, however, and we cannot guarantee absolute security.</p>
+
+      <h2>Your choices</h2>
+      <p>You can unsubscribe from our emails at any time, or ask us to update or delete your information, by emailing <a href="mailto:team@outsidesupport.org">team@outsidesupport.org</a>.</p>
+
+      <h2>Changes to this policy</h2>
+      <p>We may update this policy from time to time. We’ll post the updated version here with a new “last updated” date.</p>
+
+      <h2>Contact us</h2>
+      <p>Questions? Email us at <a href="mailto:team@outsidesupport.org">team@outsidesupport.org</a>.</p>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-logo">
+      Outside Support
+      <span>A nonprofit organization</span>
+    </div>
+    <ul class="footer-links">
+      <li><a href="outside-support-for-parents.html">For Parents</a></li>
+      <li><a href="outside-support-for-schools.html">For Schools</a></li>
+      <li><a href="outside-support-about.html">About Us</a></li>
+      <li><a href="outside-support-contact.html">Contact</a></li>
+      <li><a href="privacy.html">Privacy Policy</a></li>
+    </ul>
+    <div class="footer-contact">
+      Questions? <a href="mailto:team@outsidesupport.org">team@outsidesupport.org</a>
+      <div class="footer-legal">
+        Outside Support is a registered 501(c)(3) nonprofit organization.<br>
+        &copy; 2026 Outside Support
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -285,10 +285,13 @@
     .program-details {
       background: var(--teal-light);
       border-radius: 16px;
-      padding: 1.5rem 2rem;
+      padding: 1.5rem 2.5rem;
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.25rem 1rem;
+      grid-template-columns: repeat(3, auto);
+      gap: 1.25rem 3.5rem;
+      width: fit-content;
+      max-width: 100%;
+      margin: 0 auto;
     }
     .detail-label {
       font-size: 0.7rem;
@@ -407,7 +410,7 @@
 
       .program { padding: 4rem 1.75rem; }
       .program-grid { grid-template-columns: 1fr; }
-      .program-details { grid-template-columns: repeat(2, 1fr); gap: 1.25rem; padding: 1.25rem 1.5rem; }
+      .program-details { grid-template-columns: repeat(2, 1fr); gap: 1.25rem; padding: 1.25rem 1.5rem; width: auto; }
 
       .quote-section { padding: 3.5rem 1.75rem; }
 
@@ -510,7 +513,7 @@
     <div class="program-details">
       <div class="detail-item">
         <div class="detail-label">Format</div>
-        <div class="detail-value">Online, small groups (4–6 students)</div>
+        <div class="detail-value">Online, small groups</div>
       </div>
       <div class="detail-item">
         <div class="detail-label">Grouped by</div>
@@ -572,18 +575,18 @@
     </div>
   </section>
 
-  <!-- WAITLIST -->
+  <!-- INTEREST -->
   <section class="waitlist-band" id="waitlist">
     <div class="waitlist-inner">
-      <div class="section-label">Referrals Open Soon</div>
-      <h2>Be the first to know.</h2>
-      <p>We're preparing for our fall sessions and will begin accepting referrals shortly. Leave your email and we'll reach out the moment they open.</p>
-      <form class="email-capture-form" data-email-capture="waitlist-home">
+      <div class="section-label">Get in Touch</div>
+      <h2>Interested in learning more?</h2>
+      <p>Leave your email and a member of our team will follow up.</p>
+      <form class="email-capture-form" data-email-capture="interest-home">
         <input type="email" name="email" autocomplete="email" placeholder="Email address" required />
-        <button type="submit">Notify me</button>
+        <button type="submit">Submit</button>
       </form>
       <div class="email-capture-status" data-email-capture-status></div>
-      <p class="email-capture-note">We'll only use your email to let you know when referrals open.</p>
+      <p class="email-capture-note">We'll only use your email to follow up with you.</p>
     </div>
   </section>
 

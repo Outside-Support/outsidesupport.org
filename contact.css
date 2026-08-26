@@ -183,3 +183,58 @@
 .footer-disclaimer strong { color: rgba(255,255,255,0.75); font-weight: 600; }
 .footer-disclaimer a { color: #fff; font-weight: 600; text-decoration: none; white-space: nowrap; }
 .footer-disclaimer a:hover { color: #fff; }
+
+/* ── REFERRAL / INTEREST FORM (progressive disclosure) ── */
+.referral-toggle { margin: 0.5rem auto 0; }
+.referral-form { max-width: 460px; margin: 2rem auto 0; text-align: left; }
+.referral-field { margin-bottom: 1.1rem; }
+.referral-field label {
+  display: block;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--charcoal);
+  margin-bottom: 0.4rem;
+}
+.referral-field input,
+.referral-field select {
+  width: 100%;
+  border: 1px solid var(--rule);
+  border-radius: 10px;
+  background: var(--off-white);
+  color: var(--charcoal);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  padding: 0.8rem 1rem;
+  outline: none;
+}
+.referral-field input:focus,
+.referral-field select:focus {
+  border-color: var(--teal);
+  box-shadow: 0 0 0 3px rgba(46,125,120,0.1);
+}
+.referral-note { font-size: 0.76rem; color: var(--mid-gray); margin-top: 0.4rem; }
+.referral-form button[type="submit"] {
+  width: 100%;
+  border: 0;
+  border-radius: 100px;
+  background: var(--teal);
+  color: #fff;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  padding: 0.9rem 1.5rem;
+  margin-top: 0.5rem;
+  transition: background 0.2s, transform 0.15s;
+}
+.referral-form button[type="submit"]:hover { background: var(--teal-dark); transform: translateY(-1px); }
+.referral-form button[type="submit"]:disabled { opacity: 0.6; cursor: default; transform: none; }
+.referral-status {
+  max-width: 460px;
+  margin: 1.25rem auto 0;
+  color: var(--charcoal);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  min-height: 1.4rem;
+}
+.referral-status a { color: var(--teal); font-weight: 600; }

@@ -6,7 +6,7 @@
   <title>For Parents — Outside Support</title>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,300&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <link rel="icon" type="image/png" href="favicon.png" />
-  <link rel="stylesheet" href="contact.css?v=2" />
+  <link rel="stylesheet" href="contact.css?v=3" />
   <script src="contact-config.js" defer></script>
   <script src="contact.js" defer></script>
   <style>
@@ -303,15 +303,15 @@
         <div class="enroll-step">
           <div class="enroll-circle">1</div>
           <div>
-            <div class="enroll-title">Refer your child</div>
-            <p class="enroll-body">Fill out our referral form to get started. Tell us a little about your child and what they've been experiencing — there's no wrong way to begin.</p>
+            <div class="enroll-title">Request to get started</div>
+            <p class="enroll-body">Submit your contact information to let us know you're interested. A member of our team will follow up to answer your questions and help determine if the program is a good fit.</p>
           </div>
         </div>
         <div class="enroll-step">
           <div class="enroll-circle">2</div>
           <div>
             <div class="enroll-title">Complete consent forms</div>
-            <p class="enroll-body">If your child is a good fit for the program, we'll send over consent forms for you to complete. Parent or guardian consent and student assent are obtained before participation begins.</p>
+            <p class="enroll-body">A short eligibility form followed by consent and assent forms will be sent for you and your child to complete.</p>
           </div>
         </div>
         <div class="enroll-step">
@@ -325,18 +325,46 @@
     </div>
   </div>
 
-  <!-- WAITLIST -->
+  <!-- REFERRAL / INTEREST FORM -->
   <section class="waitlist-band" id="waitlist">
-    <div class="waitlist-inner">
-      <div class="section-label">Referrals Open Soon</div>
-      <h2>Be the first to know.</h2>
-      <p>We're preparing for our fall sessions and will begin accepting referrals shortly. Leave your email and we'll reach out the moment they open.</p>
-      <form class="email-capture-form" data-email-capture="waitlist-parents">
-        <input type="email" name="email" autocomplete="email" placeholder="Email address" required />
-        <button type="submit">Notify me</button>
+    <div class="waitlist-inner referral-band">
+      <div class="section-label">Fall Enrollment</div>
+      <h2>Fall groups are now open for enrollment.</h2>
+      <p>Current groups run in partnership with the BRAVE Lab at the University of Nebraska-Lincoln. Share your details and a member of our team will follow up by phone to see if it's the right fit for your family.</p>
+
+      <button type="button" class="btn-primary referral-toggle" data-referral-toggle>Get started</button>
+
+      <form class="referral-form" data-referral-capture="interest-parents" hidden>
+        <div class="referral-field">
+          <label for="ref-name">Your name</label>
+          <input type="text" id="ref-name" name="name" autocomplete="name" required />
+        </div>
+        <div class="referral-field">
+          <label for="ref-email">Email address</label>
+          <input type="email" id="ref-email" name="email" autocomplete="email" required />
+        </div>
+        <div class="referral-field">
+          <label for="ref-phone">Phone number</label>
+          <input type="tel" id="ref-phone" name="phone" autocomplete="tel" required />
+        </div>
+        <div class="referral-field">
+          <label for="ref-school">Child's school</label>
+          <input type="text" id="ref-school" name="school" required />
+        </div>
+        <div class="referral-field">
+          <label for="ref-grade">Child's grade</label>
+          <select id="ref-grade" name="grade" required>
+            <option value="" disabled selected>Select grade</option>
+            <option>6th grade</option>
+            <option>7th grade</option>
+            <option>8th grade</option>
+            <option>Other</option>
+          </select>
+          <p class="referral-note">The program currently serves grades 6&ndash;8.</p>
+        </div>
+        <button type="submit">Submit</button>
       </form>
-      <div class="email-capture-status" data-email-capture-status></div>
-      <p class="email-capture-note">We'll only use your email to let you know when referrals open.</p>
+      <div class="referral-status" data-referral-status></div>
     </div>
   </section>
 
@@ -357,7 +385,7 @@
     <div class="footer-contact">
       Questions? <a href="mailto:team@outsidesupport.org">team@outsidesupport.org</a>
       <div class="footer-legal">
-        Outside Support is a registered 501(c)(3) nonprofit organization.<br>
+        Outside Support is a registered 501(c)(3) nonprofit organization. EIN: 42-2256441<br>
         &copy; 2026 Outside Support
       </div>
     </div>

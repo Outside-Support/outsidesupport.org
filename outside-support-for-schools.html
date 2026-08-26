@@ -6,7 +6,7 @@
   <title>For Schools — Outside Support</title>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,300&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <link rel="icon" type="image/png" href="favicon.png" />
-  <link rel="stylesheet" href="contact.css?v=2" />
+  <link rel="stylesheet" href="contact.css?v=3" />
   <script src="contact-config.js" defer></script>
   <script src="contact.js" defer></script>
   <style>
@@ -160,7 +160,7 @@
       <div>
         <div class="page-eyebrow">For Schools &amp; Counselors</div>
         <h1>A trusted resource for the students your school <em>most wants to reach.</em></h1>
-        <p class="page-hero-sub">The BELONG Program is an evidence-based Tier 2 support for middle schoolers who've experienced bullying — designed to complement your school-wide efforts, not add to your workload.</p>
+        <p class="page-hero-sub">The BELONG Program is a research-informed Tier 2 support for middle schoolers who've experienced bullying — designed to complement your school-wide efforts, not add to your workload.</p>
         <a href="#waitlist" class="btn-primary">Refer a student &rarr;</a>
       </div>
       <div class="hero-facts">
@@ -178,7 +178,7 @@
         </div>
         <div class="hero-fact">
           <div class="hero-fact-label">Grounded in</div>
-          <div class="hero-fact-value">Peer-reviewed research from the BRAVE Lab, University of Nebraska-Lincoln</div>
+          <div class="hero-fact-value">Research from the BRAVE Lab, University of Nebraska-Lincoln</div>
         </div>
       </div>
     </div>
@@ -191,7 +191,7 @@
         <div class="section-label">Where We Fit</div>
         <h2 class="section-headline">A Tier 2 support that slots right into your MTSS framework.</h2>
         <p>Your school's Tier 1 efforts — assemblies, classroom curricula, school-wide culture initiatives — do important work. But some students need more targeted support than universal programming can provide.</p>
-        <p>The BELONG Program is designed for exactly those students. <strong>It's a structured, small-group Tier 2 intervention for middle schoolers who've experienced bullying</strong> — evidence-based, facilitator-led, and focused on the student who was targeted.</p>
+        <p>The BELONG Program is designed for exactly those students. <strong>It's a structured, small-group Tier 2 intervention for middle schoolers who've experienced bullying</strong> — research-informed, facilitator-led, and focused on the student who was targeted.</p>
         <p>Because it runs online and outside school hours, it requires no classroom time, no staff coverage, and no scheduling disruption. You refer the student. We do the rest.</p>
       </div>
       <div>
@@ -224,8 +224,8 @@
     <div class="offer-grid">
       <div class="offer-card">
         <div class="offer-icon">🎓</div>
-        <div class="offer-title">Evidence-based curriculum</div>
-        <p class="offer-body">The BELONG Program is grounded in peer-reviewed research from the BRAVE Lab at the University of Nebraska-Lincoln — one of the country's leading bullying research programs. When you refer a student, you're referring them to something that works.</p>
+        <div class="offer-title">Research-informed curriculum</div>
+        <p class="offer-body">The BELONG Program is grounded in research from the BRAVE Lab at the University of Nebraska-Lincoln — one of the country's leading bullying research programs. When you refer a student, you're referring them to something that works.</p>
       </div>
       <div class="offer-card">
         <div class="offer-icon">💻</div>
@@ -276,39 +276,67 @@
       <div class="referral-step">
         <div class="referral-circle">1</div>
         <div>
-          <div class="referral-title">Refer a student</div>
-          <p class="referral-body">Fill out our referral form to get started. Please note that parent or guardian contact information is required to make a referral — we'll reach out to the family directly from there.</p>
+          <div class="referral-title">Initiate a referral</div>
+          <p class="referral-body">Give us your contact information and we'll follow up to answer your questions and see if the program is a good fit for your student.</p>
         </div>
       </div>
       <div class="referral-step">
         <div class="referral-circle">2</div>
         <div>
           <div class="referral-title">We connect with the family</div>
-          <p class="referral-body">With your introduction, we reach out directly to parents or caregivers, explain the program, confirm it's the right fit, and manage enrollment from there.</p>
+          <p class="referral-body">With your introduction, we reach out to the family, explain the program, and guide them through enrollment.</p>
         </div>
       </div>
       <div class="referral-step">
         <div class="referral-circle">3</div>
         <div>
-          <div class="referral-title">The student joins a group</div>
-          <p class="referral-body">We match the student to a small facilitated group and the program begins — fully online, outside school hours, no further coordination needed from your end.</p>
+          <div class="referral-title">Get placed in a group</div>
+          <p class="referral-body">We work with families to find a time outside of school hours, and the student joins an online group.</p>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- WAITLIST -->
+  <!-- REFERRAL FORM -->
   <section class="waitlist-band" id="waitlist">
-    <div class="waitlist-inner">
-      <div class="section-label">Referrals Open Soon</div>
-      <h2>Be the first to know.</h2>
-      <p>We're preparing for our fall sessions and will begin accepting referrals shortly. Leave your email and we'll reach out the moment they open.</p>
-      <form class="email-capture-form" data-email-capture="waitlist-schools">
-        <input type="email" name="email" autocomplete="email" placeholder="School email address" required />
-        <button type="submit">Notify me</button>
+    <div class="waitlist-inner referral-band">
+      <div class="section-label">Fall Referrals</div>
+      <h2>Referrals for fall are now open.</h2>
+      <p>Current groups are being supported out of the University of Nebraska BRAVE Lab. Once you submit a referral, someone from our staff will follow up shortly.</p>
+
+      <button type="button" class="btn-primary referral-toggle" data-referral-toggle>Submit a referral</button>
+
+      <form class="referral-form" data-referral-capture="referral-schools" data-success="Your referral has been submitted. Someone from our staff will follow up shortly." hidden>
+        <div class="referral-field">
+          <label for="ref-name">Your name</label>
+          <input type="text" id="ref-name" name="name" autocomplete="name" required />
+        </div>
+        <div class="referral-field">
+          <label for="ref-email">Email address</label>
+          <input type="email" id="ref-email" name="email" autocomplete="email" required />
+        </div>
+        <div class="referral-field">
+          <label for="ref-phone">Phone number</label>
+          <input type="tel" id="ref-phone" name="phone" autocomplete="tel" required />
+        </div>
+        <div class="referral-field">
+          <label for="ref-school">School</label>
+          <input type="text" id="ref-school" name="school" required />
+        </div>
+        <div class="referral-field">
+          <label for="ref-grade">Student's grade</label>
+          <select id="ref-grade" name="grade" required>
+            <option value="" disabled selected>Select grade</option>
+            <option>6th grade</option>
+            <option>7th grade</option>
+            <option>8th grade</option>
+            <option>Other</option>
+          </select>
+          <p class="referral-note">The program currently serves grades 6&ndash;8.</p>
+        </div>
+        <button type="submit">Submit</button>
       </form>
-      <div class="email-capture-status" data-email-capture-status></div>
-      <p class="email-capture-note">We'll only use your email to let you know when referrals open.</p>
+      <div class="referral-status" data-referral-status></div>
     </div>
   </section>
 
@@ -329,7 +357,7 @@
     <div class="footer-contact">
       Questions? <a href="mailto:team@outsidesupport.org">team@outsidesupport.org</a>
       <div class="footer-legal">
-        Outside Support is a registered 501(c)(3) nonprofit organization.<br>
+        Outside Support is a registered 501(c)(3) nonprofit organization. EIN: 42-2256441<br>
         &copy; 2026 Outside Support
       </div>
     </div>

@@ -136,7 +136,8 @@
         submitToEndpoint(endpoint, payload)
           .then(function () {
             form.hidden = true;
-            if (status) status.textContent = "Thanks — we've got your details. A member of our team will be in touch shortly.";
+            var msg = form.getAttribute("data-success") || "Thanks — we've got your details. A member of our team will be in touch shortly.";
+            if (status) status.textContent = msg;
           })
           .catch(function (err) {
             if (window.console && console.warn) console.warn("Referral failed:", err);

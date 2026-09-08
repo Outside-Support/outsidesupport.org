@@ -1,5 +1,5 @@
 (function () {
-  var TIMEOUT_MS = 12000;
+  var TIMEOUT_MS = 25000;
 
   function getConfig() {
     return window.OUTSIDE_SUPPORT_CONTACT_CONFIG || {};

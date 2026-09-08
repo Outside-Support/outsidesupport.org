@@ -6,9 +6,9 @@
   <title>For Schools — Outside Support</title>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,300&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <link rel="icon" type="image/png" href="favicon.png" />
-  <link rel="stylesheet" href="contact.css?v=3" />
+  <link rel="stylesheet" href="contact.css?v=4" />
   <script src="contact-config.js" defer></script>
-  <script src="contact.js" defer></script>
+  <script src="contact.js?v=2" defer></script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
@@ -333,6 +333,19 @@
             <option>Other</option>
           </select>
           <p class="referral-note">The program currently serves grades 6&ndash;8.</p>
+        </div>
+        <div class="referral-field">
+          <label for="ref-parent-name">Parent/guardian name (optional)</label>
+          <input type="text" id="ref-parent-name" name="parentName" autocomplete="off" />
+        </div>
+        <div class="referral-field">
+          <label for="ref-parent-email">Parent/guardian email (optional)</label>
+          <input type="email" id="ref-parent-email" name="parentEmail" autocomplete="off" />
+        </div>
+        <div class="referral-field">
+          <label for="ref-parent-phone">Parent/guardian phone (optional)</label>
+          <input type="tel" id="ref-parent-phone" name="parentPhone" autocomplete="off" />
+          <p class="referral-note">Please only share family contact details if you have the family&rsquo;s permission.</p>
         </div>
         <button type="submit">Submit</button>
       </form>

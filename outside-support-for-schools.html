@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>For Schools — Outside Support</title>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,300&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,300&family=Inter:wght@300;400;500;600&family=Montserrat:wght@600;700&display=swap" rel="stylesheet" />
   <link rel="icon" type="image/png" href="favicon.png" />
   <link rel="stylesheet" href="contact.css?v=4" />
   <script src="contact-config.js" defer></script>
@@ -135,22 +135,39 @@
       footer { padding: 2.5rem 1.75rem; flex-direction: column; align-items: flex-start; gap: 1.5rem; }
       .footer-links { flex-wrap: wrap; gap: 1rem; padding-top: 0; }
     }
-  </style>
+  
+/* === Unified site nav (matches homepage) === */
+nav{position:sticky;top:0;left:auto;right:auto;z-index:100;background:rgba(249,247,244,0.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--rule);padding:0 2.5rem;height:68px;min-height:0;display:flex;align-items:center;justify-content:space-between;flex-wrap:nowrap;gap:0;}
+.nav-logo{display:flex;flex-direction:row;align-items:center;gap:.6rem;flex:0 0 auto;text-decoration:none;line-height:1.1;}
+.nav-logo img{height:34px;width:auto;}
+.nav-logo .nm{font-family:'Montserrat',sans-serif;font-weight:700;letter-spacing:-.01em;font-size:1.2rem;color:var(--teal-dark);}
+.nav-links{display:flex;align-items:center;gap:1.75rem;list-style:none;width:auto;flex-wrap:nowrap;padding-bottom:0;}
+.nav-links a{text-decoration:none;font-size:.9rem;font-weight:500;color:var(--mid-gray);cursor:pointer;white-space:nowrap;transition:color .2s;}
+.nav-links a:hover{color:var(--teal);}
+.nav-links a.active{color:var(--teal);font-weight:600;}
+.nav-cta{background:var(--teal);color:#fff !important;padding:.5rem 1.2rem;border-radius:100px;font-size:.85rem !important;font-weight:600 !important;}
+.nav-cta:hover{background:var(--teal-dark) !important;}
+.page-hero{margin-top:0 !important;}
+@media (max-width:900px){
+  nav{flex-wrap:wrap;height:auto;min-height:0;padding:.7rem 1.25rem;gap:.5rem;align-items:center;}
+  .nav-logo{flex:0 0 auto;}
+  .nav-links{width:100%;flex-wrap:wrap;gap:.45rem .9rem;}
+  .nav-links a{font-size:.8rem;}
+  .page-hero{margin-top:0 !important;}
+}
+
+</style>
 </head>
 <body>
 
   <!-- NAV -->
   <nav>
-    <a href="index.html" class="nav-logo">
-      <span class="nav-logo-main">Outside Support</span>
-      <span class="nav-logo-sub">Nonprofit</span>
-    </a>
+    <a href="index.html" class="nav-logo"><img src="brand-logo.png?v=1" alt="Outside Support logo"><span class="nm">Outside Support</span></a>
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
-      <li><a href="outside-support-for-parents.html">For Parents</a></li>
       <li><a href="outside-support-for-schools.html" class="active">For Schools</a></li>
       <li><a href="outside-support-about.html">About Us</a></li>
-      <li><a href="outside-support-contact.html" class="nav-cta">Contact</a></li>
+      <li><a class="nav-cta" href="index.html#form">Get started</a></li>
     </ul>
   </nav>
 
@@ -360,7 +377,6 @@
       <span>A nonprofit organization</span>
     </div>
     <ul class="footer-links">
-      <li><a href="outside-support-for-parents.html">For Parents</a></li>
       <li><a href="outside-support-for-schools.html">For Schools</a></li>
       <li><a href="outside-support-about.html">About Us</a></li>
       <li><a href="outside-support-contact.html">Contact</a></li>
@@ -375,7 +391,7 @@
       </div>
     </div>
     <div class="footer-disclaimer">
-      Outside Support is not a mental-health, medical, or crisis service, and nothing on this site is a substitute for professional care. If you or a child is in immediate danger, call <a href="tel:911" style="color:#fff">911</a> or call or text <a href="tel:988" style="color:#fff">988</a> (the Suicide &amp; Crisis Lifeline).
+      Outside Support is not a mental-health, medical, or crisis service, and nothing on this site is a substitute for professional care. If you or a child is in immediate danger, call <a href="tel:911" style="color:#fff">911</a> or call or text <a href="tel:988" style="color:#fff">988</a> (the Suicide &amp; Crisis Lifeline). Additional mental health and crisis resources can be found <a href="https://www.apa.org/topics/crisis-hotlines" target="_blank" rel="noopener noreferrer" style="color:#fff;text-decoration:underline">here</a>.
     </div>
   </footer>
 

@@ -194,6 +194,33 @@
       .footer-links { flex-wrap: wrap; gap: 1rem; padding-top: 0; }
     }
   
+    /* ── TEAM (v2: photos + grouped teams) ── */
+    .page-lead { margin-top: 1.4rem; max-width: 680px; font-size: 1.05rem; color: var(--mid-gray); line-height: 1.75; }
+    .team-block { max-width: 1100px; margin: 0 auto; }
+    .team-block + .team-block { margin-top: 3.5rem; padding-top: 3.5rem; border-top: 1px solid var(--rule); }
+    .team-head { margin-bottom: 2rem; }
+    .team-eyebrow { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--teal); margin-bottom: 0.5rem; }
+    .team-htitle { font-family: 'Fraunces', serif; font-size: 1.6rem; font-weight: 500; letter-spacing: -0.01em; color: var(--charcoal); }
+    .people { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+    .person { background: var(--off-white); border: 1px solid var(--rule); border-radius: 20px; padding: 2rem; display: flex; flex-direction: column; }
+    .person-top { display: flex; align-items: center; gap: 1.1rem; }
+    .person-photo { width: 84px; height: 84px; border-radius: 50%; object-fit: cover; flex: 0 0 auto; border: 2px solid #fff; box-shadow: 0 4px 14px rgba(28,43,42,0.12); }
+    .person-name { font-family: 'Fraunces', serif; font-size: 1.25rem; font-weight: 500; color: var(--charcoal); letter-spacing: -0.01em; }
+    .person-role { font-size: 0.8rem; font-weight: 600; color: var(--teal); letter-spacing: 0.03em; margin-top: 0.2rem; }
+    .person-bio { font-size: 0.9rem; color: var(--mid-gray); line-height: 1.75; margin-top: 1.1rem; }
+    .person-links { margin-top: 0.8rem; font-size: 0.82rem; font-weight: 600; }
+    .person-links a { color: var(--teal); text-decoration: none; }
+    .advisors-band { background: var(--teal-light); padding: 4.5rem 5rem; }
+    .adv-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; max-width: 1100px; margin: 1.5rem auto 0; }
+    .adv-card { background: #fff; border: 1px solid var(--rule); border-radius: 16px; padding: 1.75rem; }
+    .adv-name { font-family: 'Fraunces', serif; font-size: 1.1rem; font-weight: 500; color: var(--charcoal); }
+    .adv-role { font-size: 0.76rem; font-weight: 600; color: var(--teal); margin-top: 0.25rem; line-height: 1.4; }
+    .adv-points { margin: 0.9rem 0 0; padding-left: 1rem; color: var(--mid-gray); font-size: 0.84rem; line-height: 1.6; }
+    .adv-points li + li { margin-top: 0.3rem; }
+    .adv-links { margin-top: 0.85rem; font-size: 0.8rem; font-weight: 600; }
+    .adv-links a { color: var(--teal); text-decoration: none; }
+    @media (max-width: 900px) { .people { grid-template-columns: 1fr; } .adv-grid { grid-template-columns: 1fr; } .advisors-band { padding: 3.5rem 1.75rem; } .team-wrap { padding: 4rem 1.75rem; } }
+
 /* === Unified site nav (matches homepage) === */
 nav{position:sticky;top:0;left:auto;right:auto;z-index:100;background:rgba(249,247,244,0.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--rule);padding:0 2.5rem;height:68px;min-height:0;display:flex;align-items:center;justify-content:space-between;flex-wrap:nowrap;gap:0;}
 .nav-logo{display:flex;flex-direction:row;align-items:center;gap:.6rem;flex:0 0 auto;text-decoration:none;line-height:1.1;}
@@ -233,92 +260,77 @@ nav{position:sticky;top:0;left:auto;right:auto;z-index:100;background:rgba(249,2
   <div class="page-hero">
     <div class="page-eyebrow">About Us</div>
     <h1>We exist for the kid who's <em>going through it</em> right now.</h1>
+    <p class="page-lead">Outside Support is an early-stage nonprofit with a focused team and deep research roots. We bring the evidence-based BELONG program, developed at the University of Nebraska-Lincoln, to middle schoolers across the country — for free.</p>
   </div>
 
   <!-- TEAM -->
   <div class="team-wrap">
     <div class="team-inner">
-      <div class="section-label">Our Team</div>
-      <h2 class="section-headline">Meet the team.</h2>
-      <p class="section-sub">Outside Support is an early-stage organization with a focused team and strong research foundations. Here's who is building it.</p>
 
-      <div class="team-grid">
-        <div class="team-card featured">
-          <div class="team-name">Molly McCarthy</div>
-          <div class="team-title">Chief Executive Officer</div>
-          <div class="team-divider"></div>
-          <p class="team-bio">Molly McCarthy has spent her career building things from scratch — inside Fortune 500 companies and venture-backed startups alike. When she discovered Dr. Susan Swearer's research and saw firsthand what the BELONG program did for the kids who went through it, she knew she had found her next challenge: getting this into the hands of every middle schooler who needs it.</p>
-          <div class="team-links"><a href="https://www.linkedin.com/in/molly-mccarthy-b9b5912/" target="_blank" rel="noopener">LinkedIn</a></div>
+      <div class="team-block">
+        <div class="team-head">
+          <div class="team-eyebrow">Outside Support</div>
+          <div class="team-htitle">The team behind Outside Support.</div>
         </div>
-
-        <div class="team-card featured">
-          <div class="team-name">Jim Moran</div>
-          <div class="team-title">Founder</div>
-          <div class="team-divider"></div>
-          <p class="team-bio">Jim co-founded one of the largest market data providers and is now an early stage technology investor. Having experienced bullying growing up, Jim was excited about telehealth enabling a way to connect with others in similar situations but at different schools. He founded Outside Support in partnership with the BRAVE Lab to develop an evidence based peer support program.</p>
-          <div class="team-links"><a href="https://www.linkedin.com/in/jamesdmoran/" target="_blank" rel="noopener">LinkedIn</a></div>
+        <div class="people">
+          <div class="person">
+            <div class="person-top"><img class="person-photo" src="molly.jpg?v=1" alt="Molly McCarthy"><div><div class="person-name">Molly McCarthy</div><div class="person-role">Chief Executive Officer</div></div></div>
+            <p class="person-bio">Molly has spent her career building things from scratch — inside Fortune 500 companies and venture-backed startups alike. When she discovered Dr. Susan Swearer's research and saw firsthand what BELONG did for the kids who went through it, she knew she had found her next challenge: getting it into the hands of every middle schooler who needs it.</p>
+            <div class="person-links"><a href="https://www.linkedin.com/in/molly-mccarthy-b9b5912/" target="_blank" rel="noopener">LinkedIn</a></div>
+          </div>
+          <div class="person">
+            <div class="person-top"><img class="person-photo" src="jim.jpg?v=1" alt="Jim Moran"><div><div class="person-name">Jim Moran</div><div class="person-role">Founder</div></div></div>
+            <p class="person-bio">Jim co-founded one of the largest market data providers and is now an early-stage technology investor. Having experienced bullying growing up, he saw how telehealth could connect kids in similar situations at different schools. He founded Outside Support in partnership with the BRAVE Lab to develop an evidence-based peer support program.</p>
+            <div class="person-links"><a href="https://www.linkedin.com/in/jamesdmoran/" target="_blank" rel="noopener">LinkedIn</a></div>
+          </div>
         </div>
       </div>
 
-      <div class="advisors-section">
-        <div class="advisors-label">Advisors</div>
-        <p class="advisors-intro">We are supported by experts in child and adolescent psychiatry, family therapy, bullying research, and program implementation.</p>
-        <div class="advisors-grid">
-
-          <div class="advisor-card">
-            <div class="advisor-name">Dr. Susan Swearer, PhD</div>
-            <div class="advisor-title">Willa Cather Professor and Director, BRAVE Lab</div>
-            <ul class="advisor-points">
-              <li>Willa Cather Professor of Educational Psychology and Director, Bullying Research and Victim Empowerment (BRAVE) Lab, University of Nebraska-Lincoln.</li>
-              <li>Co-Director, Bullying Research Network.</li>
-              <li>Licensed psychologist focused on bullying prevention, school climate, and youth mental health.</li>
-              <li>Former Professional Counselor, Center for Pediatric Psychiatry, Children's Medical Center of Dallas.</li>
-            </ul>
-            <div class="advisor-links"><a href="https://cehs.unl.edu/edpsych/person/susan-swearer/" target="_blank" rel="noopener">Profile</a> &middot; <a href="https://www.linkedin.com/in/susan-swearer-46585037/" target="_blank" rel="noopener">LinkedIn</a></div>
+      <div class="team-block">
+        <div class="team-head">
+          <div class="team-eyebrow">BRAVE Lab &middot; University of Nebraska-Lincoln</div>
+          <div class="team-htitle">The team behind BELONG.</div>
+        </div>
+        <div class="people">
+          <div class="person">
+            <div class="person-top"><img class="person-photo" src="swearer.jpg?v=1" alt="Dr. Susan Swearer"><div><div class="person-name">Dr. Susan Swearer, PhD</div><div class="person-role">Director, BRAVE Lab</div></div></div>
+            <p class="person-bio">Willa Cather Professor of Educational Psychology and Director of the Bullying Research and Victim Empowerment (BRAVE) Lab at UNL, and Co-Director of the Bullying Research Network. A licensed psychologist, she has spent her career on bullying prevention, school climate, and youth mental health — and developed and piloted the BELONG program.</p>
+            <div class="person-links"><a href="https://cehs.unl.edu/edpsych/person/susan-swearer/" target="_blank" rel="noopener">Profile</a> &middot; <a href="https://www.linkedin.com/in/susan-swearer-46585037/" target="_blank" rel="noopener">LinkedIn</a></div>
           </div>
-
-          <div class="advisor-card">
-            <div class="advisor-name">Dr. Sara Heron, MD</div>
-            <div class="advisor-title">Executive Director, Bay Children's Services</div>
-            <ul class="advisor-points">
-              <li>Child and adolescent psychiatrist.</li>
-              <li>MD, University of California San Francisco School of Medicine; psychiatry residency at UCSF; child and adolescent psychiatry fellowship at Stanford University.</li>
-            </ul>
-            <div class="advisor-links"><a href="https://baychildren.org/providers" target="_blank" rel="noopener">Profile</a> &middot; <a href="https://www.linkedin.com/in/sara-heron-445b471b9/" target="_blank" rel="noopener">LinkedIn</a></div>
+          <div class="person">
+            <div class="person-top"><img class="person-photo" src="rejman.jpg?v=1" alt="Emilea Rejman"><div><div class="person-name">Emilea Rejman, M.A., PLMHP</div><div class="person-role">Project Director, BELONG</div></div></div>
+            <p class="person-bio">Project Director of BELONG at the BRAVE Lab and a doctoral candidate in school psychology at the University of Nebraska-Lincoln, where she works under Dr. Susan Swearer. She leads the day-to-day of the BELONG groups.</p>
+            <div class="person-links"><a href="https://bravelab.unl.edu/sites/unl.edu.cehs.brave-lab/files/media/file/Rejman%20CV%202024-4.pdf" target="_blank" rel="noopener">Profile</a></div>
           </div>
+        </div>
+      </div>
 
-          <div class="advisor-card">
-            <div class="advisor-name">Dr. Thomas Tarshis, MD</div>
-            <div class="advisor-title">Child psychiatrist and bullying/victimization expert</div>
-            <ul class="advisor-points">
-              <li>Former AACAP spokesperson on bullying and victimization.</li>
-              <li>Author of <em>Living with Peer Pressure and Bullying</em>.</li>
-              <li>Author of the Peer Interactions in Primary School (PIPS) Survey.</li>
-            </ul>
-            <div class="advisor-links"><a href="https://www.linkedin.com/in/thomas-tarshis-116a204/" target="_blank" rel="noopener">LinkedIn</a></div>
-          </div>
+    </div>
+  </div>
 
-          <div class="advisor-card">
-            <div class="advisor-name">Amanda Hinson, JD</div>
-            <div class="advisor-title">Marriage and family therapy graduate intern</div>
-            <ul class="advisor-points">
-              <li>Graduate student intern in marriage and family therapy at Insights Collaborative Therapy Group, supervised by Mary Sanger, LPC-S, LMFT-S.</li>
-              <li>Previously at Gibson Dunn and Mercer Management Consulting.</li>
-              <li>Southern Methodist University (MS expected May 2026), Harvard Law (JD), Harvard College (AB, Physics).</li>
-            </ul>
-            <div class="advisor-links"><a href="https://www.insightstherapy.com/therapists/amanda-hinson" target="_blank" rel="noopener">Profile</a> &middot; <a href="https://www.linkedin.com/in/amandasharp/" target="_blank" rel="noopener">LinkedIn</a></div>
-          </div>
-
-          <div class="advisor-card">
-            <div class="advisor-name">Emilea Rejman, M.A., PLMHP</div>
-            <div class="advisor-title">Project Director, BELONG (BRAVE Lab)</div>
-            <ul class="advisor-points">
-              <li>University of Nebraska-Lincoln.</li>
-              <li>Doctoral candidate in school psychology at UNL, supervised by Dr. Susan Swearer.</li>
-            </ul>
-            <div class="advisor-links"><a href="https://bravelab.unl.edu/sites/unl.edu.cehs.brave-lab/files/media/file/Rejman%20CV%202024-4.pdf" target="_blank" rel="noopener">Profile</a></div>
-          </div>
-
+  <!-- ADVISORS -->
+  <div class="advisors-band">
+    <div class="team-inner">
+      <div class="team-eyebrow">Advisors</div>
+      <div class="team-htitle">Guided by industry experts.</div>
+      <div class="adv-grid">
+        <div class="adv-card">
+          <div class="adv-name">Dr. Sara Heron, MD</div>
+          <div class="adv-role">Executive Director, Bay Children's Services</div>
+          <ul class="adv-points"><li>Child and adolescent psychiatrist.</li><li>MD, UCSF School of Medicine; psychiatry residency at UCSF; child &amp; adolescent psychiatry fellowship at Stanford.</li></ul>
+          <div class="adv-links"><a href="https://baychildren.org/providers" target="_blank" rel="noopener">Profile</a> &middot; <a href="https://www.linkedin.com/in/sara-heron-445b471b9/" target="_blank" rel="noopener">LinkedIn</a></div>
+        </div>
+        <div class="adv-card">
+          <div class="adv-name">Dr. Thomas Tarshis, MD</div>
+          <div class="adv-role">Child psychiatrist &amp; bullying expert</div>
+          <ul class="adv-points"><li>Former AACAP spokesperson on bullying and victimization.</li><li>Author of <em>Living with Peer Pressure and Bullying</em>.</li><li>Author of the Peer Interactions in Primary School (PIPS) Survey.</li></ul>
+          <div class="adv-links"><a href="https://www.linkedin.com/in/thomas-tarshis-116a204/" target="_blank" rel="noopener">LinkedIn</a></div>
+        </div>
+        <div class="adv-card">
+          <div class="adv-name">Amanda Hinson, JD</div>
+          <div class="adv-role">Marriage &amp; family therapy graduate intern</div>
+          <ul class="adv-points"><li>Graduate intern in marriage &amp; family therapy at Insights Collaborative Therapy Group.</li><li>Previously at Gibson Dunn and Mercer Management Consulting.</li><li>SMU (MS expected 2026), Harvard Law (JD), Harvard College (AB, Physics).</li></ul>
+          <div class="adv-links"><a href="https://www.insightstherapy.com/therapists/amanda-hinson" target="_blank" rel="noopener">Profile</a> &middot; <a href="https://www.linkedin.com/in/amandasharp/" target="_blank" rel="noopener">LinkedIn</a></div>
         </div>
       </div>
     </div>

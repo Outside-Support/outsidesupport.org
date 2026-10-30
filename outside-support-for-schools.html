@@ -56,6 +56,8 @@
     .hero-fact { background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.15); border-radius: 12px; padding: 1.25rem 1.5rem; }
     .hero-fact-label { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--amber); margin-bottom: 0.3rem; }
     .hero-fact-value { font-size: 0.95rem; color: #fff; font-weight: 500; line-height: 1.4; }
+    .hero-micro { font-size: 0.88rem; color: rgba(255,255,255,0.72); margin-top: 0.9rem; }
+    .hero-micro b { color: #fff; }
 
     /* ── TIER 2 SECTION ── */
     .tier-wrap { background: #fff; border-bottom: 1px solid var(--rule); padding: 6rem 5rem; }
@@ -82,7 +84,7 @@
     .offer-wrap { padding: 6rem 5rem; max-width: 1100px; margin: 0 auto; }
     .offer-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
     .offer-card { border: 1px solid var(--rule); border-radius: 16px; padding: 2rem 1.75rem; background: #fff; }
-    .offer-icon { font-size: 1.4rem; margin-bottom: 1rem; }
+    .offer-ico { width: 48px; height: 48px; border-radius: 12px; background: var(--teal-light); display: flex; align-items: center; justify-content: center; margin-bottom: 1.1rem; }
     .offer-title { font-family: 'Fraunces', serif; font-size: 1.05rem; font-weight: 500; color: var(--charcoal); margin-bottom: 0.5rem; letter-spacing: -0.01em; }
     .offer-body { font-size: 0.87rem; color: var(--mid-gray); line-height: 1.75; }
 
@@ -136,6 +138,22 @@
       .footer-links { flex-wrap: wrap; gap: 1rem; padding-top: 0; }
     }
   
+    /* ── COUNSELOR FAQ ── */
+    .faq-wrap { background: var(--off-white); border-top: 1px solid var(--rule); padding: 5.5rem 5rem; }
+    .faq-inner { max-width: 820px; margin: 0 auto; }
+    .faq-inner .section-headline { margin-bottom: 0; }
+    .faq { margin-top: 2.5rem; }
+    .faq details { border-bottom: 1px solid var(--rule); }
+    .faq summary { list-style: none; cursor: pointer; padding: 1.4rem 2.5rem 1.4rem 0; font-family: 'Fraunces', serif; font-size: 1.2rem; font-weight: 500; color: var(--charcoal); position: relative; }
+    .faq summary::-webkit-details-marker { display: none; }
+    .faq summary::after { content: '+'; position: absolute; right: 0; top: 1.15rem; font-size: 1.7rem; color: var(--teal); font-weight: 300; line-height: 1; }
+    .faq details[open] summary::after { content: '\2013'; }
+    .faq .ans { padding: 0 2.5rem 1.5rem 0; color: var(--mid-gray); font-size: 1.02rem; line-height: 1.75; }
+    .faq .ans a { color: var(--teal); font-weight: 600; text-decoration: none; }
+    .faq .ans ul { margin: 0.6rem 0 0 1.1rem; }
+    .faq .ans li { margin-top: 0.35rem; }
+    @media (max-width: 900px) { .faq-wrap { padding: 4rem 1.75rem; } .faq summary { font-size: 1.08rem; } }
+
 /* === Unified site nav (matches homepage) === */
 nav{position:sticky;top:0;left:auto;right:auto;z-index:100;background:rgba(249,247,244,0.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--rule);padding:0 2.5rem;height:68px;min-height:0;display:flex;align-items:center;justify-content:space-between;flex-wrap:nowrap;gap:0;}
 .nav-logo{display:flex;flex-direction:row;align-items:center;gap:.6rem;flex:0 0 auto;text-decoration:none;line-height:1.1;}
@@ -178,7 +196,8 @@ nav{position:sticky;top:0;left:auto;right:auto;z-index:100;background:rgba(249,2
         <div class="page-eyebrow">For Schools &amp; Counselors</div>
         <h1>A trusted resource for the students your school <em>most wants to reach.</em></h1>
         <p class="page-hero-sub">The BELONG Program is a research-informed Tier 2 support for middle schoolers who've experienced bullying — designed to complement your school-wide efforts, not add to your workload.</p>
-        <a href="#waitlist" class="btn-primary">Refer a student &rarr;</a>
+        <a href="#waitlist" class="btn-primary">Refer a student</a>
+        <p class="hero-micro"><b>1 minute</b> &middot; We take it from there</p>
       </div>
       <div class="hero-facts">
         <div class="hero-fact">
@@ -240,32 +259,32 @@ nav{position:sticky;top:0;left:auto;right:auto;z-index:100;background:rgba(249,2
     <p class="section-sub" style="max-width:600px;">Outside Support is a partner, not a replacement. Here's what referring a student actually looks like from your end.</p>
     <div class="offer-grid">
       <div class="offer-card">
-        <div class="offer-icon">🎓</div>
+        <div class="offer-ico"><svg width="24" height="24" viewBox="0 0 24 24" stroke="#2E7D78" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div>
         <div class="offer-title">Research-informed curriculum</div>
         <p class="offer-body">The BELONG Program is grounded in research from the BRAVE Lab at the University of Nebraska-Lincoln — one of the country's leading bullying research programs. When you refer a student, you're referring them to something that works.</p>
       </div>
       <div class="offer-card">
-        <div class="offer-icon">💻</div>
+        <div class="offer-ico"><svg width="24" height="24" viewBox="0 0 24 24" stroke="#2E7D78" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
         <div class="offer-title">Fully online, no disruption</div>
         <p class="offer-body">Sessions happen online, outside school hours. No classroom time lost, no scheduling conflicts, no staff required on your end. Students attend from home, on a schedule that works for their family.</p>
       </div>
       <div class="offer-card">
-        <div class="offer-icon">🗺️</div>
+        <div class="offer-ico"><svg width="24" height="24" viewBox="0 0 24 24" stroke="#2E7D78" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.4-3 8.1-7 9-4-.9-7-4.6-7-9V6l7-3z"/><path d="M9 12l2 2 4-4.2"/></svg></div>
         <div class="offer-title">No one from their school</div>
         <p class="offer-body">Because the program draws students from across the country, we guarantee that no student is ever grouped with someone from their own school. That's what makes middle schoolers actually willing to open up.</p>
       </div>
       <div class="offer-card">
-        <div class="offer-icon">👥</div>
+        <div class="offer-ico"><svg width="24" height="24" viewBox="0 0 24 24" stroke="#2E7D78" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.2"/><path d="M3.5 20c0-3 2.4-5 5.5-5s5.5 2 5.5 5"/><path d="M16 5.2a3 3 0 0 1 0 5.6"/><path d="M18 20c0-2.2-1-3.8-2.5-4.6"/></svg></div>
         <div class="offer-title">Grouped by gender</div>
         <p class="offer-body">Students are placed in small groups of peers the same gender. That intentional structure makes the program more relevant and the peer connections more meaningful.</p>
       </div>
       <div class="offer-card">
-        <div class="offer-icon">🎯</div>
+        <div class="offer-ico"><svg width="24" height="24" viewBox="0 0 24 24" stroke="#2E7D78" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="5"/><path d="M8.5 13.2L7 21l5-2.7L17 21l-1.5-7.8"/></svg></div>
         <div class="offer-title">Trained facilitators</div>
         <p class="offer-body">Every group is led by a facilitator trained in the BELONG Program curriculum. Consistent, intentional, and quality-controlled — every session, every group.</p>
       </div>
       <div class="offer-card">
-        <div class="offer-icon">🤝</div>
+        <div class="offer-ico"><svg width="24" height="24" viewBox="0 0 24 24" stroke="#2E7D78" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 8.6 8.6 0 0 1-3.3-.7L3 21l1.4-4.3A8.4 8.4 0 0 1 12 3a8.4 8.4 0 0 1 9 8.5z"/></svg></div>
         <div class="offer-title">We handle the family outreach</div>
         <p class="offer-body">Once you make the introduction, we take it from there — connecting with families, explaining the program, and managing enrollment. Minimal lift on your end.</p>
       </div>
@@ -317,13 +336,13 @@ nav{position:sticky;top:0;left:auto;right:auto;z-index:100;background:rgba(249,2
   <!-- REFERRAL FORM -->
   <section class="waitlist-band" id="waitlist">
     <div class="waitlist-inner referral-band">
-      <div class="section-label">Fall Referrals</div>
-      <h2>Referrals for fall are now open.</h2>
-      <p>Current groups are being supported out of the University of Nebraska BRAVE Lab. Once you submit a referral, someone from our staff will follow up shortly.</p>
+      <div class="section-label">Free. Online. Grades 6&ndash;8.</div>
+      <h2>Referrals are now open.</h2>
 
-      <button type="button" class="btn-primary referral-toggle" data-referral-toggle>Submit a referral</button>
+      <button type="button" class="btn-primary referral-toggle" data-referral-toggle onclick="var m=document.getElementById('ref-micro');if(m)m.style.display='none';">Refer a student</button>
+      <p id="ref-micro" style="font-size:.88rem;color:var(--mid-gray);margin-top:.9rem;"><b>1 minute</b> &middot; We take it from there</p>
 
-      <form class="referral-form" data-referral-capture="referral-schools" data-success="Your referral has been submitted. Someone from our staff will follow up shortly." hidden>
+      <form class="referral-form" data-referral-capture="referral-schools" data-success="Thanks — your referral is in. We'll reach out to the family and take it from here." hidden>
         <div class="referral-field">
           <label for="ref-name">Your name</label>
           <input type="text" id="ref-name" name="name" autocomplete="name" required />
@@ -369,6 +388,27 @@ nav{position:sticky;top:0;left:auto;right:auto;z-index:100;background:rgba(249,2
       <div class="referral-status" data-referral-status></div>
     </div>
   </section>
+
+  <!-- COUNSELOR FAQ -->
+  <div class="faq-wrap">
+    <div class="faq-inner">
+      <div class="section-label">For Counselors</div>
+      <h2 class="section-headline">Frequently asked questions.</h2>
+      <div class="faq">
+        <details><summary>What is BELONG, and how does it fit with what we already do?</summary><div class="ans">BELONG is a free support group for middle schoolers who’ve experienced bullying, developed from evidence-based research — small, facilitator-led groups that help students build real skills and connect with peers. It builds on the bullying-prevention work you’re already doing without adding to your plate: you refer a student, and we handle the rest — no classroom time, no staff coverage, no scheduling disruption.</div></details>
+        <details><summary>What’s the connection between Outside Support and the University of Nebraska?</summary><div class="ans">A partnership to bring the BELONG Program to the kids who need it. BELONG was designed and piloted by Dr. Susan Swearer at the University of Nebraska-Lincoln’s BRAVE Lab, with funding from our founder, Jim Moran. After seeing the difference it made for kids and parents, we created Outside Support — a nonprofit — to scale the program to families across the country.</div></details>
+        <details><summary>Is it therapy or counseling?</summary><div class="ans">No. BELONG is a peer-support and skill-building group — not therapy or clinical treatment, and not a replacement for school counseling or mental-health services. It’s an additional resource that complements the support you already provide.</div></details>
+        <details><summary>Who is it for?</summary><div class="ans">Middle schoolers in grades 6–8 who’ve experienced bullying and could benefit from peer connection and skill building.</div></details>
+        <details><summary>How do I refer a student?</summary><div class="ans">Submit a short referral form with your and a parent’s contact information. We follow up, connect with the family, explain the program, and manage consent and enrollment from there. Minimal lift on your end.</div></details>
+        <details><summary>Is there any cost to my school?</summary><div class="ans">None. BELONG is completely free to schools and families — no fees, no contracts, and no administrative burden.</div></details>
+        <details><summary>Will students be grouped with others from our school?</summary><div class="ans">Never. Because we draw students from across the country, we can guarantee a student is never placed in a group with someone from their own school.</div></details>
+        <details><summary>Who leads the groups, and are they qualified?</summary><div class="ans">Groups are led weekly by the same facilitators, trained under Dr. Susan Swearer — a licensed psychologist and director of the BRAVE Lab at the University of Nebraska-Lincoln. Current groups are run by doctoral students there.</div></details>
+        <details><summary>How do you keep students safe?</summary><div class="ans">Password-protected, HIPAA-compliant Zoom sessions limited to enrolled students and the facilitator, led by trained facilitators. Both parental consent and youth assent are required before any student takes part.</div></details>
+        <details><summary>How can I bring this program to my school?</summary><div class="ans">We’d love to talk it through — email us at <a href="mailto:team@outsidesupport.org">team@outsidesupport.org</a>, and we’ll find what fits your school. A few easy ways to start:<ul><li>Share BELONG with your middle school counseling team so they can refer students who could benefit.</li><li>Add Outside Support to your community resource list.</li><li>Include a short blurb and a link to outsidesupport.org in a counselor newsletter to parents.</li></ul></div></details>
+      </div>
+    </div>
+  </div>
+
 
   <!-- FOOTER -->
   <footer>

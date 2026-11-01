@@ -117,6 +117,7 @@
           parentName: (form.querySelector('[name="parentName"]') || {}).value || "",
           parentEmail: (form.querySelector('[name="parentEmail"]') || {}).value || "",
           parentPhone: (form.querySelector('[name="parentPhone"]') || {}).value || "",
+          counselorFollowUp: (function () { var c = form.querySelector('[name="counselorFollowUp"]'); return c ? (c.checked ? "Yes" : "No") : ""; })(),
           formType: form.getAttribute("data-referral-capture") || "interest",
           sourcePage: document.title,
           pageUrl: window.location.href,

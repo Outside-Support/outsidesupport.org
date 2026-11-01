@@ -8,7 +8,7 @@
   <link rel="icon" type="image/png" href="favicon.png?v=3" />
   <link rel="stylesheet" href="contact.css?v=4" />
   <script src="contact-config.js" defer></script>
-  <script src="contact.js?v=3" defer></script>
+  <script src="contact.js?v=4" defer></script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
@@ -99,8 +99,8 @@
 
     /* ── REFERRAL ── */
     .referral-wrap { padding: 6rem 5rem 4rem; max-width: 1100px; margin: 0 auto; }
-    .referral-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; margin-top: 3rem; position: relative; }
-    .referral-steps::before { content: ''; position: absolute; top: 28px; left: calc(16.66% + 1rem); right: calc(16.66% + 1rem); height: 1px; background: var(--rule); z-index: 0; }
+    .referral-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; margin-top: 3rem; position: relative; }
+    .referral-steps::before { content: ''; position: absolute; top: 28px; left: calc(12.5% + 1rem); right: calc(12.5% + 1rem); height: 1px; background: var(--rule); z-index: 0; }
     .referral-step { display: flex; flex-direction: column; align-items: center; text-align: center; padding: 0 2rem; position: relative; z-index: 1; }
     .referral-circle { width: 56px; height: 56px; border-radius: 50%; background: var(--teal); color: #fff; display: flex; align-items: center; justify-content: center; font-family: 'Fraunces', serif; font-size: 1.4rem; font-weight: 500; margin-bottom: 1.5rem; }
     .referral-title { font-family: 'Fraunces', serif; font-size: 1.1rem; font-weight: 500; color: var(--charcoal); margin-bottom: 0.5rem; letter-spacing: -0.01em; }
@@ -312,22 +312,29 @@ nav{position:sticky;top:0;left:auto;right:auto;z-index:100;background:rgba(249,2
       <div class="referral-step">
         <div class="referral-circle">1</div>
         <div>
-          <div class="referral-title">Initiate a referral</div>
-          <p class="referral-body">Give us your contact information and we'll follow up to answer your questions and see if the program is a good fit for your student.</p>
+          <div class="referral-title">Submit a referral</div>
+          <p class="referral-body">Share your contact info and the student's parent/guardian details. One minute &mdash; we take it from there.</p>
         </div>
       </div>
       <div class="referral-step">
         <div class="referral-circle">2</div>
         <div>
           <div class="referral-title">We connect with the family</div>
-          <p class="referral-body">With your introduction, we reach out to the family, explain the program, and guide them through enrollment.</p>
+          <p class="referral-body">We reach out to the parent, explain the program, and answer their questions to see if it's the right fit.</p>
         </div>
       </div>
       <div class="referral-step">
         <div class="referral-circle">3</div>
         <div>
-          <div class="referral-title">Get placed in a group</div>
-          <p class="referral-body">We work with families to find a time outside of school hours, and the student joins an online group.</p>
+          <div class="referral-title">Consent &amp; enrollment</div>
+          <p class="referral-body">If the family wants to move forward, we guide them through the short eligibility and consent forms.</p>
+        </div>
+      </div>
+      <div class="referral-step">
+        <div class="referral-circle">4</div>
+        <div>
+          <div class="referral-title">The student joins a group</div>
+          <p class="referral-body">They're placed in a small online group that meets outside school hours.</p>
         </div>
       </div>
     </div>
@@ -342,7 +349,7 @@ nav{position:sticky;top:0;left:auto;right:auto;z-index:100;background:rgba(249,2
       <button type="button" class="btn-primary referral-toggle" data-referral-toggle onclick="var m=document.getElementById('ref-micro');if(m)m.style.display='none';">Refer a student</button>
       <p id="ref-micro" style="font-size:.88rem;color:var(--mid-gray);margin-top:.9rem;"><b>1 minute</b> &middot; We take it from there</p>
 
-      <form class="referral-form" data-referral-capture="referral-schools" data-success="Thanks — your referral is in. We'll reach out to the family and take it from here." hidden>
+      <form class="referral-form" data-referral-capture="referral-schools" data-success="Thanks for submitting a referral. We'll follow up with the family and take it from here." hidden>
         <div class="referral-field">
           <label for="ref-name">Your name</label>
           <input type="text" id="ref-name" name="name" autocomplete="name" required />
@@ -370,16 +377,20 @@ nav{position:sticky;top:0;left:auto;right:auto;z-index:100;background:rgba(249,2
           </select>
           <p class="referral-note">The program currently serves grades 6&ndash;8.</p>
         </div>
+        <div style="display:flex;align-items:flex-start;gap:.6rem;margin:0 0 1.4rem;text-align:left;">
+          <input type="checkbox" id="ref-followup" name="counselorFollowUp" value="Yes" style="width:18px;height:18px;flex:0 0 auto;margin-top:.15rem;accent-color:var(--teal);" />
+          <label for="ref-followup" style="font-size:.9rem;color:var(--charcoal);line-height:1.45;cursor:pointer;">Please follow up with me in addition to the parent.</label>
+        </div>
         <div class="referral-field">
-          <label for="ref-parent-name">Parent/guardian name (optional)</label>
+          <label for="ref-parent-name">Parent/guardian name</label>
           <input type="text" id="ref-parent-name" name="parentName" autocomplete="off" />
         </div>
         <div class="referral-field">
-          <label for="ref-parent-email">Parent/guardian email (optional)</label>
+          <label for="ref-parent-email">Parent/guardian email</label>
           <input type="email" id="ref-parent-email" name="parentEmail" autocomplete="off" />
         </div>
         <div class="referral-field">
-          <label for="ref-parent-phone">Parent/guardian phone (optional)</label>
+          <label for="ref-parent-phone">Parent/guardian phone</label>
           <input type="tel" id="ref-parent-phone" name="parentPhone" autocomplete="off" />
           <p class="referral-note">Please only share family contact details if you have the family&rsquo;s permission.</p>
         </div>
@@ -435,5 +446,8 @@ nav{position:sticky;top:0;left:auto;right:auto;z-index:100;background:rgba(249,2
     </div>
   </footer>
 
+  <script>
+  (function(){var f=document.querySelector('[data-referral-capture="referral-schools"]');if(f){new MutationObserver(function(){if(f.hidden){var s=document.getElementById("waitlist");if(s)setTimeout(function(){s.scrollIntoView({behavior:"smooth",block:"center"});},60);}}).observe(f,{attributes:true,attributeFilter:["hidden"]});}})();
+  </script>
 </body>
 </html>

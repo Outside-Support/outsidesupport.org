@@ -20,7 +20,8 @@ nav{position:sticky;top:0;z-index:100;background:rgba(249,247,244,0.96);backdrop
 .nav-logo .nm{font-family:'Montserrat',sans-serif;font-weight:700;letter-spacing:-.01em;font-size:1.2rem;color:var(--teal-dark);}
 .nav-links{display:flex;align-items:center;gap:1.75rem;list-style:none;}
 .nav-links a{text-decoration:none;font-size:.9rem;font-weight:500;color:var(--mid-gray);cursor:pointer;}
-.nav-links a.active{color:var(--teal);font-weight:600;}
+.nav-links a.active{color:var(--teal-dark);font-weight:600;position:relative;}
+.nav-links a.active::after{content:"";position:absolute;left:0;right:0;bottom:-6px;height:3px;border-radius:2px;background:var(--amber);}
 .nav-cta{background:var(--teal);color:#fff !important;padding:.5rem 1.2rem;border-radius:100px;font-size:.85rem !important;font-weight:600 !important;}
 .eyebrow{display:inline-flex;align-items:center;gap:.55rem;font-size:.8rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);}
 .eyebrow img{height:26px;}
@@ -159,7 +160,16 @@ h1,h2{text-wrap:balance;}p,li,.hero p.sub,.lead{text-wrap:pretty;}
 @media (max-width:980px){nav{flex-wrap:wrap;height:auto;padding:.7rem 1.25rem;gap:.5rem;}.nav-logo{flex:0 0 auto;}.nav-links{width:100%;flex-wrap:wrap;gap:.45rem .9rem;}.nav-links a{font-size:.8rem;}.hero h1{font-size:2.4rem;}.signs,.pillars,.trust-grid,.why,.quotes,.ceo{grid-template-columns:1fr;}.steps{grid-template-columns:1fr 1fr;}.steps::before{display:none;}.row2{grid-template-columns:1fr;}}
 @media (max-width:560px){.hero h1{font-size:2rem;}.steps{grid-template-columns:1fr;}section{padding:3.4rem 0;}h2.sec{font-size:1.85rem;}.formcard{padding:1.6rem;}.highlight{flex-direction:column;align-items:flex-start;}}
 .problem-strip{background:var(--teal-dark);color:#fff;padding:4.5rem 5rem;}.problem-inner{max-width:900px;margin:0 auto;display:grid;grid-template-columns:1fr 2fr;gap:3rem;align-items:center;}.problem-stat{text-align:center;}.problem-stat-num{font-family:'Fraunces',serif;font-size:5rem;font-weight:300;line-height:1;color:var(--amber);}.problem-stat-label{font-size:.9rem;color:rgba(255,255,255,.72);line-height:1.5;margin-top:.5rem;}.problem-copy h2{font-family:'Fraunces',serif;font-size:1.7rem;font-weight:500;line-height:1.3;margin-bottom:1rem;letter-spacing:-.01em;}.problem-copy p{font-size:1rem;line-height:1.8;color:rgba(255,255,255,.82);}.problem-copy .cite-mark{font-size:.6em;vertical-align:super;color:var(--amber);font-weight:600;}.problem-copy .problem-cite{margin-top:1.5rem;font-size:.8rem;line-height:1.65;color:rgba(255,255,255,.55);}.problem-copy .problem-cite sup{color:var(--amber);}.problem-copy .problem-cite a{color:var(--amber);font-weight:600;text-decoration:none;white-space:nowrap;}@media (max-width:980px){.problem-inner{grid-template-columns:1fr;gap:1.75rem;}.problem-strip{padding:3rem 1.75rem;}}.referral-status{max-width:620px;margin:1rem auto 0;text-align:center;color:var(--charcoal);font-size:.95rem;line-height:1.6;min-height:1.2rem;}.referral-status a{color:var(--teal);font-weight:600;}
-</style></head><body><div id="stage"><nav><div class="nav-logo"><img src="brand-logo.png?v=1" alt="Outside Support logo"><span class="nm">Outside Support</span></div><ul class="nav-links"><li><a href="index.html" class="active">Home</a></li><li><a href="outside-support-for-schools.html">For Schools</a></li><li><a href="outside-support-about.html">About Us</a></li><li><a class="nav-cta" href="#form" onclick="revealForm();return false;">Get started</a></li></ul></nav><section class="hero"><div class="wrap">
+</style><!-- Google tag (Google Ads) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18565855510"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-18565855510');
+  window.OUTSIDE_SUPPORT_ADS = { conversionSendTo: 'AW-18565855510/wOvaCLnKnrUdEJby8ZRF' };
+</script>
+</head><body><div id="stage"><nav><div class="nav-logo"><img src="brand-logo.png?v=1" alt="Outside Support logo"><span class="nm">Outside Support</span></div><ul class="nav-links"><li><a href="index.html" class="active">Home</a></li><li><a href="outside-support-for-schools.html">For Schools</a></li><li><a href="outside-support-about.html">About Us</a></li><li><a class="nav-cta" href="#form" onclick="revealForm();return false;">Get started</a></li></ul></nav><section class="hero"><div class="wrap">
 <div class="eyebrow" style="justify-content:center;"><img src="brand-logo.png?v=1" alt="Outside Support logo">Online Peer Support Program · For Middle Schoolers</div>
 <h1>Your child doesn't have to face bullying <em>alone.</em></h1>
 <p class="sub">Outside Support provides a free, six-week online support group for middle schoolers who have experienced bullying. Students are grouped with kids from other schools — never anyone from their own — giving them a safe space to learn problem-solving and coping skills while connecting with peers who get it.</p>

@@ -8,6 +8,20 @@
     return getConfig().recipientEmail || "team@outsidesupport.org";
   }
 
+  // Google Ads conversion. Fires only after the server confirms the
+  // Get Started submission. Sends no form data (no names, emails, etc.) -
+  // just "a conversion happened." Does nothing if the Google tag isn't on the page.
+  function trackAdsConversion() {
+    try {
+      var ads = window.OUTSIDE_SUPPORT_ADS || {};
+      if (ads.conversionSendTo && typeof window.gtag === "function") {
+        window.gtag("event", "conversion", { send_to: ads.conversionSendTo });
+      }
+    } catch (err) {
+      if (window.console && console.warn) console.warn("Ads conversion tracking failed:", err);
+    }
+  }
+
   // Resolves only if the server confirms {ok:true}. Any transport error,
   // non-2xx status, non-JSON body, or ok:false rejects.
   function submitToEndpoint(endpoint, payload) {
@@ -142,6 +156,7 @@
             form.hidden = true;
             var msg = form.getAttribute("data-success") || "Thanks — we've got your details. A member of our team will be in touch shortly.";
             if (status) status.textContent = msg;
+            trackAdsConversion();
           })
           .catch(function (err) {
             if (window.console && console.warn) console.warn("Referral failed:", err);

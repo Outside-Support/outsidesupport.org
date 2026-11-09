@@ -76,7 +76,8 @@ nav{position:sticky;top:0;left:auto;right:auto;z-index:100;background:rgba(249,2
 .nav-links{display:flex;align-items:center;gap:1.75rem;list-style:none;width:auto;flex-wrap:nowrap;padding-bottom:0;}
 .nav-links a{text-decoration:none;font-size:.9rem;font-weight:500;color:var(--mid-gray);cursor:pointer;white-space:nowrap;transition:color .2s;}
 .nav-links a:hover{color:var(--teal);}
-.nav-links a.active{color:var(--teal);font-weight:600;}
+.nav-links a.active{color:var(--teal-dark);font-weight:600;position:relative;}
+.nav-links a.active::after{content:"";position:absolute;left:0;right:0;bottom:-6px;height:3px;border-radius:2px;background:var(--amber);}
 .nav-cta{background:var(--teal);color:#fff !important;padding:.5rem 1.2rem;border-radius:100px;font-size:.85rem !important;font-weight:600 !important;}
 .nav-cta:hover{background:var(--teal-dark) !important;}
 .page-hero{margin-top:0 !important;}
@@ -89,6 +90,15 @@ nav{position:sticky;top:0;left:auto;right:auto;z-index:100;background:rgba(249,2
 }
 
 </style>
+<!-- Google tag (Google Ads) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18565855510"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-18565855510');
+  window.OUTSIDE_SUPPORT_ADS = { conversionSendTo: 'AW-18565855510/wOvaCLnKnrUdEJby8ZRF' };
+</script>
 </head>
 <body>
 
